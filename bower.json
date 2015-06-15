@@ -1,0 +1,11 @@
+{
+  "name": "election-website",
+  "version": "0.0.1",
+  "authors": [
+    "Nyan Lynn Htut <lynnhtut87@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "materialize": "~0.96.1"
+  }
+}
