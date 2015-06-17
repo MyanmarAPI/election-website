@@ -12,5 +12,18 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+	var paths = {
+		'jquery': './vendor/bower_components/jquery/dist/',
+	    'materialize': './vendor/bower_components/materialize/dist/'
+	}
+
     mix.less('app.less');
+
+    //mix.copy(paths.materialize + 'font/**', 'public/font');
+
+    mix.scripts([
+        //paths.jquery + "jquery.js",
+        //paths.materialize + "js/materialize.js"
+        'app.js'
+    ], 'public/js/app.js');
 });
