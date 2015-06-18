@@ -25,5 +25,6 @@ Route::get('/contact', function () {
 
 Route::get('/api/v1/authenticate/{key}', [
 	'as' => 'api::authenticate',
+	'middleware' => 'api',
 	'uses' => 'Api\AuthenticationController@authenticate', 
 ]);
