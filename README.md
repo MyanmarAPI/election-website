@@ -8,6 +8,8 @@
 - OpenSSL PHP Extension
 - Mbstring PHP Extension
 - Tokenizer PHP Extension
+- MongoDB PHP Extension
+- MongoDB
 - Composer (https://getcomposer.org/)
 - NodeJS (https://nodejs.org/)
 - NPM (https://www.npmjs.com/)
