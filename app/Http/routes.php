@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('static.home');
 });
+
+Route::get('/about', function () {
+	return view('static.about');
+});
+
+Route::get('/contact', function () {
+	return view('static.contact');
+});
+
+Route::get('/api/v1/authenticate/{key}', [
+	'as' => 'api::authenticate',
+	'uses' => 'Api\AuthenticationController@authenticate', 
+]);
