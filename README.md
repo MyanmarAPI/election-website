@@ -30,4 +30,6 @@ $ npm install
 $ bower install
 
 $ gulp
+
+$ php artisan app:install
 ```
