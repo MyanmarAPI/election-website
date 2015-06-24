@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Util\Gravatar;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -40,6 +41,27 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function applications()
     {
-        $this->hasMany('App\Application');
+        return $this->hasMany('App\Application');
+    }
+
+    /**
+     * Check user is admin or not.
+     *
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
+     * Get user profile image (gravatar).
+     *
+     * @param  integer $size
+     * @return sring
+     */
+    public function getProfileImage($size = 50)
+    {
+        return (new Gravatar($this->email))->url($size);
     }
 }
