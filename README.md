@@ -21,7 +21,7 @@
 $ git clone git@github.com:MyanmarAPI/election-website.git
 $ cd election-website
 
-// For PHP Dependicies
+// For PHP Dependencies
 $ composer install 
 // For Node JS Dependencies
 $ npm install
@@ -29,7 +29,12 @@ $ npm install
 // Run gulp for assets published
 $ gulp
 
+// currently: customize .env file
+cp .env.example .env
+nano .env
+
 $ php artisan app:install
+$ php artisan key:generate
 ```
 
 ## Run Seed User Data
