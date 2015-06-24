@@ -14,7 +14,6 @@
 - NodeJS (https://nodejs.org/)
 - NPM (https://www.npmjs.com/)
 - Gulp (http://gulpjs.com/)
-- Bower (http://bower.io/)
 
 ## Installation
 
@@ -26,10 +25,15 @@ $ cd election-website
 $ composer install 
 // For Node JS Dependencies
 $ npm install
-// For Frontend Assets Packages
-$ bower install
 
+// Run gulp for assets published
 $ gulp
 
 $ php artisan app:install
+```
+
+## Run Seed User Data
+
+```
+php artisan db:seed
 ```
