@@ -23,12 +23,13 @@
 			</a>
 			@endif
 		</div>
+                <div class="clearfix"></div>
 	</div> <!-- end of div.hero -->
 @endsection
 
 @section('content')
     <div class="row app-container mg-top">
-		<div class="col s6" id="develop-card">
+		<div class="col m6 s12" id="develop-card">
 			<div class="card hoverable">
         		<div class="card-content grey-text text-darken-2">
           			<span class="card-title grey-text text-darken-2">Develop</span>
@@ -42,7 +43,7 @@
       		</div> <!-- end of div.card -->
 		</div> <!-- end of div#develop-card -->
 
-		<div class="col s6" id="contribute-card">
+		<div class="col m6 s12" id="contribute-card">
 			<div class="card hoverable">
         		<div class="card-content grey-text text-darken-2">
           			<span class="card-title grey-text text-darken-2">Contribute</span>
