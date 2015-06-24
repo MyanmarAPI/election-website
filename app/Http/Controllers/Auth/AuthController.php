@@ -23,6 +23,13 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers;
 
     /**
+     * Redirect url path after use is loggedin.
+     *
+     * @var string
+     */
+    protected $redirectPath = 'dashboard';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
@@ -59,6 +66,8 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'status' => 'a',
+            'role' => 'user'
         ]);
     }
 }
