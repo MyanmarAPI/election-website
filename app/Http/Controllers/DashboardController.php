@@ -30,6 +30,12 @@ class DashboardController extends Controller
 	{
 		$data['user'] = $this->user;
 
+		$data['total_users'] = User::where('role', 'user')->count();
+
+		$data['total_admins'] = User::where('role', 'admin')->count();
+
+		$data['total_apps'] = Application::count();
+
 		$data['users'] = User::latest()->take(10)->get();
 
 		$data['applications'] = Application::latest()->take(10)->get();

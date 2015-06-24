@@ -8,6 +8,35 @@
 	
 	<div class="row app-container">
 
+		<div class="row mg-top" id="total-view">
+			<div class="col s4 total-block">
+				<h5>Users</h5>
+					
+				<div class="total indigo-text">
+					{{ $total_users }}
+				</div>
+				
+			</div>
+
+			<div class="col s4 total-block">
+				<h5>Admins</h5>
+					
+				<div class="total indigo-text">
+					{{ $total_admins }}
+				</div>
+				
+			</div>
+
+			<div class="col s4 total-block">
+				<h5>Applications</h5>
+					
+				<div class="total indigo-text">
+					{{ $total_apps }}
+				</div>
+				
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col s12" id="analytics-view">
 				<h4>Analytics</h4>
