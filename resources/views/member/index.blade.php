@@ -14,7 +14,7 @@
 					<small class="right">
 						<a href="{{ route('member.create') }}"
 						class="waves-effect waves-teal btn-flat indigo-text text-size-small">
-							Create New Member
+							<i class="material-icons">add</i> Create New Member
 						</a>
 					</small>
 				</h4>
@@ -55,7 +55,7 @@
 							</a>
 							@endif
 
-							<a title="Delete" href="{{ route('user.delete', $member->id) }}" 
+							<a title="Delete" href="{{ route('member.delete', $member->id) }}" 
 							class="waves-effect waves-light btn confirm_delete red">
 								<i class="material-icons">delete</i>
 							</a>
