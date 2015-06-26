@@ -3,15 +3,16 @@
 namespace App;
 
 use App\Util\Gravatar;
+use Jenssegers\Mongodb\Model;
 use Illuminate\Auth\Authenticatable;
+use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Jenssegers\Mongodb\Model;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, SoftDeletes;
 
     /**
      * The database collection used by the model.
