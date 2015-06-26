@@ -15,9 +15,16 @@ use App\User;
 
 class UserController extends Controller
 {
-
+	/**
+	 * Current logged in user.
+	 *
+	 * @var \App\User
+	 */
 	protected $user;
 
+	/**
+	 * Create new user controller instance.
+	 */
 	public function __construct()
 	{
 		$this->user = Auth::user();
@@ -30,7 +37,7 @@ class UserController extends Controller
      */
 	public function index()
 	{
-		$users = User::where('role', '=', 'user')->paginate(20);
+		$users = User::getUserWithPaginate();
 
 		return view('user.index', compact('users'));
 	}
