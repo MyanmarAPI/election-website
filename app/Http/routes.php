@@ -90,26 +90,30 @@ function() {
 		'as' => 'user.delete',
 		'uses' => 'UserController@destroy'
 	]);
+});
 
-	/*Route::get('/create', [
-		'as' => 'application.create',
-		'uses' => 'ApplicationController@create'
+// Admin Member Panel Routes for Admin.
+Route::group(['middleware' => 'auth', 'prefix' => 'members'], 
+function() {
+	Route::get('/', [
+		'as' => 'members',
+		'uses' => 'MemberController@index'
+	]);
+
+	Route::get('/create', [
+		'as' => 'member.create',
+		'uses' => 'MemberController@getCreate'
 	]);
 
 	Route::post('/create', [
-		'as' => 'application.store',
-		'uses' => 'ApplicationController@store'
+		'as' => 'member.store',
+		'uses' => 'MemberController@postCreate'
 	]);
 
-	Route::get('/edit', [
-		'as' => 'application.edit',
-		'uses' => 'ApplicationController@edit'
+	Route::get('{id}/delete', [
+		'as' => 'members.delete',
+		'uses' => 'MemberController@destroy'
 	]);
-
-	Route::post('/update', [
-		'as' => 'application.update',
-		'uses' => 'ApplicationController@update'
-	]);*/
 });
 
 Route::get('/api/v1/authenticate/{key}', [
