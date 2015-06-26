@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 
+/**
+ * Controller for the User Management for Admin.
+ * 
+ * @package Election Ddeveloper Website
+ * @license 
+ * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ */
+
 class UserController extends Controller
 {
 
@@ -28,7 +36,7 @@ class UserController extends Controller
 	}
 
 	/**
-     * Display a listing of the resource.
+     * Ban the given user.
      *
      * @return Response
      */
@@ -37,6 +45,21 @@ class UserController extends Controller
 		$user = User::findOrFail($id);
 
 		$user->status = 'b';
+		$user->save();
+
+		return back();
+	}
+
+	/**
+     * Remove given user from banned lists.
+     *
+     * @return Response
+     */
+	public function unban($id)
+	{
+		$user = User::findOrFail($id);
+
+		$user->status = 'a';
 		$user->save();
 
 		return back();

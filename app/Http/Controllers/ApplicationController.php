@@ -7,6 +7,13 @@ use App\Http\Requests\ApplicationFormRequest;
 use App\Util\AppKeyGenerator;
 use Auth;
 
+/**
+ * Controller for the API Application.
+ * 
+ * @package Election Ddeveloper Website
+ * @license 
+ * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ */
 class ApplicationController extends Controller
 {
 	/**

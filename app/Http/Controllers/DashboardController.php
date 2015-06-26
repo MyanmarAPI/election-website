@@ -6,6 +6,14 @@ use Auth;
 use App\User;
 use App\Application;
 
+/**
+ * Controller for the User and Admin Dashboard.
+ * 
+ * @package Election Ddeveloper Website
+ * @license 
+ * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ */
+
 class DashboardController extends Controller
 {
 
