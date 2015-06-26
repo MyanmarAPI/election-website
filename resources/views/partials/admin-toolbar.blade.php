@@ -5,10 +5,10 @@
 				<i class="material-icons left">apps</i>Applications
 			</a>
 			<a class="waves-effect waves-teal btn-flat" href="{{ url('users') }}">
-				<i class="material-icons left">people</i>Users
+				<i class="material-icons left">people</i>Register Users
 			</a>
 			<a class="waves-effect waves-teal btn-flat" href="{{ url('members') }}">
-				<i class="material-icons left">supervisor_account</i>Members
+				<i class="material-icons left">supervisor_account</i>Admin Members
 			</a>
 		</div>
 	</div> <!-- end of div.app-container -->
