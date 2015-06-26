@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Applications')
+@section('title', 'Users')
 
 @section('content')
 
