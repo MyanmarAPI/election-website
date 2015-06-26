@@ -111,7 +111,7 @@ function() {
 	]);
 
 	Route::get('{id}/delete', [
-		'as' => 'members.delete',
+		'as' => 'member.delete',
 		'uses' => 'MemberController@destroy'
 	]);
 });

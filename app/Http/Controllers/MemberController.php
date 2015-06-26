@@ -75,4 +75,23 @@ class MemberController extends Controller
 		return back()->withInput();
 	}
 
+	/**
+     * Remove the specified resource from storage.
+     *
+     * @param  string  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        try {
+            User::destroy($id);
+
+            session()->flash('success', 'Member is successfully deleted.');
+        } catch (\Exception $e) {
+            session()->flash('error', 'Error occured to delete member.');
+        }
+
+        return back();
+    }
+
 }
