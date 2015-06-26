@@ -64,4 +64,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return (new Gravatar($this->email))->url($size);
     }
+
+    /**
+     * Get admin member lists with pagination.
+     *
+     * @param  integer $perPage
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function getAdminWithPaginate($perPage = 20)
+    {
+        $instance = new static;
+
+        return $instance->where('role', '=', 'admin')->latest()->paginate($perPage);
+    }
+
+    /**
+     * Get user lists with pagination.
+     *
+     * @param  integer $perPage
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function getUserWithPaginate($perPage = 20)
+    {
+        $instance = new static;
+
+        return $instance->where('role', '=', 'user')->latest()->paginate($perPage);
+    }
 }
