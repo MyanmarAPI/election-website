@@ -72,6 +72,16 @@
 
     <script>
     	$(document).ready(function() {
+    		@if (Session::get('success'))
+    		// Show toast for session flash success message
+    		Materialize.toast('{{ Session::get('success') }}', 4000, 'success');
+    		@endif
+
+    		@if (Session::get('error'))
+    		// Show toast for session flash error message
+    		Materialize.toast('{{ Session::get('error') }}', 4000, 'error');
+    		@endif
+
 		    @yield('scripts')
 		});
     </script>
