@@ -40,7 +40,7 @@ class ApplicationController extends Controller
 	{
 		if ( $this->user->isAdmin())
 		{
-			$applications = Application::with('users')->get();
+			$applications = Application::with('user')->get();
 
             return view('app.admin-index', compact('applications'));
 		}
