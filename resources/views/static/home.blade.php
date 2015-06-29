@@ -14,9 +14,16 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 			@if (Auth::guest())
-			<a class="waves-effect waves-light btn-large cyan" href="{{ url('auth/register') }}">
-				<i class="material-icons left">create</i>Create Your Account
-			</a>
+
+				@if (env('REGISTRATION_ENABLE'))
+					<a class="waves-effect waves-light btn-large cyan" href="{{ url('auth/register') }}">
+						<i class="material-icons left">create</i>Create Your Account
+					</a>
+				@else
+					<button class="waves-effect waves-light btn-large cyan">
+						Coming Soon...
+					</button>
+				@endif
 			@else
 			<a class="waves-effect waves-light btn-large cyan" href="{{ url('dashboard') }}">
 				<i class="material-icons left">dashboard</i>My Dashboard

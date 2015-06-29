@@ -31,5 +31,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'api' => \Hexcores\Api\Http\Middleware\VerifyApiRequestHeader::class,
         'admin' => \App\Http\Middleware\RequiredAdminRole::class,
+        'register_enable' => \App\Http\Middleware\RegistrationEnable::class,
     ];
 }
