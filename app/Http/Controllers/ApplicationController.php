@@ -40,14 +40,14 @@ class ApplicationController extends Controller
 	{
 		if ( $this->user->isAdmin())
 		{
-			$applications = Application::all();
-		}
-		else
-		{
-			$applications = Application::ownBy($this->user)->all();	
-		}
+			$applications = Application::with('users')->get();
 
-		return view('app.index', compact('applications'));
+            return view('app.admin-index', compact('applications'));
+		}
+		
+        $applications = Application::ownBy($this->user)->get(); 
+
+		return view('app.user-index', compact('applications'));
 	}
 
 	/**
