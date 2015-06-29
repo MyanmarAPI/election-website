@@ -8,16 +8,13 @@
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
-			<div class="col s12" id="admin-dashboard">
-				<h4>Applications</h4>
+			<div class="col s12" id="admin-apps">
+				<h4>Register Applications</h4>
 
 				@if ( $applications->isEmpty())
 				<div class="empty">
 					<p class="center-align">
-						Application is empty! <br><br>
-						<a class="waves-effect waves-light btn" href="{{ route('application.create') }}">
-							<i class="mdi-content-add left"></i>Create New Application
-						</a>
+						Application is empty!
 					</p>
 				</div>
 				@else
@@ -35,7 +32,7 @@
 
 					<tr>
 						<td>{{ $app->name }}</td>
-						<td><span class="app-key">{{ $app->key }}</span></td>
+						<td><div class="app-key fixed-width-200 truncate">{{ $app->key }}</div></td>
 						<td>{{ $app->type }}</td>
 						<td>
 							<a title="Edit" href="{{ route('application.edit', $app->id) }}" 
