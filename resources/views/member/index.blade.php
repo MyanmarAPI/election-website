@@ -32,7 +32,7 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Status</th>
-							<th width="200px">Actions</th>
+							<th width="300px">Actions</th>
 						</tr>					
 					</thead>
 	
@@ -54,6 +54,11 @@
 								<i class="material-icons">lock_open</i>
 							</a>
 							@endif
+
+							<a title="Downgrade to User" href="{{ route('action.downgrade', $member->id) }}" 
+							class="waves-effect waves-light btn blue-grey">
+								<i class="material-icons">person</i>
+							</a>
 
 							<a title="Delete" href="{{ route('member.delete', $member->id) }}" 
 							class="waves-effect waves-light btn confirm_delete red">

@@ -92,7 +92,7 @@ function() {
 	]);
 });
 
-// Admin Member Panel Routes for Admin.
+// Admin Member Panel Routes for Admin Users.
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'members'], 
 function() {
 	Route::get('/', [
@@ -113,6 +113,20 @@ function() {
 	Route::get('{id}/delete', [
 		'as' => 'member.delete',
 		'uses' => 'MemberController@destroy'
+	]);
+});
+
+// Admin Action Routes for Admin Users.
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'actions'], 
+function() {
+	Route::get('/{id}/promote', [
+		'as' => 'action.promote',
+		'uses' => 'AdminActionController@promoteUserToAdmin'
+	]);
+
+	Route::get('/{id}/downgrade', [
+		'as' => 'action.downgrade',
+		'uses' => 'AdminActionController@downgradeAdminToUser'
 	]);
 });
 

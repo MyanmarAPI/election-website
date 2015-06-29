@@ -24,7 +24,7 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Status</th>
-							<th width="200px">Actions</th>
+							<th width="300px">Actions</th>
 						</tr>					
 					</thead>
 	
@@ -46,6 +46,11 @@
 								<i class="material-icons">lock_open</i>
 							</a>
 							@endif
+
+							<a title="Promote to Admin" href="{{ route('action.promote', $user->id) }}" 
+							class="waves-effect waves-light btn indigo">
+								<i class="material-icons">verified_user</i>
+							</a>
 
 							<a title="Delete" href="{{ route('user.delete', $user->id) }}" 
 							class="waves-effect waves-light btn confirm_delete red">

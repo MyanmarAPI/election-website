@@ -46,6 +46,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
+     * Promote to admin role for this user.
+     *
+     * @return bool
+     */
+    public function promoteToAdmin()
+    {
+        $this->role = 'admin';
+
+        return $this->save();
+    }
+
+    /**
+     * Downgrade to user role for this admin.
+     *
+     * @return bool
+     */
+    public function downgradeToUser()
+    {
+        $this->role = 'user';
+
+        return $this->save();
+    }
+
+    /**
      * Check user is admin or not.
      *
      * @return boolean
