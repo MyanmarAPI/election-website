@@ -69,7 +69,7 @@ function() {
 });
 
 // User Panel Routes for Admin.
-Route::group(['middleware' => 'auth', 'prefix' => 'users'], 
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'users'], 
 function() {
 	Route::get('/', [
 		'as' => 'users',
@@ -93,7 +93,7 @@ function() {
 });
 
 // Admin Member Panel Routes for Admin.
-Route::group(['middleware' => 'auth', 'prefix' => 'members'], 
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'members'], 
 function() {
 	Route::get('/', [
 		'as' => 'members',
