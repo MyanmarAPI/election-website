@@ -3,6 +3,8 @@
 @section('title', 'Applications')
 
 @section('content')
+
+	@include('partials.user-toolbar')
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
@@ -12,7 +14,7 @@
 
 				<div class="row">
 					<div class="col l6 m6 s12">
-						<h4>Col 1</h4>
+
 						@if ( $applications->isEmpty())
 						<div class="empty">
 							<p class="center-align">
@@ -62,7 +64,19 @@
 					</div> <!-- end of div.col l6 m6 s12 -->
 
 					<div class="col l6 m6 s12">
-						<h4>Col 2</h4>
+						<p>To use MyamarAPI, you need a key for api request. Get key by making an application.</p>
+
+						<a class="waves-effect waves-light btn-large cyan" href="{{ route('application.create') }}">
+							<i class="material-icons left">create</i>Create Application
+						</a>
+
+						<p>API Endpoint Lists</p>
+
+						<ul class="bullet-list">
+							@foreach (endpoint_lists() as $list)
+							<li>{{ $list }}</li>
+							@endforeach
+						</ul>
 					</div>
 
 				</div>
