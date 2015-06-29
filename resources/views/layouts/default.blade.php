@@ -21,8 +21,8 @@
 		<nav class="white">
 			<div class="nav-wrapper app-container">
 				<div class="col s12">
-					<a href="/" class="brand-logo">
-						<img src="/img/main-logo.png" alt="Myanmar Election API">
+					<a href="{{ url('/') }}" class="brand-logo">
+						<img src="{{ url('img/main-logo.png') }}" alt="Myanmar Election API">
 						Myanmar Election API
 					</a>
 
@@ -36,8 +36,8 @@
 
 					<ul id="nav-mobile" class="side-nav">
 						<li class="nav-logo">
-							<a href="/">
-								<img src="/img/main-logo.png" alt="Myanmar Election API">
+							<a href="{{ url('/') }}">
+								<img src="{{ url('img/main-logo.png') }}" alt="Myanmar Election API">
 								Myanmar Election API
 							</a>
 						</li>
