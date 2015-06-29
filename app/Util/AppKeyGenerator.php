@@ -51,6 +51,6 @@ class AppKeyGenerator
 			throw new RuntimeException("Need to set User object to key generate.");
 		}
 
-		return uniqid(md5($app->id . $this->user->id) . time());
+		return sha1(md5($app->id . $this->user->id) . time() . mt_rand());
 	}
 }
