@@ -22,7 +22,6 @@
 			<div class="nav-wrapper app-container">
 				<div class="col s12">
 					<a href="{{ url('/') }}" class="brand-logo">
-						{{-- <img src="{{ url('img/main-logo.png') }}" alt="Myanmar Election API"> --}}
 						Myanmar Election API
 					</a>
 
@@ -37,7 +36,6 @@
 					<ul id="nav-mobile" class="side-nav">
 						<li class="nav-logo">
 							<a href="{{ url('/') }}">
-								<img src="{{ url('img/main-logo.png') }}" alt="Myanmar Election API">
 								Myanmar Election API
 							</a>
 						</li>
@@ -47,12 +45,14 @@
 			</div> <!-- end of div.nav-wrapper -->
 		</nav>
 	</div> <!-- end of div.navbar-fixed -->
+	
+	<main>
+		@yield('hero')
 
-	@yield('hero')
-
-	<div id="content">
-		@yield('content')
-	</div> <!-- end of div#content -->
+		<div id="content">
+			@yield('content')
+		</div> <!-- end of div#content -->
+	</main>
 
 	<footer class="brown white-text">
 		<div class="app-container">

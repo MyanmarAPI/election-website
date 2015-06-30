@@ -1,10 +1,10 @@
-<div id="toolbar" class="toolbar-container amber">
+<div id="toolbar" class="toolbar-container grey darken-3">
 	<div class="row app-container" >
 		<div class="col s12">
-			<a class="waves-effect waves-teal btn-flat" href="{{ route('application') }}">
+			<a class="waves-effect waves-teal btn-flat white-text" href="{{ route('application') }}">
 				<i class="material-icons left">list</i>Applications
 			</a>
-			<a class="waves-effect waves-teal btn-flat" href="{{ route('application.create') }}">
+			<a class="waves-effect waves-teal btn-flat white-text" href="{{ route('application.create') }}">
 				<i class="material-icons left">create</i>Create Application
 			</a>
 		</div>
