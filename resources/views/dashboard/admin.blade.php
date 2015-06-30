@@ -49,7 +49,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col s6">
+			<div class="col m6 s12">
 				<h4>Latest Register User</h4>
 
 				<ul class="collection">
@@ -63,7 +63,7 @@
 				</ul>
 			</div>
 
-			<div class="col s6">
+			<div class="col m6 s12">
 				<h4>Latest Register Application</h4>
 
 				<ul class="collection">

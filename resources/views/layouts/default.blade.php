@@ -26,7 +26,7 @@
 					</a>
 
 					<a href="#" data-activates="nav-mobile" class="button-collapse">
-						<i class="mdi-navigation-menu"></i>
+						<i class="mdi-navigation-menu cyan-text"></i>
 					</a>
 
 					<ul class="right hide-on-med-and-down">
