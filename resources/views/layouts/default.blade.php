@@ -18,11 +18,11 @@
 <body>
 
 	<div class="navbar-fixed">
-		<nav class="white">
+		<nav class="yellow">
 			<div class="nav-wrapper app-container">
 				<div class="col s12">
 					<a href="{{ url('/') }}" class="brand-logo">
-						<img src="{{ url('img/main-logo.png') }}" alt="Myanmar Election API">
+						{{-- <img src="{{ url('img/main-logo.png') }}" alt="Myanmar Election API"> --}}
 						Myanmar Election API
 					</a>
 
@@ -54,7 +54,7 @@
 		@yield('content')
 	</div> <!-- end of div#content -->
 
-	<footer>
+	<footer class="brown white-text">
 		<div class="app-container">
 			<div class="row no-margin">
 				<div class="col l12 s12">

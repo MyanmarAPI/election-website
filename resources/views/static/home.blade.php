@@ -5,6 +5,7 @@
 @section('hero')
 	<div class="hero center white">
 		<div class="app-container">
+			<img src="{{ asset('img/big_logo.png') }}" alt="Let's Vote" width="200px" id="lets_vote_logo">
 			<h2>2015 Myanmar Election API</h2>
 			<p>Welcome to MyanmarAPI, a civic information API for the 2015 elections and beyond!</p>
 			<p>Developers are using MyanmarAPI to build mobile and web applications.</p>
