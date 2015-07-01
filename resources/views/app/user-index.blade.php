@@ -19,9 +19,6 @@
 						<div class="empty">
 							<p class="center-align">
 								Application is empty!
-								<a class="waves-effect waves-light btn" href="{{ route('application.create') }}">
-									<i class="mdi-content-add left"></i>Create New Application
-								</a>
 							</p>
 						</div>
 						@else
