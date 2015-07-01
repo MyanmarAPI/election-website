@@ -34,6 +34,30 @@ Route::get('dashboard', [
 	'uses' => 'DashboardController@index'
 ]);
 
+// User Profile Routes
+Route::group(['middleware' => 'auth', 'prefix' => 'profile'], 
+function() {
+	Route::get('/', [
+		'as' => 'profile',
+		'uses' => 'ProfileController@getProfile'
+	]);
+
+	Route::post('/', [
+		'as' => 'profile.update',
+		'uses' => 'ProfileController@postProfile'
+	]);
+
+	Route::get('/password', [
+		'as' => 'profile.password',
+		'uses' => 'ProfileController@getPassword'
+	]);
+
+	Route::post('/password', [
+		'as' => 'profile.password.update',
+		'uses' => 'ProfileController@postPassword'
+	]);
+});
+
 // API Application Routes.
 Route::group(['middleware' => 'auth', 'prefix' => 'applications'], 
 function() {
