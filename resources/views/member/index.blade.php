@@ -57,7 +57,7 @@
 
 							<a title="Downgrade to User" href="{{ route('action.downgrade', $member->id) }}" 
 							class="waves-effect waves-light btn blue-grey">
-								<i class="material-icons">person</i>
+								<i class="material-icons">swap_vert</i>
 							</a>
 
 							<a title="Delete" href="{{ route('member.delete', $member->id) }}" 

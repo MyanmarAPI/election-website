@@ -49,7 +49,7 @@
 
 							<a title="Promote to Admin" href="{{ route('action.promote', $user->id) }}" 
 							class="waves-effect waves-light btn indigo">
-								<i class="material-icons">verified_user</i>
+								<i class="material-icons">swap_vert</i>
 							</a>
 
 							<a title="Delete" href="{{ route('user.delete', $user->id) }}" 
