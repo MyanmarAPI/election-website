@@ -39,7 +39,8 @@
                                 <tr>
                                     <td width="32px"></td>
                                     <td style="font-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 24px; color: rgba(0,0,0,0.8); line-height: 1.25;">
-                                    {{ $subject }}
+                                    @section('subject')
+                                    @show
                                     </td>
                                     <td width="32px"></td>
                                 </tr>
