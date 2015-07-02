@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "jenssegers/mongodb": "dev-master",
         "hexcores/api-support": "dev-master",
-        "illuminate/html": "^5.0@dev"
+        "illuminate/html": "^5.0@dev",
+        "guzzlehttp/guzzle": "~5.3|~6.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
