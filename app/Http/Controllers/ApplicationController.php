@@ -107,7 +107,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot edit the application.');
 
-            redirect('applications');
+            return redirect('applications');
         }
         
         
@@ -128,7 +128,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot update the application.');
 
-            redirect('applications');
+            return redirect('applications');
         }
 
         $app->fill($request->only('name', 'description', 'type'));
