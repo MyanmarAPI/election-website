@@ -128,7 +128,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot update the application.');
 
-            back();
+            redirect('applications');
         }
 
         $app->fill($request->only('name', 'description', 'type'));
