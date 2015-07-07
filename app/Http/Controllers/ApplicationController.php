@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Application;
-use App\Http\Requests\ApplicationFormRequest;
-use App\Util\AppKeyGenerator;
 use Auth;
+use App\Application;
+use App\Util\AppKeyGenerator;
+use App\Http\Requests\ApplicationFormRequest;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 /**
  * Controller for the API Application.
@@ -94,7 +96,14 @@ class ApplicationController extends Controller
      */
     public function edit($id)
     {
-        $model = Application::getByIdForUser($id, $this->user);
+        try {
+            $model = Application::getByIdForUser($id, $this->user);
+        } catch (ModelNotFoundException $e) {
+            session()->flash('error', 'Sorry, you cannot edit the application.');
+
+            back();
+        }
+        
         
         return view('app.form', compact('model'));
     }
@@ -108,7 +117,13 @@ class ApplicationController extends Controller
      */
     public function update(ApplicationFormRequest $request, $id)
     {
-        $app = Application::getByIdForUser($id, $this->user);
+        try {
+            $app = Application::getByIdForUser($id, $this->user);
+        } catch (ModelNotFoundException $e) {
+            session()->flash('error', 'Sorry, you cannot update the application.');
+
+            back();
+        }
 
         $app->fill($request->only('name', 'description', 'type'));
 
