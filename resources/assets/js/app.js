@@ -1,5 +1,5 @@
- // Sidebar Navigation for Mobile View
- $(".button-collapse").sideNav();
+// Sidebar Navigation for Mobile View
+$(".button-collapse").sideNav();
 
  // Delete Confimation Box
 $('.confirm_delete').on('click', function(e){
