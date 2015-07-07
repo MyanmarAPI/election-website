@@ -35,7 +35,11 @@
 						<td>{{ $app->name }}</td>
 						<td><div class="app-key fixed-width-200 truncate">{{ $app->key }}</div></td>
 						<td>{{ $app->type }}</td>
-						<td><span>{{ $app->user->name }}</span></td>
+						<td>
+							<span class="tooltipped" data-position="top" data-delay="50" data-tooltip="{{ $app->user->email }}">
+								{{ $app->user->name }}
+							</span>
+						</td>
 						<td>
 							@if ($app->disable)
 							<a title="Change Status" href="{{ route('application.enable', $app->id) }}" 
