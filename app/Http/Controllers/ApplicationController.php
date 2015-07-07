@@ -47,7 +47,7 @@ class ApplicationController extends Controller
             return view('app.admin-index', compact('applications'));
 		}
 		
-        $applications = Application::ownBy($this->user)->get(); 
+        $applications = Application::ownBy($this->user)->latest()->get(); 
 
 		return view('app.user-index', compact('applications'));
 	}
