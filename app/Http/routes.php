@@ -90,6 +90,18 @@ function() {
 		'as' => 'application.delete',
 		'uses' => 'ApplicationController@destroy'
 	]);
+
+	Route::get('{id}/disable', [
+		'middleware' => 'admin',
+		'as' => 'application.disable',
+		'uses' => 'ApplicationController@disable'
+	]);
+
+	Route::get('{id}/enable', [
+		'middleware' => 'admin',
+		'as' => 'application.enable',
+		'uses' => 'ApplicationController@enable'
+	]);
 });
 
 // User Panel Routes for Admin.

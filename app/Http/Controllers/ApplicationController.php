@@ -144,4 +144,42 @@ class ApplicationController extends Controller
 
         return back();
     }
+
+    /**
+     * Disable the application status.
+     *
+     * @param  string  $id
+     * @return Response
+     */
+    public function disable($id)
+    {
+        $app = Application::find($id);
+
+        if ( $app->makeDisable()) {
+            session()->flash('success', 'Application is successfully disabled.');
+        } else {
+            session()->flash('error', 'Error occured to disable application.');
+        }
+
+        return back();
+    }
+
+    /**
+     * Enable the application status.
+     *
+     * @param  string  $id
+     * @return Response
+     */
+    public function enable($id)
+    {
+        $app = Application::find($id);
+
+        if ( $app->makeEnable()) {
+            session()->flash('success', 'Application is successfully enabled.');
+        } else {
+            session()->flash('error', 'Error occured to enable application.');
+        }
+
+        return back();
+    }
 }

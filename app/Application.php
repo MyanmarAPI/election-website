@@ -19,7 +19,7 @@ class Application extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'description', 'key', 'type', 'user_id'];
+    protected $fillable = ['name', 'description', 'key', 'type', 'user_id', 'disable'];
 
     /**
      * Relationship for user model
@@ -64,5 +64,17 @@ class Application extends Model
         $userId = ($user instanceof User) ? $user->id : $user;
 
         return $query->where('user_id', '=', $userId);
+    }
+
+    public function makeDisable()
+    {
+        $this->disable = true;
+
+        return $this->save();
+    }
+
+    public function makeEnable()
+    {
+        return $this->drop('disable');
     }
 }

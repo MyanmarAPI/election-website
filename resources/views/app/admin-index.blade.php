@@ -24,6 +24,7 @@
 							<th>Application Name</th>
 							<th>Application Key</th>
 							<th>Application Type</th>
+							<th>Created By</th>
 							<th width="200px">Actions</th>
 						</tr>					
 					</thead>
@@ -34,15 +35,19 @@
 						<td>{{ $app->name }}</td>
 						<td><div class="app-key fixed-width-200 truncate">{{ $app->key }}</div></td>
 						<td>{{ $app->type }}</td>
+						<td><span>{{ $app->user->name }}</span></td>
 						<td>
-							<a title="Edit" href="{{ route('application.edit', $app->id) }}" 
+							@if ($app->disable)
+							<a title="Change Status" href="{{ route('application.enable', $app->id) }}" 
+							class="waves-effect waves-light btn orange">
+								<i class="material-icons">clear</i>
+							</a>
+							@else
+							<a title="Change Status" href="{{ route('application.disable', $app->id) }}" 
 							class="waves-effect waves-light btn indigo">
-								<i class="material-icons">edit</i>
+								<i class="material-icons">done</i>
 							</a>
-							<a title="Delete" href="{{ route('application.delete', $app->id) }}" 
-							class="waves-effect waves-light btn confirm_delete red">
-								<i class="material-icons">delete</i>
-							</a>
+							@endif
 						</td>
 					</tr>
 
