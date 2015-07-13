@@ -44,7 +44,7 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						{!! Form::select('type', ['android' => 'Android App', 'ios' => 'iOS App', 'web' => 'Web']) !!}
+						{!! Form::select('type', ['android' => 'Android App', 'ios' => 'iOS App', 'web' => 'Web', 'window' => 'Window Mobile']) !!}
 						<label>Application Type</label>
 						<p class="form-error">{{ $errors->first('type') }}</p>
 					</div>
