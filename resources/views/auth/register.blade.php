@@ -8,7 +8,7 @@
 		<div class="col s6 offset-s3">
 
 			<div class="z-depth-1 box" id="register">
-				<h4 class="box-header cyan-text text-darken-3">Create new account</h4>
+				<h4 class="box-header mps-blue mps-yellow-text">Create new account</h4>
 
 				{!! Form::open(['url' => 'auth/register', 'autocomplete' => 'false', 'class' => 'form']) !!}
 				
@@ -46,7 +46,7 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button class="btn waves-effect waves-light" type="submit" name="action">Register
+						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Register
 	    					<i class="mdi-content-send right"></i>
 	  					</button>
 					</div>

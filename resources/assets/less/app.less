@@ -209,3 +209,35 @@ nav ul a {
 		font-size: 1.3rem;
 	}
 }
+
+@mps-blue : #32449A;
+
+@mps-yellow : #FCBF14;
+
+.mps-blue {
+  background: @mps-blue;
+}
+
+.mps-blue-text {
+	color: @mps-blue;
+}
+
+.mps-yellow {
+  background: @mps-yellow;
+}
+
+.mps-yellow-text {
+	color: @mps-yellow;
+}
+
+.input-field {
+	input[type=text], input[type=password], input[type=email] {
+		&:focus {
+			border-bottom: 1px solid @mps-blue;
+			box-shadow: 0 1px 0 0 @mps-blue;
+			& + label {
+				color: @mps-blue;			
+			}
+		}
+	}
+}

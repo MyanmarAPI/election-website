@@ -18,11 +18,12 @@
 <body>
 
 	<div class="navbar-fixed">
-		<nav class="yellow">
+		<nav class="grey lighten-4">
 			<div class="nav-wrapper app-container">
 				<div class="col s12">
 					<a href="{{ url('/') }}" class="brand-logo">
-						Myanmar Election API
+						<img src="{{ asset('img/mps-logo.png') }}" alt="MaePaySoh Logo" height="60px">
+						{{-- Myanmar Election API --}}
 					</a>
 
 					<a href="#" data-activates="nav-mobile" class="button-collapse">
@@ -36,7 +37,7 @@
 					<ul id="nav-mobile" class="side-nav">
 						<li class="nav-logo">
 							<a href="{{ url('/') }}">
-								Myanmar Election API
+								<img src="{{ asset('img/mps-logo.png') }}" alt="MaePaySoh Logo" height="60px">
 							</a>
 						</li>
 						@include('partials.nav')
@@ -54,7 +55,7 @@
 		</div> <!-- end of div#content -->
 	</main>
 
-	<footer class="brown white-text">
+	<footer class="indigo darken-2 white-text">
 		<div class="app-container">
 			<div class="row no-margin">
 				<div class="col l12 s12">

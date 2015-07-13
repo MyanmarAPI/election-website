@@ -8,7 +8,7 @@
 		<div class="col s6 offset-s3">
 
 			<div class="z-depth-1 box" id="login">
-				<h4 class="box-header cyan-text text-darken-3">Reset Password</h4>
+				<h4 class="box-header mps-blue mps-yellow-text">Reset Password</h4>
 
 				@if (session('status'))
 					<div class="alert alert-success">
@@ -45,7 +45,7 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button class="btn waves-effect waves-light" type="submit" name="action">
+						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">
 							Reset Password
 	  					</button>
 					</div>
