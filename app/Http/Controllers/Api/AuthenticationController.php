@@ -12,8 +12,7 @@ class AuthenticationController extends Controller
 	{
 		$app = Application::where('key', '=', $key)->first();
 
-		if ( is_null($app))
-		{
+		if ( is_null($app) || $app->disable) {
 			return response_unauthorized();
 		}
 
