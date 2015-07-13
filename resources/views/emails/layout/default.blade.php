@@ -32,7 +32,7 @@
                     <tr height="16"></tr>
                     <tr>
                         <td>
-                            <table bgcolor="#ffeb3b" width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width: 332px; max-width: 600px; border: 1px solid #E0E0E0; border-bottom: 0; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                            <table bgcolor="#303f9f" width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width: 332px; max-width: 600px; border: 1px solid #E0E0E0; border-bottom: 0; border-top-left-radius: 3px; border-top-right-radius: 3px;">
                                 <tr>
                                     <td height="72px" colspan="3"></td>
                                 </tr>
