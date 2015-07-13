@@ -20,9 +20,13 @@ if ( ! function_exists('app_type'))
 			case 'web':
 				return 'Web';
 				break;
+
+			case 'window':
+				return 'Window Mobile';
+				break;
 			
 			default:
-				# code...
+				return 'Other';
 				break;
 		}
 	}

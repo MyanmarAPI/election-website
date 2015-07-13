@@ -34,6 +34,22 @@ Route::get('dashboard', [
 	'uses' => 'DashboardController@index'
 ]);
 
+Route::get('search/user', [
+	'as' => 'search::user',
+	'middleware' => ['auth', 'admin'],
+	'uses' => 'SearchController@user'
+]);
+Route::get('search/member', [
+	'as' => 'search::member',
+	'middleware' => ['auth', 'admin'],
+	'uses' => 'SearchController@member'
+]);
+Route::get('search/application', [
+	'as' => 'search::application',
+	'middleware' => ['auth', 'admin'],
+	'uses' => 'SearchController@application'
+]);
+
 // User Profile Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'profile'], 
 function() {

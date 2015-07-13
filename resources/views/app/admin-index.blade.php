@@ -4,7 +4,7 @@
 
 @section('content')
 
-	@include('partials.admin-toolbar')
+	@include('partials.admin-toolbar', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key...'])
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
@@ -33,7 +33,9 @@
 
 					<tr>
 						<td>{{ $app->name }}</td>
-						<td><div class="app-key fixed-width-200 truncate">{{ $app->key }}</div></td>
+						<td>
+							<div class="app-key fixed-width-200 truncate">{{ $app->key }}</div>
+						</td>
 						<td>{{ $app->type }}</td>
 						<td>
 							<span class="tooltipped" data-position="top" data-delay="50" data-tooltip="{{ $app->user->email }}">
@@ -41,6 +43,9 @@
 							</span>
 						</td>
 						<td>
+							<button title="View APP Key" class="btn key-button" data-key-text="{{ $app->key }}">
+								<i class="material-icons">visibility</i>
+							</button>
 							@if ($app->disable)
 							<a title="Change Status" href="{{ route('application.enable', $app->id) }}" 
 							class="waves-effect waves-light btn orange">
@@ -62,4 +67,23 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="key-model" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Application Key</h4>
+      <p class="app-key center-align" id="model-key-text"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+@endsection
+
+@section('scripts')
+	// View full application key
+	$('.key-button').on('click', function(e) {
+		e.preventDefault();
+		$('#model-key-text').text($(this).data('key-text'));
+		$('#key-model').openModal();
+	});
 @endsection

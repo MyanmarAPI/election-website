@@ -4,7 +4,7 @@
 
 @section('content')
 
-	@include('partials.admin-toolbar')
+	@include('partials.admin-toolbar', ['routeName' => 'search::user', 'placeHolder' => 'Search User By Email...'])
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
