@@ -11,16 +11,17 @@
 				<i class="material-icons left">supervisor_account</i>Admin Members
 			</a>
 		</div>
+		@if(isset($routeName) && isset($placeHolder))
 		<div class="col s12 m3 l4">
 			{!! Form::open([
 				'route' => $routeName, 
-				'autocomplete' => 'false', 
-				'class' => 'form',
+				'autocomplete' => 'false',
 				'method' => 'GET'
 			]) !!}
 			<input name="s" type="search" placeholder="{{ $placeHolder }}" class="white-text">
 			{!! Form::close() !!}
 		</div>
+		@endif
 	</div> <!-- end of div.app-container -->
 
 </div> <!-- end of div#toolbar -->
