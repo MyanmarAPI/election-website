@@ -21,6 +21,7 @@
 				<table class="bordered">
 					<thead>
 						<tr>
+							<th>#</th>
 							<th>Application Name</th>
 							<th>Application Key</th>
 							<th>Application Type</th>
@@ -32,6 +33,13 @@
 					@foreach ( $applications as $app)
 
 					<tr>
+						<td>
+							@if ($app->disable)
+							<i class="material-icons red-text text-accent-4" title="Application is disable">power_settings_new</i>
+							@else
+							<i class="material-icons light-green-text text-accent-4" title="Application is running">power_settings_new</i>
+							@endif
+						</td>
 						<td>{{ $app->name }}</td>
 						<td>
 							<div class="app-key fixed-width-200 truncate">{{ $app->key }}</div>
