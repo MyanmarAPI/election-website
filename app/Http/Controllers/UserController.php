@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\User;
+use App\Application;
 
 /**
  * Controller for the User Management for Admin.
@@ -50,9 +51,12 @@ class UserController extends Controller
 	public function ban($id)
 	{
 		$user = User::findOrFail($id);
-
 		$user->status = 'b';
-		$user->save();
+
+		if ($user->save()) {
+			Application::where('user_id', $id)->update(['disable' => true]);
+		}
+
 
 		return back();
 	}
@@ -65,9 +69,11 @@ class UserController extends Controller
 	public function unban($id)
 	{
 		$user = User::findOrFail($id);
-
 		$user->status = 'a';
-		$user->save();
+		
+		if ($user->save()) {
+			Application::where('user_id', $id)->unset('disable');
+		}
 
 		return back();
 	}
@@ -83,6 +89,9 @@ class UserController extends Controller
 
 		try {
 			$user->delete();
+
+			Application::where('user_id', $id)->delete();
+
 			session()->flash('success', 'User is successfully deleted.');
 		} catch (\Exception $e) {
 			session()->flash('error', 'Error occured to delete the user.');
