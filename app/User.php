@@ -112,6 +112,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         $instance = new static;
 
-        return $instance->where('role', '=', 'user')->latest()->paginate($perPage);
+        return $instance->with('applications')->where('role', '=', 'user')->latest()->paginate($perPage);
     }
 }

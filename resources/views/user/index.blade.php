@@ -23,6 +23,7 @@
 						<tr>
 							<th>Name</th>
 							<th>Email</th>
+							<th>Applications</th>
 							<th>Status</th>
 							<th width="300px">Actions</th>
 						</tr>					
@@ -33,6 +34,7 @@
 					<tr>
 						<td>{{ $user->name }}</td>
 						<td>{{ $user->email }}</td>
+						<td>{{ $user->applications->count() }}</td>
 						<td>{{ ($user->status == 'a') ? 'Active' : 'Banned' }}</td>
 						<td>
 							@if ($user->status == 'a')
