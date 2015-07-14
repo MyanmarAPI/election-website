@@ -62,7 +62,7 @@ class ApplicationController extends Controller
         if ( $this->user->isAdmin()) {
             session()->flash('error', 'Admin cannot create new application.');
 
-            return redirect('applications');
+            return redirect()->route('application');
         }
 
 		return view('app.form');
@@ -107,7 +107,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot edit the application.');
 
-            return redirect('applications');
+            return redirect()->route('application');
         }
         
         
@@ -128,7 +128,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot update the application.');
 
-            return redirect('applications');
+            return redirect()->route('application');
         }
 
         $app->fill($request->only('name', 'description', 'type'));
