@@ -56,13 +56,13 @@
 							</button>
 							@if ($app->disable)
 							<a title="Change Status" href="{{ route('application.enable', $app->id) }}" 
-							class="waves-effect waves-light btn orange">
-								<i class="material-icons">clear</i>
+							class="waves-effect waves-light btn red">
+								<i class="material-icons">power_settings_new</i>
 							</a>
 							@else
 							<a title="Change Status" href="{{ route('application.disable', $app->id) }}" 
-							class="waves-effect waves-light btn indigo">
-								<i class="material-icons">done</i>
+							class="waves-effect waves-light btn red">
+								<i class="material-icons">power_settings_new</i>
 							</a>
 							@endif
 						</td>
