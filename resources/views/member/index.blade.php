@@ -13,7 +13,7 @@
 					Admin Members 
 					<small class="right">
 						<a href="{{ route('member.create') }}"
-						class="waves-effect waves-teal btn-flat indigo-text text-size-small">
+						class="waves-effect waves-indigo btn-flat indigo-text text-size-small">
 							<i class="material-icons">add</i> Create New Member
 						</a>
 					</small>

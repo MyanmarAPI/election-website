@@ -40,7 +40,7 @@
 										<h6>Application Type</h6>
 										<p>{{ app_type($app->type) }}</p>
 										
-										<h6>Created At</h6>
+										<h6>Created at</h6>
 										<p>{{ $app->created_at->format('M d, Y H:i A') }}</p>
 									</div> <!-- end of div.card-content -->
 
@@ -63,7 +63,7 @@
 					<div class="col l6 m6 s12">
 						<p>To use MyamarAPI, you need a key for api request. Get key by making an application.</p>
 
-						<a class="waves-effect waves-light btn-large cyan" href="{{ route('application.create') }}">
+						<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ route('application.create') }}">
 							<i class="material-icons left">create</i>Create Application
 						</a>
 

@@ -9,7 +9,7 @@
 
 			<div id="profile" class="box">
 
-				<h4 class="box-header cyan-text text-darken-3">Update Profile</h4>
+				<h4 class="box-header mps-blue mps-yellow-text">Update Profile</h4>
 
 				{!! Form::model($user, [
 						'route' => 'profile.update', 
@@ -39,7 +39,7 @@
 							Update
 	  					</button>
 
-	  					<a class="waves-effect waves-teal btn-flat blue-text text-darken-2" 
+	  					<a class="waves-effect waves-indigo btn-flat blue-text text-darken-2" 
 	  					href="{{ route('dashboard') }}">Cancel</a>
 					</div>
 				</div>
