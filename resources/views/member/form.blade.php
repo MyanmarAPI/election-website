@@ -9,7 +9,7 @@
 
 			<div id="app-create" class="box">
 
-				<h4 class="box-header cyan-text text-darken-3">Create new admin member</h4>
+				<h4 class="box-header mps-blue mps-yellow-text">Create new admin member</h4>
 
 				{!! Form::open([
 						'route' => 'member.store', 
@@ -50,11 +50,11 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button class="btn waves-effect waves-light" type="submit" name="action">
+						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">
 							Create
 	  					</button>
 
-	  					<a class="waves-effect waves-teal btn-flat blue-text text-darken-2" 
+	  					<a class="waves-effect waves-indigo btn-flat blue-text text-darken-2" 
 	  					href="{{ route('members') }}">Cancel</a>
 					</div>
 				</div>

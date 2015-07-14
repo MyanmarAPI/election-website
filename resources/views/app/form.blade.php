@@ -10,7 +10,7 @@
 			<div id="app-create" class="box">
 
 				@if ( isset($model))
-					<h4 class="box-header cyan-text text-darken-3">Edit your application</h4>
+					<h4 class="box-header mps-blue mps-yellow-text">Edit your application</h4>
 
 					{!! Form::model($model, [
 							'route' => ['application.edit', $model->id], 
@@ -18,7 +18,7 @@
 							'class' => 'form'
 						]) !!}
 				@else
-					<h4 class="box-header cyan-text text-darken-3">Create new application</h4>
+					<h4 class="box-header mps-blue mps-yellow-text">Create new application</h4>
 
 					{!! Form::open([
 							'route' => 'application.create', 
@@ -52,11 +52,11 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button class="btn waves-effect waves-light" type="submit" name="action">
+						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">
 							Submit
 	  					</button>
 
-	  					<a class="waves-effect waves-teal btn-flat blue-text text-darken-2" href="{{ route('application') }}">Cancel</a>
+	  					<a class="waves-effect waves-indigo btn-flat blue-text text-darken-2" href="{{ route('application') }}">Cancel</a>
 					</div>
 				</div>
 
