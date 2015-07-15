@@ -7,9 +7,11 @@ use App\User;
 /**
  * Controller for the Actions of Admin.
  * 
- * @package Election Ddeveloper Website
- * @license 
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 class AdminActionController extends Controller

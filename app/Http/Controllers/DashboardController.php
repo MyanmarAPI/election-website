@@ -7,11 +7,13 @@ use App\User;
 use App\Application;
 
 /**
- * Controller for the User and Admin Dashboard.
+ * Controller for the Dashboard.
  * 
- * @package Election Ddeveloper Website
- * @license 
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 class DashboardController extends Controller

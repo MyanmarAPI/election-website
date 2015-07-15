@@ -7,11 +7,13 @@ use App\User;
 use App\Application;
 
 /**
- * Controller for the User Management for Admin.
- * 
- * @package Election Ddeveloper Website
- * @license 
+ * Controller for the Register User Management.
+ *
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 class UserController extends Controller

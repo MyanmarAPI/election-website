@@ -4,12 +4,14 @@
 
 @section('content')
 
-	@include('partials.admin-toolbar', ['routeName' => 'search::user', 'placeHolder' => 'Search User By Email...'])
+	@include('partials.admin-toolbar')
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
 			<div class="col s12">
 				<h4>Users</h4>
+
+				@include('partials.search', ['routeName' => 'search::user', 'placeHolder' => 'Search User By Email...'])
 
 				@if ( $users->isEmpty())
 				<div class="empty">

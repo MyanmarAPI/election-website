@@ -8,14 +8,16 @@ use App\Util\AppKeyGenerator;
 use App\Http\Requests\ApplicationFormRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-
 /**
- * Controller for the API Application.
+ * Controller for the API Register Application.
  * 
- * @package Election Ddeveloper Website
- * @license 
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 class ApplicationController extends Controller
 {
 	/**
@@ -62,7 +64,7 @@ class ApplicationController extends Controller
         if ( $this->user->isAdmin()) {
             session()->flash('error', 'Admin cannot create new application.');
 
-            return redirect('applications');
+            return redirect()->route('application');
         }
 
 		return view('app.form');
@@ -107,7 +109,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot edit the application.');
 
-            return redirect('applications');
+            return redirect()->route('application');
         }
         
         
@@ -128,7 +130,7 @@ class ApplicationController extends Controller
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Sorry, you cannot update the application.');
 
-            return redirect('applications');
+            return redirect()->route('application');
         }
 
         $app->fill($request->only('name', 'description', 'type'));

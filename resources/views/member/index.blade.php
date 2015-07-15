@@ -4,7 +4,7 @@
 
 @section('content')
 
-	@include('partials.admin-toolbar', ['routeName' => 'search::member', 'placeHolder' => 'Search Member...'])
+	@include('partials.admin-toolbar')
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
@@ -19,6 +19,8 @@
 					</small>
 				</h4>
 
+				@include('partials.search', ['routeName' => 'search::member', 'placeHolder' => 'Search Member By Email...'])
+
 				@if ( $members->isEmpty())
 				<div class="empty">
 					<p class="center-align">
@@ -26,6 +28,7 @@
 					</p>
 				</div>
 				@else
+
 				<table class="bordered">
 					<thead>
 						<tr>

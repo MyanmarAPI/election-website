@@ -7,11 +7,13 @@ use Validator;
 use App\User;
 
 /**
- * Trait for profile validation.
+ * Trait for profile validator.
  * 
- * @package Election Ddeveloper Website
- * @license 
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 trait ProfileValidator

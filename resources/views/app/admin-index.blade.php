@@ -4,12 +4,14 @@
 
 @section('content')
 
-	@include('partials.admin-toolbar', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key...'])
+	@include('partials.admin-toolbar')
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
 			<div class="col s12" id="admin-apps">
 				<h4>Register Applications</h4>
+
+				@include('partials.search', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key...'])
 
 				@if ( $applications->isEmpty())
 				<div class="empty">
