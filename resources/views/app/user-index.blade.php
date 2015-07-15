@@ -69,9 +69,17 @@
 
 						<p>API Endpoint Lists</p>
 
-						<ul class="bullet-list">
-							@foreach (endpoint_lists() as $list)
-							<li>{{ $list }}</li>
+						<ul class="collapsible" data-collapsible="accordion">
+							@foreach (endpoint_lists() as $_k => $list)
+							<li>
+								<div class="collapsible-header">
+									<i class="material-icons">assessment</i> {{ $list['name'] }}
+								</div>
+								<div class="collapsible-body">
+									<p>{{ $list['desc'] }}</p>
+									<p><a href="{{ $list['docs'] }}" target="_blank">Documentation</a></p>
+								</div>
+							</li>
 							@endforeach
 						</ul>
 					</div>
