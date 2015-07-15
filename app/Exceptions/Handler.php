@@ -38,6 +38,26 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if (app()->environment() == 'production') {
+            return $this->renderForProduction($request, $e);
+        }
+
         return parent::render($request, $e);
+    }
+
+    /**
+     * Render the exception for production stage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $e
+     * @return \Illuminate\Http\Response
+     */
+    protected function renderForProduction($request, Exception $e)
+    {
+        if ($this->isHttpException($e)) {
+            return $this->toIlluminateResponse($this->renderHttpException($e), $e);
+        } else {
+            return response()->view('errors.500', [], 500);
+        }
     }
 }

@@ -6,12 +6,15 @@ use Validator;
 use App\Showcase;
 
 /**
- * Trait for showcase validation.
+ * Trait for showcase validator.
  * 
- * @package Election Ddeveloper Website
- * @license 
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 
 trait ShowcaseValidator
 {

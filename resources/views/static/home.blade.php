@@ -29,7 +29,7 @@
 					</button>
 				@endif
 			@else
-			<a class="waves-effect waves-light btn-large cyan" href="{{ url('dashboard') }}">
+			<a class="waves-effect waves-light btn-large indigo" href="{{ url('dashboard') }}">
 				<i class="material-icons left">dashboard</i>My Dashboard
 			</a>
 			@endif
