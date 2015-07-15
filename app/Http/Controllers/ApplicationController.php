@@ -8,14 +8,16 @@ use App\Util\AppKeyGenerator;
 use App\Http\Requests\ApplicationFormRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-
 /**
- * Controller for the API Application.
+ * Controller for the API Register Application.
  * 
- * @package Election Ddeveloper Website
- * @license 
+ * @package Election API Website
  * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 class ApplicationController extends Controller
 {
 	/**

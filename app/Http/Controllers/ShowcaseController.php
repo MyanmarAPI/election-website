@@ -7,6 +7,16 @@ use App\Showcase;
 use App\Traits\ShowcaseValidator;
 use App\Http\Controllers\Controller;
 
+/**
+ * Controller for the Showcase Application.
+ *
+ * @package Election API Website
+ * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 class ShowcaseController extends Controller
 {
     use ShowcaseValidator;

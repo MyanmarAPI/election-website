@@ -7,6 +7,16 @@ use App\Events\UserPasswordChanged;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+/**
+ * Event listener for UserPasswordChanged to send email notification.
+ * 
+ * @package Election API Website
+ * @author Nyan Lynn Htut <naynlynnhtut@hexcores.com>
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 class EmailPasswordChangeNotification
 {
     protected $mailer;
