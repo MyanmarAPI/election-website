@@ -5,7 +5,7 @@
 			'autocomplete' => 'false',
 			'method' => 'GET'
 		]) !!}
-		<input name="s" type="search" placeholder="{{ $placeHolder }}" class="white-text">
+		<input name="s" type="search" placeholder="{{ $placeHolder }}">
 		{!! Form::close() !!}
 	</div>
 @endif
