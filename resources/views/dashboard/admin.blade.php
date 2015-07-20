@@ -49,6 +49,7 @@
 				<div id="analytic-date-range">
 					<strong><span id="analytic-date">{{ date('Y-m-d') }}</span></strong>
 				</div>
+				<div class="loading"><i class="fa fa-spinner fa-spin spinner" style="display:none;"></i></div>
 
 				<div id="report-analytics" style="height: 250px;"></div>
 

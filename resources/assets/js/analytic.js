@@ -28,6 +28,8 @@ function fetchData(analyticHost, apiKey, apiSecret) {
 
 		range.text(data.hourly.date_range);
 
+		$( ".loading .spinner" ).hide();
+
 		var t_hits = new Vue({
 			  el: '#total_hits',
 			  data: {
@@ -44,6 +46,10 @@ $('.analytic-btn').click(function(e){
 	var newdata = current_data[type]['data'];
 	graph.setData(newdata);
 	range.text(current_data[type]['date_range']);
+});
+
+$( document ).ajaxStart(function() {
+  $( ".loading .spinner" ).show();
 });
 
 function MorrisGraph(element, data) {
