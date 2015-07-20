@@ -25,5 +25,6 @@ elixir(function(mix) {
         //paths.jquery + "jquery.js",
         //paths.materialize + "js/materialize.js"
         'app.js'
-    ], 'public/js/app.js');
+    ], 'public/js/app.js')
+    .scripts(['analytic.js'], 'public/js/analytic.js');
 });
