@@ -8,8 +8,7 @@
 		<div class="col s12" id="about">
 			<h4>Contact Us</h4>
 
-			<p>Coming Soon....</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis iusto deleniti nesciunt illo dicta sit quisquam ea, veniam ratione earum neque labore voluptates ipsum voluptatibus at, vero vel nemo tempora.</p>
+			<p>If you interesting to support this movement please reach us through our Facebook Group at <a href="https://www.facebook.com/MaePaySoh">https://www.facebook.com/MaePaySoh</a></p>
 
 			<h4 id="submit-your-app">Submit Your Application</h4>
 			<p>You can also submit your application information created using Myanmar Election API. We will publicize and promote each application that uses Myanmar Election API . </p>
