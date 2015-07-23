@@ -41,9 +41,10 @@ class TokenGenerationController extends Controller
 
 		if ( $tokenValue) {
 			$token = new Token;
-			$token->app_id = $app->id;
-			$token->app_key = $app->key;
-			$token->token = $tokenValue;
+			$token->app_id = $app->id; // Application ID
+			$token->app_key = $app->key; // Application Key
+			$token->user_id = $app->user_id; // Application owner id
+			$token->token = $tokenValue; // Token for unique user.
 
 			if ($token->save()) {
 				return response_ok($token);		

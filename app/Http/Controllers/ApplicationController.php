@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Token;
 use App\Application;
 use App\Util\AppKeyGenerator;
 use App\Http\Requests\ApplicationFormRequest;
@@ -160,6 +161,8 @@ class ApplicationController extends Controller
                         ->where('_id', $id)
                         ->delete();
 
+            Token::where('app_id', $id)->where('user_id', $this->user->id)->delete();
+
             session()->flash('success', 'Application is successfully deleted.');
         } catch (\Exception $e) {
             session()->flash('error', 'Error occured to delete application.');
@@ -179,6 +182,9 @@ class ApplicationController extends Controller
         $app = Application::find($id);
 
         if ( $app->makeDisable()) {
+            
+            Token::where('app_id', $id)->update(['disable' => true]);
+
             session()->flash('success', 'Application is successfully disabled.');
         } else {
             session()->flash('error', 'Error occured to disable application.');
@@ -198,6 +204,9 @@ class ApplicationController extends Controller
         $app = Application::find($id);
 
         if ( $app->makeEnable()) {
+            
+            Token::where('app_id', $id)->drop('disable');
+
             session()->flash('success', 'Application is successfully enabled.');
         } else {
             session()->flash('error', 'Error occured to enable application.');

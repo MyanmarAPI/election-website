@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Application;
+use App\Token;
 use App\Http\Controllers\Controller;
 
 /**
@@ -18,19 +18,22 @@ use App\Http\Controllers\Controller;
 class AuthenticationController extends Controller
 {
 	/**
-	 * Authenticate the given api key is valid or not.
+	 * Authenticate the given request token is valid or not.
 	 *
-	 * @param  string $key
+	 * @param  string $token
 	 * @return \Symfony\Component\HttpFoundation\JsonResponse
 	 */
-	public function authenticate($key)
+	public function authenticate($token)
 	{
-		$app = Application::where('key', '=', $key)->first();
+		$token = Token::where('token', '=', $token)->first();
 
-		if ( is_null($app) || $app->disable) {
-			return response_unauthorized();
+		if ( is_null($token) || $token->disable) {
+			
+			$msg = is_null($token) ? 'Invalid token' : 'Application is disable';
+
+			return response_unauthorized($msg);
 		}
 
-		return response_ok($app);
+		return response_ok($token);
 	}
 }
