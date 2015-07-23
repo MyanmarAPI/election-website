@@ -249,6 +249,6 @@ Route::get('/api/v1/authenticate/{key}', [
 // Token Generate api route.
 Route::get('/api/v1/token/generate/{key}', [
 	'as' => 'api::token',
-	//'middleware' => 'api',
+	'middleware' => 'api',
 	'uses' => 'Api\TokenGenerationController@generate', 
 ]);
