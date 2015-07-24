@@ -122,6 +122,31 @@ function() {
 			'uses' => 'ShowcaseController@update'
 		]);
 
+		Route::get('/{id}/icon', [
+			'as' => 'showcase.icon',
+			'uses' => 'ShowcaseController@icon'
+		]);
+
+		Route::post('/{id}/icon', [
+			'as' => 'showcase.postIcon',
+			'uses' => 'ShowcaseController@postIcon'
+		]);
+
+		Route::get('/{id}/screenshots', [
+			'as' => 'showcase.screenshots',
+			'uses' => 'ShowcaseController@screenshots'
+		]);
+
+		Route::get('/{id}/screenshots/remove', [
+			'as' => 'showcase.screenshotsRemove',
+			'uses' => 'ShowcaseController@screenshotsRemove'
+		]);
+
+		Route::post('/{id}/screenshots', [
+			'as' => 'showcase.postScreenshots',
+			'uses' => 'ShowcaseController@postScreenshots'
+		]);
+
 		Route::get('/{id}/publish', [
 			'as' => 'showcase.publish',
 			'uses' => 'ShowcaseController@publish'
@@ -242,13 +267,13 @@ function() {
 // Authentication api route.
 Route::get('/api/v1/authenticate/{key}', [
 	'as' => 'api::authenticate',
-	'middleware' => 'api',
+	//'middleware' => 'api',
 	'uses' => 'Api\AuthenticationController@authenticate', 
 ]);
 
 // Token Generate api route.
 Route::get('/api/v1/token/generate/{key}', [
 	'as' => 'api::token',
-	'middleware' => 'api',
+	//'middleware' => 'api',
 	'uses' => 'Api\TokenGenerationController@generate', 
 ]);

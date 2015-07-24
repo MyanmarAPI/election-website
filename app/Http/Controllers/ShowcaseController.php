@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Showcase;
+use App\Traits\ImageUpload;
 use App\Traits\ShowcaseValidator;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +20,7 @@ use App\Http\Controllers\Controller;
 
 class ShowcaseController extends Controller
 {
-    use ShowcaseValidator;
+    use ShowcaseValidator, ImageUpload;
 
     /**
      * Display a listing of the resource.
@@ -60,6 +61,7 @@ class ShowcaseController extends Controller
             );
         }
 
+        $data['published'] = 'd';
         $data['slug'] = str_slug($data['name']);
 
         $showcase = new Showcase($data);
@@ -67,7 +69,7 @@ class ShowcaseController extends Controller
         if ( $showcase->save()) {
             session()->flash('success', 'Showcase App is successfully created.');
 
-            return redirect()->route('showcase');
+            return redirect()->route('showcase.icon', $showcase->id);
         }
 
         session()->flash('error', 'Error occured to create showcase app.');
@@ -76,25 +78,18 @@ class ShowcaseController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $model = Showcase::findOrFail($id);
+
+        $screenshots = $model->screenshots;
+
+        return view('showcase.dashboard.form', compact('model', 'screenshots'));
     }
 
     /**
@@ -105,7 +100,27 @@ class ShowcaseController extends Controller
      */
     public function update($id)
     {
-        //
+        $showcase = Showcase::findOrFail($id);
+
+        $data = $request->all();
+
+        $validator = $this->validator($data);
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        if ( $showcase->fill($data)->save()) {
+            session()->flash('success', 'Showcase App is successfully edited.');
+
+            return redirect()->route('showcase');
+        }
+
+        session()->flash('error', 'Error occured to edit showcase app.');
+
+        return back()->withInput();
     }
 
     /**
@@ -117,6 +132,118 @@ class ShowcaseController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Icon image upload view.
+     *
+     * @param  string $id
+     * @return \Illuminate\Http\Response
+     */
+    public function icon($id)
+    {
+        $route = 'showcase.postIcon';
+
+        $showcase = Showcase::findOrFail($id);
+
+        $maxFiles = 1;
+
+        return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'maxFiles'));
+    }
+
+    /**
+     * Icon image upload process.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param  string $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function postIcon(Request $request, $id)
+    {
+        $model = Showcase::findOrFail($id);
+
+        $upload = $this->imageUpload($request);
+
+        if ( $upload) {
+
+            // Remove old icon image
+            if ( $model->icon) {
+                $this->deleteImage($model->icon);
+            }
+
+            $model->icon = implode('/', $upload);
+
+            if ($model->save()) {
+                return response()->json($model->icon, 200);
+            }
+        }
+
+        return response()->json('error', 400);
+    }
+
+    /**
+     * Screenshot images upload view.
+     *
+     * @param  string $id
+     * @return \Illuminate\Http\Response
+     */
+    public function screenshots($id)
+    {
+        $route = 'showcase.postScreenshots';
+
+        $showcase = Showcase::findOrFail($id);
+
+        $for = 'screenshots';
+
+        return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'for'));
+    }
+
+     /**
+     * Screenshot images upload process.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param  string $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function postScreenshots(Request $request, $id)
+    {
+        $model = Showcase::findOrFail($id);
+
+        $upload = $this->imageUpload($request);
+
+        if ( $upload) {
+            $image = implode('/', $upload);
+
+            if ($model->push('screenshots', $image)) {
+                return response()->json($image, 200);
+            }
+        }
+
+        return response()->json('error', 400);
+    }
+
+    /**
+     * Screenshot images upload view.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param  string $id
+     * @return \Illuminate\Http\Response
+     */
+    public function screenshotsRemove(Request $request, $id)
+    {
+        $showcase = Showcase::findOrFail($id);
+
+        $file = $request->get('s');
+
+        foreach ($showcase->screenshots as $s) {
+            if ( $s == $file) {
+                if ($showcase->pull('screenshots', $s)) {
+                    $this->deleteImage($s);
+                }
+            }
+        }
+
+        return back();
     }
 
     /**

@@ -9,7 +9,15 @@
 	<div class="row app-container mg-top white-container">
 		<div class="row">
 			<div class="col s12" id="admin-apps">
-				<h4>Showcase Applications</h4>
+				<h4>
+					Showcase Applications
+					<small class="right">
+						<a href="{{ route('showcase.create') }}"
+						class="waves-effect waves-indigo btn-flat indigo-text text-size-small">
+							<i class="material-icons">add</i> Create New
+						</a>
+					</small>
+				</h4>
 
 				@if ( $apps->isEmpty())
 				<div class="empty">
@@ -21,10 +29,12 @@
 				<table class="bordered">
 					<thead>
 						<tr>
-							<th>Application Name</th>
-							<th>Application Type</th>
-							<th>Application Status</th>
-							<th width="200px">Actions</th>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Status</th>
+							<th>Screenshots</th>
+							<th>Icon Image</th>
+							<th width="380px">Actions</th>
 						</tr>					
 					</thead>
 	
@@ -34,7 +44,22 @@
 						<td>{{ $app->name }}</td>
 						<td>{{ $app->type }}</td>
 						<td>{{ ($app->published == 'p') ? 'Publish' : 'Draft' }}</td>
+						<td>{{ count($app->screenshots) }}</td>
 						<td>
+							@if (is_null($app->icon))
+							<i class="material-icons red-text" title="Require Icon Image">error_outline</i>
+							@else
+							<i class="material-icons green-text" title="Icon Image Is Ok">done</i>
+							@endif
+						<td>
+							<a title="Add Icon" href="{{ route('showcase.icon', $app->id) }}" 
+							class="waves-effect waves-light btn indigo">
+								<i class="material-icons">photo</i>
+							</a>
+							<a title="Add Screenshots" href="{{ route('showcase.screenshots', $app->id) }}" 
+							class="waves-effect waves-light btn teal">
+								<i class="material-icons">photo_library</i>
+							</a>
 							@if ($app->published == 'p')
 							<a title="Draft" href="{{ route('showcase.draft', $app->id) }}" 
 							class="waves-effect waves-light btn red">
@@ -46,6 +71,10 @@
 								<i class="material-icons">visibility</i>
 							</a>
 							@endif
+							<a title="Edit" href="{{ route('showcase.edit', $app->id) }}" 
+							class="waves-effect waves-light btn indigo">
+								<i class="material-icons">open_in_new</i>
+							</a>
 						</td>
 					</tr>
 

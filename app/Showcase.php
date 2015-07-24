@@ -42,12 +42,16 @@ class Showcase extends Model
     }
 
     /**
-     * Mutator for screenshots attributes.
+     * Check showcase is ready to publish.
      *
-     * @param array $values
+     * @return boolean
      */
-    public function setScreenshotsAttribute($values)
+    public function readyToPublish()
     {
-        $this->attributes['screenshots'] = array_filter($values);
+        if ( count($this->screenshots) > 0 && ! is_null($this->icon)) {
+            return true;
+        }
+
+        return false;
     }
 }

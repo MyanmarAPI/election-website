@@ -24,7 +24,7 @@
 							'class' => 'form'
 						]) !!}
 				@endif
-
+				
 				<div class="row">
 					<div class="col s12 m6">
 						<div class="row">
@@ -43,6 +43,9 @@
 							</div>
 						</div>
 
+					</div> <!-- end of div.col s12 m6 -->
+
+					<div class="col s12 m6">
 						<div class="row">
 							<div class="input-field col s12">
 								{!! Form::select('type', ['android' => 'Android App', 'ios' => 'iOS App', 'web' => 'Web', 'window' => 'Window Mobile']) !!}
@@ -50,62 +53,15 @@
 								<p class="form-error">{{ $errors->first('type') }}</p>
 							</div>
 						</div>
-
+						
 						<div class="row">
 							<div class="input-field col s12">
 								{!! Form::textarea('description', null, ['class' => 'materialize-textarea']) !!}
 								<label for="description">Application Description</label>
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="input-field col s12">
-								{!! Form::select('published', ['d' => 'Draft', 'p' => 'Publish']) !!}
-								<label>Application Status</label>
-								<p class="form-error">{{ $errors->first('published') }}</p>
-							</div>
-						</div>
-
 					</div> <!-- end of div.col s12 m6 -->
 
-					<div class="col s12 m6">
-						<div class="row">
-							<div class="input-field col s12">
-								{!! Form::url('icon', null, ['class' => $errors->has('icon') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Application Icon Image Url</label>
-								<p class="form-error">{{ $errors->first('icon') }}</p>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s12">
-								{!! Form::url('screenshots[]', null, ['class' => $errors->has('screenshots') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Application Screenshot Url</label>
-								<p class="form-error">{{ $errors->first('screenshots') }}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12">
-								{!! Form::url('screenshots[]', null, ['class' => $errors->has('screenshots') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Application Screenshot Url</label>
-								<p class="form-error">{{ $errors->first('screenshots') }}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12">
-								{!! Form::url('screenshots[]', null, ['class' => $errors->has('screenshots') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Application Screenshot Url</label>
-								<p class="form-error">{{ $errors->first('screenshots') }}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12">
-								{!! Form::url('screenshots[]', null, ['class' => $errors->has('screenshots') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Application Screenshot Url</label>
-								<p class="form-error">{{ $errors->first('screenshots') }}</p>
-							</div>
-						</div>
-					</div> <!-- end of div.col s12 m6 -->
 				</div> <!-- end of div.row -->
 
 				
@@ -116,7 +72,7 @@
 							Submit
 	  					</button>
 
-	  					<a class="waves-effect waves-teal btn-flat blue-text text-darken-2" href="{{ route('application') }}">Cancel</a>
+	  					<a class="waves-effect waves-teal btn-flat blue-text text-darken-2" href="{{ route('showcase') }}">Cancel</a>
 					</div>
 				</div>
 

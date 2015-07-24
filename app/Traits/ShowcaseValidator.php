@@ -28,13 +28,8 @@ trait ShowcaseValidator
     {
         $v = Validator::make($data, [
             'name' => 'required|max:255',
-            'url' => 'required|url',
-            'icon' => 'required|url',
+            'url' => 'required|url'
         ]);
-
-        $v->sometimes('screenshots', 'required', function($input) {
-            return $input->published == 'p';
-        });
 
         return $v;
     }
