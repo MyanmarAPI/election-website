@@ -29,7 +29,7 @@ class Token extends Model
      *
      * @var array
      */
-    protected $fillable = ['app_key', 'app_id', 'token', 'disable'];
+    protected $fillable = ['app_key', 'app_id', 'token', 'user_id', 'disable'];
 
     /**
      * Relationship for application model
