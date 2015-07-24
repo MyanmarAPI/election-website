@@ -66,6 +66,12 @@ trait ImageUpload
         return property_exists($this, 'destinationPath') ? $this->destinationPath : 'uploads';
     }
 
+    /**
+     * Delete image file.
+     *
+     * @param  string $path
+     * @return void
+     */
     protected function deleteImage($path)
     {
         if (File::exists($path)) {

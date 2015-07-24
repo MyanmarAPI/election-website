@@ -70,7 +70,16 @@
 			if ( IMAGE_FOR == 'icon') {
 				window.location.replace(window.location.origin + '/dashboard/showcase');
 			} else {
-				$('#image-container').append('<img src="/'+res+'">');
+				var screenshotRemoveUrl = '{{ route('showcase.screenshotsRemove', ['id' => $showcase->id]) }}';
+				
+				var temp = '<li>'
+							+ '<img src="/' + res + '">'
+							+ '<a class="red-text" href="' + screenshotRemoveUrl + '?s=' + res + '">'
+							+ 'Remove Image'
+							+ '</a>'
+							+ '</li>';
+
+				$('#screenshots-lists').append(temp);
 			}
 		});
 	});
