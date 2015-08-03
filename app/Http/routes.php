@@ -186,7 +186,7 @@ function() {
 	Route::group(['middleware' => ['admin'], 'prefix' => 'members'], 
 	function() {
 		Route::get('/', [
-			'as' => 'member',
+			'as' => 'members',
 			'uses' => 'MemberController@index'
 		]);
 

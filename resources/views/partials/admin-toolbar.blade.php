@@ -10,7 +10,7 @@
 			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('user') }}">
 				<i class="material-icons left">people</i>Register Users
 			</a>
-			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('member') }}">
+			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('members') }}">
 				<i class="material-icons left">supervisor_account</i>Admin Members
 			</a>
 		</div>
