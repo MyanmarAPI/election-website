@@ -34,6 +34,7 @@
 @section('content')
 	
     <div class="row app-container mg-top">
+    	
 		<div class="col m6 s12" id="develop-card">
 			<div class="card hoverable">
         		<div class="card-content grey-text text-darken-2">
