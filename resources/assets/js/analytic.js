@@ -11,15 +11,9 @@ var graph = MorrisGraph('report-analytics', default_data);
 
 var range = $('#analytic-date');
 
-function fetchData(analyticHost, apiKey, apiSecret) {
+function fetchData(url) {
 	//Get Data 
-	$.ajax(analyticHost + 'all/today', {
-		crossDomain : true,
-		headers : {
-			'X-API-KEY' : apiKey,
-			'X-API-SECRET' : apiSecret
-		}
-	})
+	$.ajax(url)
 	.done(function(data){
 
 		current_data = data;
@@ -57,6 +51,7 @@ function MorrisGraph(element, data) {
 	return new Morris.Line({
 	  element: element,
 	  data: data,
+	  smooth: false,
 	  xkey: 'period',
 	  ykeys: ['value'],
 	  labels: ['Hits']
