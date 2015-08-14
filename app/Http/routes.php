@@ -277,3 +277,14 @@ Route::get('/api/v1/token/generate/{key}', [
 	//'middleware' => 'api',
 	'uses' => 'Api\TokenGenerationController@generate', 
 ]);
+
+//Analytic Route
+Route::group(['middleware' => 'auth', 'prefix' => 'api/v1/analytics'],
+function(){
+
+	Route::get('/all/today', [
+		'as' => 'api.analytic.default',
+		'uses' => 'AnalyticController@getDefault'
+	]);
+
+});
