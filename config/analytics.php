@@ -4,8 +4,8 @@ return [
 	
 	'base_url' => 'http://api.maepaysoh.org/analytics/v1/',
 
-	'X-API-KEY' => 'BrputSL37p9DbaAJ7vP6DkdLcFvPjJjZ',
+	'X-API-KEY' => env('ANALYTIC-API-KEY'),
 
-	'X-API-SECRET' => 'pvPoUytn1pvnfhNlECFBuqwQpMyaFMhA'
+	'X-API-SECRET' => env('ANALYTIC-API-SECRET')
 
 ];
