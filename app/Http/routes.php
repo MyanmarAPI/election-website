@@ -287,4 +287,9 @@ function(){
 		'uses' => 'AnalyticController@getDefault'
 	]);
 
+	Route::get('/total-hits', [
+		'as' => 'api.analytic.total_hits',
+		'uses' => 'AnalyticController@getTotalHits'
+	]);
+
 });

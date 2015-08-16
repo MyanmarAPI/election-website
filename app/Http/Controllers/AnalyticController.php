@@ -35,18 +35,26 @@ class AnalyticController extends Controller
         $this->user = Auth::user();
     }   
     
-    public function getDefault()
+    public function getDefault(Request $request)
     {
 
-        $query = [];
+        $query = $request->query();
 
         if (!$this->user->isAdmin()) {
             $query['user_id'] = $this->user->id;
         }
 
         return $this->getAnalyticData('all/today/', $query);
-
         
+    }
+
+    public function getTotalHits(Request $request)
+    {
+        if ($this->user->isAdmin()) {
+            return $this->getAnalyticData('total-hits');
+        }
+
+        return response_missing();
     }
 
     private function getAnalyticData($url, $query = [])

@@ -24,13 +24,18 @@ function fetchData(url) {
 
 		$( ".loading .spinner" ).hide();
 
-		var t_hits = new Vue({
+	});
+}
+
+function fetchTotalHits(url) {
+	$.ajax(url)
+	.done(function(data){
+		new Vue({
 			  el: '#total_hits',
 			  data: {
-			  	total_hits : current_data.total_hits
+			  	total_hits : data
 			  }
 		});
-
 	});
 }
 

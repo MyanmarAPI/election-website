@@ -87,6 +87,8 @@
 
 		fetchData('{{ route('api.analytic.default') }}');
 
+		fetchTotalHits('{{ route('api.analytic.total_hits') }}');
+
 	</script>
 
 @endsection
