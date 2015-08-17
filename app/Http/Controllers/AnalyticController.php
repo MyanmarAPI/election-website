@@ -36,8 +36,14 @@ class AnalyticController extends Controller
         $this->user = Auth::user();
     }   
     
-    public function getDefault(Request $request)
+    public function getDefault(Request $request, $type = 'default')
     {
+
+        $uri_type = ['default', 'hourly', 'daily', 'monthly'];
+
+        if (!in_array($type, $uri_type)) {
+            return response_missing();
+        }
 
         $query = $request->query();
 
@@ -45,7 +51,13 @@ class AnalyticController extends Controller
             $query['user_id'] = $this->user->id;
         }
 
-        return $this->getAnalyticData('all/today/', $query);
+        if ($type == 'default') {
+            $req_uri = 'all/today';
+        } else {
+            $req_uri = $type;
+        }
+
+        return $this->getAnalyticData($req_uri, $query);
         
     }
 

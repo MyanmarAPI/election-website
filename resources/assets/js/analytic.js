@@ -20,11 +20,28 @@ function fetchData(url) {
 
 		graph.setData(data.hourly.data);
 
-		range.text(data.hourly.date_range);
+		$('#hourly-date-input').val(current_data['hourly']['date_range']['date']);
 
 		$( ".loading .spinner" ).addClass('hide');
 
 	});
+}
+
+function fetchSingleData(type, query_str) {
+
+	var app = $('#analytic-app').val();
+	if (app) {
+		query_str = query_str+'&api_key='+app;
+	};
+	$.ajax(ANALYTIC_BASE+'/data/'+type+query_str)
+	.done(function(data){
+		current_data[type] = data;
+		graph.setData(current_data[type]['data']);
+		var date_range = current_data[type]['date_range'];
+		setDateRange(date_range, type);
+		$( ".loading .spinner" ).addClass('hide');
+	});
+
 }
 
 function fetchTotalHits(url) {
@@ -44,18 +61,59 @@ $('.analytic-btn').click(function(e){
 	var type = $(this).data('type');
 	var newdata = current_data[type]['data'];
 	graph.setData(newdata);
-	range.text(current_data[type]['date_range']);
+	$('.date-range-input').hide();
+	var date_range = current_data[type]['date_range'];
+	setDateRange(date_range, type);
+	$('#'+type+'-date-input-wrapper').show();
+	//range.text(current_data[type]['date_range']);
+});
+
+function setDateRange(date_range, type)
+{
+	if (type == 'hourly') {
+		$('#hourly-date-input').val(date_range['date']);
+	} else {
+		$('#'+type+'-date-from').val(date_range['from']);
+		$('#'+type+'-date-to').val(date_range['to']);
+	};
+}
+
+//Get Analytic Data by Application
+$('#analytic-app').on('change', function(){
+	var analytic_app = $(this).val();
+	fetchData(ANALYTIC_BASE+'/data/default?api_key='+analytic_app);
+	if (analytic_app) {
+		fetchUUcount(ANALYTIC_BASE+'/unique-user-count?api_key='+analytic_app);
+	} else {
+		$('#uu_count_wrapper').hide();
+	}
+});
+
+//Hourly Data by Date
+$('#hourly-date-input').on('change', function(){
+	var date = $(this).val();
+	fetchSingleData('hourly', '?date='+date);
+});
+
+//Daily and Monthly by Date 
+$('.date-set-btn').on('click', function(e){
+	e.preventDefault();
+	var type = $(this).data('type');
+	var from = $('#'+type+"-date-from").val();
+	var to = $('#'+type+"-date-to").val();
+	fetchSingleData(type, '?from='+from+'&to='+to);
 });
 
 $( document ).ajaxStart(function() {
   $( ".loading .spinner" ).removeClass('hide');
 });
 
-$('.analytic-date-range').on('focus', function(){
-	$(this).pickadate({
-	    selectMonths: true, // Creates a dropdown to control month
-	    selectYears: 10 // Creates a dropdown of 15 years to control year
-	});
+$('.analytic-date-range').pickadate({
+	format: 'yyyy-mm-dd',
+	closeOnSelect: true,
+    selectMonths: true, 
+    selectYears: 10,
+    max: $(this).attr('max')
 });
 
 function fetchUUcount(url) {
