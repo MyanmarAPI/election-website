@@ -292,4 +292,9 @@ function(){
 		'uses' => 'AnalyticController@getTotalHits'
 	]);
 
+	Route::get('/unique-user-count', [
+		'as' => 'api.analytic.uu.count',
+		'uses' => 'AnalyticController@getUniqueUserCount'
+	]);
+
 });

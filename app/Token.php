@@ -40,4 +40,19 @@ class Token extends Model
     {
     	return $this->belongsTo('App\Application', 'app_id');
     }
+
+    /**
+     * Get Unique User by Api Key
+     *
+     * @return void
+     * @author 
+     **/
+    public function getTokenCountByApp($app_key)
+    {
+
+        $model = $this->getModel();
+
+        return $model->where('app_key', $app_key)->count();
+
+    }
 }

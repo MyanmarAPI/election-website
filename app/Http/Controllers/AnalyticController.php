@@ -8,6 +8,7 @@ use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
+use App\Token;
 
 class AnalyticController extends Controller
 {
@@ -55,6 +56,22 @@ class AnalyticController extends Controller
         }
 
         return response_missing();
+    }
+
+    public function getUniqueUserCount(Request $request)
+    {
+        $api_key = $request->input('api_key');
+
+        if (!$api_key) {
+            return response_missing();
+        }
+
+        $token_count = (new Token)->getTokenCountByApp($api_key);
+
+        return response_ok([
+            'app_key' => $api_key,
+            'unique_user' => $token_count
+        ]);
     }
 
     private function getAnalyticData($url, $query = [])
