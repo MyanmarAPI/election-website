@@ -4,6 +4,7 @@ namespace App;
 
 use App\User;
 use Jenssegers\Mongodb\Model;
+use Auth;
 
 /**
  * API Register Application Model.
@@ -67,6 +68,18 @@ class Application extends Model
         $ins = new static;
 
         return $ins->ownBy($user)->where('_id', '=', $id)->firstOrFail();
+    }
+
+    public static function getAppForSelect($user)
+    {
+        $ins = new static;
+
+        if ($user->isAdmin()) {
+            return $ins->get(['key', 'name'])->toArray();
+        }
+        
+        return $ins->ownBy($user)->get(['key', 'name'])->toArray();    
+        
     }
 
     public function scopeOwnBy($query, $user)

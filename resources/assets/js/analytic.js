@@ -22,7 +22,7 @@ function fetchData(url) {
 
 		range.text(data.hourly.date_range);
 
-		$( ".loading .spinner" ).hide();
+		$( ".loading .spinner" ).addClass('hide');
 
 	});
 }
@@ -48,8 +48,23 @@ $('.analytic-btn').click(function(e){
 });
 
 $( document ).ajaxStart(function() {
-  $( ".loading .spinner" ).show();
+  $( ".loading .spinner" ).removeClass('hide');
 });
+
+$('.analytic-date-range').on('focus', function(){
+	$(this).pickadate({
+	    selectMonths: true, // Creates a dropdown to control month
+	    selectYears: 10 // Creates a dropdown of 15 years to control year
+	});
+});
+
+function fetchUUcount(url) {
+	$.ajax(url)
+	.done(function(data){
+		$('#uu_count').text(data.unique_user);
+		$('#uu_count_wrapper').show();
+	});
+}
 
 function MorrisGraph(element, data) {
 

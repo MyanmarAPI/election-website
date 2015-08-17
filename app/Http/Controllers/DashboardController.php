@@ -50,11 +50,15 @@ class DashboardController extends Controller
 
 		$data['applications'] = Application::latest()->take(10)->get();
 
+		$data['opt_app'] = Application::getAppForSelect($this->user);
+
 		return view('dashboard.admin', $data);
 	}
 
 	protected function dashboardForUser()
 	{
+		$data['opt_app'] = Application::getAppForSelect($this->user);
+
 		$data['user'] = $this->user;
 		
 		return view('dashboard.user', $data);
