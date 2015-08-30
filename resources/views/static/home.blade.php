@@ -29,6 +29,49 @@
 		</div>
                 <div class="clearfix"></div>
 	</div> <!-- end of div.hero -->
+	<div class="hero center">
+		<div class="app-container endpoints">		
+			<h4>Try Our Endpoints</h4>
+			<p>Build your app using our election data</p>
+			<div class="row">
+			<div class="col m3 s12">
+				<a href="http://myanmarapi.github.io/endpoints/candidate.html"><i class="material-icons md-36">supervisor_account</i>
+				</a>
+				<p>Candidate</p>
+			</div>
+			<div class="col m3 s12">
+			<a href="http://myanmarapi.github.io/endpoints/party.html"><i class="material-icons">account_balance</i>
+			</a>
+			<p>Party</p>
+			</div>
+			<div class="col m3 s12">
+			<a href="http://myanmarapi.github.io/endpoints/geolocation.html"><i class="material-icons">room</i>
+			</a>
+			<p>Geolocation</p>
+			</div>
+			<div class="col m3 s12">
+			<a href="http://myanmarapi.github.io/endpoints/faq.html"><i class="material-icons">question_answer</i>
+			</a>
+			<p>FAQ</p>
+			</div>
+			</div>
+		</div>
+                <div class="clearfix"></div>
+	</div> <!-- end of div.hero -->
+
+	<div class="hero center white">
+		<div class="app-container">
+			<img src="{{ asset('img/hack-challenge.jpg') }}" alt="MaePaySoh Hack Challenge" height="200px">
+			
+			<h4>Calling developers &amp; designers!</h4>
+			<p>Design and develop app for voters to help them know more about their candidates &amp; parties.</p>
+			<p><a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="{https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
+						<i class="material-icons left">create</i>Join
+					</a>
+			</p>
+		</div>
+                <div class="clearfix"></div>
+	</div> <!-- end of div.hero -->
 @endsection
 
 @section('content')
@@ -70,6 +113,7 @@
         			<div class="fb-page" data-href="https://www.facebook.com/MaePaySoh" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/MaePaySoh"><a href="https://www.facebook.com/MaePaySoh">Mae Pay Soh API</a></blockquote></div></div>
         		</div>
         	</div>
+
         	<div id="fb-root"></div>
 			<script>(function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0];
