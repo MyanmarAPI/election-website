@@ -65,7 +65,7 @@
 			
 			<h4>Calling developers &amp; designers!</h4>
 			<p>Design and develop app for voters to help them know more about their candidates &amp; parties.</p>
-			<p><a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="{https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
+			<p><a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
 						<i class="material-icons left">create</i>Join
 					</a>
 			</p>
