@@ -25,7 +25,7 @@ class RegistrationEnable
      */
     public function handle($request, Closure $next)
     {
-        if ( ! env('REGISTRATION_ENABLE')) {
+        if ( ! env('REGISTRATION_ENABLE') && !isset($_GET['betauser'])) {
             return redirect('/');
         }
 
