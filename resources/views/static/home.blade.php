@@ -17,9 +17,9 @@
 						<i class="material-icons left">create</i>Create Your Account
 					</a>
 				@else
-					<button class="waves-effect waves-light btn-large indigo darken-2">
-						Coming Soon...
-					</button>
+					<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('beta') }}">
+						<i class="material-icons left">create</i>Apply As Beta Developer
+					</a>
 				@endif
 			@else
 			<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('dashboard') }}">

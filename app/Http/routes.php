@@ -20,6 +20,10 @@ Route::get('/about', function () {
 	return view('static.about');
 });
 
+Route::get('/beta', function () {
+	return view('static.beta');
+});
+
 Route::get('/contact', function () {
 	return view('static.contact');
 });
