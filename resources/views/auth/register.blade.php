@@ -9,9 +9,11 @@
 
 			<div class="z-depth-1 box" id="register">
 				<h4 class="box-header mps-blue mps-yellow-text">Create new account</h4>
-
-				{!! Form::open(['url' => 'auth/register', 'autocomplete' => 'false', 'class' => 'form']) !!}
-				
+				@if (isset($_GET['betauser']))
+					{!! Form::open(['url' => 'auth/register?betauser=true', 'autocomplete' => 'false', 'class' => 'form']) !!}
+				@else
+					{!! Form::open(['url' => 'auth/register', 'autocomplete' => 'false', 'class' => 'form']) !!}
+				@endif
 				<div class="row">
 					<div class="input-field col s12">
 						<input type="text" name="name" value="{{ old('name') }}" autocomplete="off"
