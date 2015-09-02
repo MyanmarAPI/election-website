@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use App\Application;
+use App\Token;
 
 /**
  * Controller for the Dashboard.
@@ -41,6 +42,8 @@ class DashboardController extends Controller
 		$data['user'] = $this->user;
 
 		$data['total_users'] = User::where('role', 'user')->count();
+
+		$data['total_token'] = Token::count();
 
 		$data['total_admins'] = User::where('role', 'admin')->count();
 
