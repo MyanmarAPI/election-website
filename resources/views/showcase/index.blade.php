@@ -2,24 +2,21 @@
 
 @section('title', 'Showcase')
 
-@section('hero')
-	<div class="hero center white">
-		<div class="app-container">
-			<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('/contact#submit-your-app') }}">
-				How to Submit Your Application
-			</a>
-		</div>
-        <div class="clearfix"></div>
-	</div> <!-- end of div.hero -->
-@endsection
 
 @section('content')
 	
 	<div class="row app-container mg-top">
 		@if ($apps->isEmpty())
-		<div class="empty">
-			<p class="center-align">
-				Showcase is empty now. Submit your application for first showcase of Myanmar API.
+		<div class="col s12" id="showcase">
+			<h4>MaePaySoh Apps Showcase</h4>
+			<p>
+				Applications powered by the MaePaySoh (“Let’s Vote”) API will be showcased here!
+			</p>
+			<p>Join the MaePaySoh Hack Challenge to build apps for voters powered by the MaePaySoh API!</p>
+			<p>
+			<a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
+					<i class="material-icons left">create</i>Join
+				</a>
 			</p>
 		</div>
 		@endif

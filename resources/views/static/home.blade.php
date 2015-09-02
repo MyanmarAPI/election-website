@@ -4,8 +4,9 @@
 
 @section('hero')
 	<div class="hero center white">
-		<div class="app-container">
-			<img src="{{ asset('img/mps-logo.png') }}" alt="MaePaySoh Logo" height="200px">
+		<div class="app-container row">
+			<div class="col m8 offset-m2">
+			<img src="{{ asset('img/mps-logo.png') }}" alt="MaePaySoh Logo" width="80%">
 			<h2>2015 Myanmar Election API</h2>
 			<p>Welcome to MyanmarAPI, a civic information API for the 2015 elections and beyond!</p>
 			<p>Developers are using MyanmarAPI to build mobile and web applications.</p>
@@ -28,8 +29,25 @@
 			@endif
 		</div>
                 <div class="clearfix"></div>
+        </div>
 	</div> <!-- end of div.hero -->
 	<div class="hero center">
+		<div class="app-container row">
+			<div class="col m8 offset-m2">
+			<img src="{{ asset('img/hack-challenge.jpg') }}" alt="MaePaySoh Hack Challenge" width="100%">
+			
+			<h4>Calling developers &amp; designers!</h4>
+			<p class="large-text m8">Starting September 12, 2015, developers can use MaePaySoh API to power mobile and web applications to help voters access essential information about Myanmar’s general elections.</p>
+			<p>
+				<a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
+					<i class="material-icons left">create</i>Join
+				</a>
+			</p>
+			</div>
+		</div>
+        <div class="clearfix"></div>
+	</div> <!-- end of div.hero -->
+	<div class="hero center white">
 		<div class="app-container endpoints">		
 			<h4>Try Our Endpoints</h4>
 			<p>Build your app using our election data</p>
@@ -59,20 +77,7 @@
                 <div class="clearfix"></div>
 	</div> <!-- end of div.hero -->
 
-	<div class="hero center white">
-		<div class="app-container">
-			<img src="{{ asset('img/hack-challenge.jpg') }}" alt="MaePaySoh Hack Challenge" height="200px">
-			
-			<h4>Calling developers &amp; designers!</h4>
-			<p>Design and develop app for voters to help them know more about their candidates &amp; parties.</p>
-			<p>
-				<a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
-					<i class="material-icons left">create</i>Join
-				</a>
-			</p>
-		</div>
-        <div class="clearfix"></div>
-	</div> <!-- end of div.hero -->
+	
 @endsection
 
 @section('content')
