@@ -73,6 +73,8 @@
 					@endforeach
 					
 				</table>
+
+				{!! $applications->render() !!}
 				@endif
 			</div>
 		</div>
