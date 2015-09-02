@@ -9,8 +9,8 @@
 	<div class="row app-container">
 
 		<div class="row mg-top" id="total-view">
-			<div class="col s4 total-block">
-				<h5>Users</h5>
+			<div class="col s3 total-block">
+				<h5>Registered Users</h5>
 					
 				<div class="total indigo-text">
 					{{ $total_users }}
@@ -18,7 +18,7 @@
 				
 			</div>
 
-			<div class="col s4 total-block">
+			<div class="col s3 total-block">
 				<h5>Admins</h5>
 					
 				<div class="total indigo-text">
@@ -27,13 +27,19 @@
 				
 			</div>
 
-			<div class="col s4 total-block">
+			<div class="col s3 total-block">
 				<h5>Applications</h5>
 					
 				<div class="total indigo-text">
 					{{ $total_apps }}
 				</div>
 				
+			</div>
+			<div class="col s3 total-block">
+				<h5>Unique Users</h5>
+					<div class="total indigo-text">
+						{{ $total_token }}
+					</div>
 			</div>
 		</div>
 
