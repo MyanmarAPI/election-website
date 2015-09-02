@@ -63,8 +63,10 @@ class AnalyticController extends Controller
 
     public function getTotalHits(Request $request)
     {
+        $query = $request->query();
+
         if ($this->user->isAdmin()) {
-            return $this->getAnalyticData('total-hits');
+            return $this->getAnalyticData('total-hits', $query);
         }
 
         return response_missing();
