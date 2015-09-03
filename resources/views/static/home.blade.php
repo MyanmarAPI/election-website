@@ -7,9 +7,9 @@
 		<div class="app-container row">
 			<div class="col m8 offset-m2">
 			<img src="{{ asset('img/mps-logo.png') }}" alt="MaePaySoh Logo" width="80%">
-			<h2>2015 Myanmar Election API</h2>
-			<p>Welcome to MyanmarAPI, a civic information API for the 2015 elections and beyond!</p>
-			<p>Developers are using MyanmarAPI to build mobile and web applications.</p>
+			<h2>Mae Pay Soh Elections API</h2>
+			<p>Starting September 12, 2015, developers can use MaePaySoh API to power mobile and web applications to help voters access essential information about Myanmar’s general elections.
+</p>
 
 			@if (Auth::guest())
 

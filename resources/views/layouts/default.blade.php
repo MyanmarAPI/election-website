@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>2015 Myanmar Election API - @yield('title')</title>
+	<title>Mae Pay Soh Elections API - @yield('title')</title>
 
 	<!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>

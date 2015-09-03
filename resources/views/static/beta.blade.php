@@ -5,7 +5,7 @@
 @section('content')
 	
 	<div class="row app-container mg-top">
-		<div class="col s12" id="about">
+		<div class="col s12 box-content white" id="beta">
 			<h4>Beta Developer</h4>
 			<p>MaePaySoh (“Let’s Vote!”) API will be published by September 12, 2015! We are still working with <a href="http://uecmyanmar.org" target="_blank">Union Election Commission (UEC) of Myanmar</a>  to ensure the official data is ready for use. </p>
 			<p>Until then, you are welcome to test our API through a beta program! Register using the link below.</p>
