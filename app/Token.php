@@ -55,4 +55,31 @@ class Token extends Model
         return $model->where('app_key', $app_key)->count();
 
     }
+
+    /**
+     * Get Token Counts by App
+     *
+     * @return void
+     * @author 
+     **/
+    public static function getAppTokenCounts()
+    {
+        $ins = new static;
+
+        $result = $ins->raw(function($collection){
+            return $collection->aggregate([
+                '$group' => [
+                    '_id' => '$app_key',
+                    'users' => ['$sum' => 1]
+                ]
+            ]);
+        });
+
+        usort($result['result'], function($a, $b){
+            return $b['users'] - $a['users'];
+        });
+
+        return $result['result'];
+    }
+
 }
