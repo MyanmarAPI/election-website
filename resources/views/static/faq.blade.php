@@ -50,40 +50,6 @@
 </li>
 </ol>
 
-<h4>Hack Challenge FAQ</h4>
-<ol>
-<li>
-<p class="question">Q. What is the MaePaySoh Hack Challenge?</p>
-<p>The MaePaySoh Hack Challenge is a competition to see who can build the best apps, websites &amp; digital tools to help voters. We have a great database for developers to use which is full of information voters need to know. The best apps from the Hack Challenge will be promoted and distributed around the country in the weeks before the election.</p>
-</li>
-<li>
-<p class="question">Q. Who can participate in the MaePaySoh Hack Challenge?</p>
-<p>Talented developers, software engineers, and designers who want to:
-	<ul>
-	<li>Help voters access information about the elections</li>
-	<li>Work with other talented developers to build data-driven tech products</li>
-	<li>Win money &amp; prizes, and see their product distributed around the country</li>
-	</ul>
-</p>
-</li>
-<li>
-<p class="question">Q. Do I have to be on a team in order to participate in the MaePaySoh Hack Challenge?</p>
-<p>You are welcome to participate as an individual. However, we encourage people to join teams because teams have been most successful in past hackathons.</p>
-</li>
-<li>
-<p class="question">Q. How do I register to participate in the Hack Challenge?</p>
-<p>Register for the Hack Challenge at MaePaySoh.org.</p>
-</li>
-<li>
-<p class="question">Q. How long is the Hack Challenge?</p>
-<p>This competition is a bit different from previous hackathons that lasted 24-48 hours. We want to give you more time to design and build functioning apps that can be distributed to voters across the country. The Hack Challenge begins on Saturday September 12 and ends on Sunday September 27.</p>
-</li>
-<li>
-<p class="question">Q. What prizes will be available to the winners of the Hack Challenge?</p>
-<p>The first place winner will receive a $4000 cash prize, and coveted membership to the Accelerate Track of FbStart, which entitles your startup or company to up to $80,000 in benefits from services including Facebook, Salesforce, Adobe and Github. Cash prizes will also be available for the second ($2000) and third ($1000) place teams, and additional prizes will be announced shortly.</p>
-</li>
-</ol>
-
  				
 
 		</div>

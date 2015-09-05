@@ -24,6 +24,10 @@ Route::get('/beta', function () {
 	return view('static.beta');
 });
 
+Route::get('/hackchallenge', function () {
+	return view('static.hackchallenge');
+});
+
 Route::get('/faq', function () {
 	return view('static.faq');
 });
