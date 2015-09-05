@@ -15,6 +15,10 @@
 	<p>Join the MAEPAYSOH HACK CHALLENGE! The Challenge begins September 12, 2015!</p>
 
 	<p>The MaePaySoh Hack Challenge is a competition to see who can build the best apps, websites &amp; digital tools to help voters. We have a great API for developers to use which is full of information voters need to know. The best apps from the Hack Challenge will be promoted around the country, and prizes worth up to 30,000 USD will be available for the winning teams!</p>
+	<p class="center"><a class="waves-effect waves-light btn-large indigo darken-2" href="http://j.mp/mpshackchallenge">
+						<i class="material-icons left">create</i>Register Hack Challenge
+					</a>
+	</p>
 </article>
 
 
