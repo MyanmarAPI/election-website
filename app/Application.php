@@ -5,6 +5,8 @@ namespace App;
 use App\User;
 use Jenssegers\Mongodb\Model;
 use Auth;
+use App\Token;
+use GuzzleHttp\Client;
 
 /**
  * API Register Application Model.
@@ -80,6 +82,84 @@ class Application extends Model
         
         return $ins->ownBy($user)->get(['key', 'name'])->toArray();    
         
+    }
+
+    public static function getMostUsedApps($count = 5)
+    {
+        $ins = new static;
+        
+        $token_counts = Token::getAppTokenCounts();
+
+        return array_map(function($app) use($ins){
+
+            $info = $ins->where('key', $app['_id'])->first(['_id','name', 'key']);
+
+            $app['id'] = $info->id;
+
+            $app['name'] = $info->name;
+
+            $app['key'] = $info->key;
+
+            unset($app['_id']);
+
+            return $app;
+
+        }, array_slice($token_counts, 0, $count));
+
+    }
+
+    public static function getMostActiveApps($count = 5)
+    {
+        $ins = new static;
+
+        $client = new Client(['base_uri' => config('analytics.base_url')]);
+
+        try {
+
+            $response = $client->get('total-hits', [
+                'headers' => [
+                    'X-API-KEY' => config('analytics.X-API-KEY'),
+                    'X-API-SECRET' => config('analytics.X-API-SECRET')
+                ],
+                'query' => [
+                    'hit_contents' => 'api_key'
+                ]
+            ]);
+
+        } catch(\Exception $e) {
+
+            return false;
+
+        }
+
+        if ($response->getStatusCode() != 200) {
+            return false;
+        }
+
+        $result = json_decode($response->getBody()->getContents(), true);
+
+        $result_apps = $result['api_key']['data'];
+
+        usort($result_apps, function($a, $b){
+            return $b['hit'] - $a['hit'];
+        });
+
+        return array_map(function($app) use($ins){
+
+            $info = $ins->where('key', $app['info'])->first(['_id','name', 'key']);
+
+            $app['id'] = $info->id;
+
+            $app['name'] = $info->name;
+
+            $app['key'] = $info->key;
+
+            unset($app['info']);
+
+            return $app;
+
+        }, array_slice($result_apps, 0, $count));
+
     }
 
     public function scopeOwnBy($query, $user)
