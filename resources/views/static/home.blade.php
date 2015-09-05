@@ -34,13 +34,13 @@
 	<div class="hero center">
 		<div class="app-container row">
 			<div class="col m8 offset-m2">
-			<img src="{{ asset('img/hack-challenge.jpg') }}" alt="MaePaySoh Hack Challenge" width="100%">
+			<img src="{{ asset('img/mps-hackchallenge.png') }}" alt="MaePaySoh Hack Challenge" width="100%">
 			
 			<h4>Calling developers &amp; designers!</h4>
 			<p class="large-text m8">Starting September 12, 2015, developers can use MaePaySoh API to power mobile and web applications to help voters access essential information about Myanmar’s general elections.</p>
 			<p>
-				<a class="waves-effect waves-light btn-large indigo darken-2" target="_blank" href="https://docs.google.com/forms/d/1-ib5lVUq-SiAn_9AlXeC76LPv-2TtPwk6K6l12UNfjk/viewform">
-					<i class="material-icons left">create</i>Join
+				<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('hackchallenge') }}">
+					<i class="material-icons left">trending_flat</i>Learn More
 				</a>
 			</p>
 			</div>
