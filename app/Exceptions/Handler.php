@@ -41,7 +41,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if (app()->environment() !== 'production') {
+        if (app()->environment() == 'production') {
             return $this->renderForProduction($request, $e);
         }
 
