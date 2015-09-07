@@ -49,6 +49,10 @@ class DashboardController extends Controller
 
 		$data['total_apps'] = Application::count();
 
+		$data['most_used_app'] = Application::getMostUsedApps();
+
+		$data['most_active_app'] = Application::getMostActiveApps();
+
 		$data['users'] = User::latest()->take(10)->get();
 
 		$data['applications'] = Application::latest()->take(10)->get();

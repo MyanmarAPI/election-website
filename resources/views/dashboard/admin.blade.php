@@ -49,7 +49,60 @@
 
 		<div class="row">
 			<div class="col m6 s12">
-				<h4>Latest Register User</h4>
+				<h4>Most Used Applications</h4>
+				<div class="collection white">
+					<table class="bordered">
+						<thead>
+							<tr>
+								<th width="80%">Name</th>
+								<th>Unique Users</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach($most_used_app as $app)
+								<tr>
+									<td>
+										{{ $app['name'] }}
+										{{-- <p>API Key : {{ $app['key'] }}</p> --}}
+									</td>
+									<td>{{ $app['users'] }}</td>
+								</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col m6 s12">
+				<h4>Most Active Applications</h4>
+				@if ($most_active_app)
+					<div class="collection white">
+						<table class="bordered">
+							<thead>
+								<tr>
+									<th width="80%">Name</th>
+									<th>Total Hits</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach($most_active_app as $app)
+									<tr>
+										<td>
+											{{ $app['name'] }}
+											{{-- <p>API Key : {{ $app['key'] }}</p> --}}
+										</td>
+										<td>{{ $app['hit'] }}</td>
+									</tr>
+								@endforeach
+							</tbody>
+						</table>
+					</div>
+				@endif
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col m6 s12">
+				<h4>Latest Register Users</h4>
 
 				<ul class="collection">
 					@foreach ($users as $u)
@@ -63,7 +116,7 @@
 			</div>
 
 			<div class="col m6 s12">
-				<h4>Latest Register Application</h4>
+				<h4>Latest Register Applications</h4>
 
 				<ul class="collection">
 					@foreach ($applications as $a)

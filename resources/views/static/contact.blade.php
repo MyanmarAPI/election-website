@@ -5,7 +5,7 @@
 @section('content')
 	
 	<div class="row app-container mg-top">
-		<div class="col s12" id="about">
+		<div class="col s12 box-content white" id="about">
 			<h4>Contact Us</h4>
 
 			<p>If you interesting to support this movement please reach us through our Facebook Group at <a href="https://www.facebook.com/MaePaySoh">https://www.facebook.com/MaePaySoh</a></p>
