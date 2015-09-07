@@ -44,8 +44,7 @@ class ApplicationController extends Controller
      */
 	public function index()
 	{
-		if ( $this->user->isAdmin())
-		{
+		if ( $this->user->isAdmin()) {
 			$applications = Application::getForAdminIndex(app('request')->get('type'));
 
             return view('app.admin-index', compact('applications'));
@@ -63,7 +62,12 @@ class ApplicationController extends Controller
      */
     public function show($id)
     {
-        $application = Application::findOrFail($id);
+        if ( $this->user->isAdmin()) {
+            $application = Application::findOrFail($id);    
+        } else {
+            $application = Application::ownBy($this->user)->findOrFail($id);
+        }
+        
 
         $total_users = (new Token)->getTokenCountByApp($application->key);
 
