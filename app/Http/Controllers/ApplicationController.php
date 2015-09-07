@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Token;
 use App\Application;
+use App\Services\Analytics;
 use App\Util\AppKeyGenerator;
 use App\Http\Requests\ApplicationFormRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -66,7 +67,7 @@ class ApplicationController extends Controller
 
         $total_users = (new Token)->getTokenCountByApp($application->key);
 
-        $analytic = app('App\Services\Analytics')->totalHits([
+        $analytic = app(Analytics::class)->totalHits([
             'api_key' => $application->key, 
             'hit_contents' => 'endpoint|api_key'
         ]);

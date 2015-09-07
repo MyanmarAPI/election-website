@@ -2,11 +2,11 @@
 
 namespace App;
 
-use App\User;
-use Jenssegers\Mongodb\Model;
 use Auth;
+use App\User;
 use App\Token;
 use GuzzleHttp\Client;
+use Jenssegers\Mongodb\Model;
 
 /**
  * API Register Application Model.
