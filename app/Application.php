@@ -65,6 +65,17 @@ class Application extends Model
         }
     }
 
+    public static function getForAdminIndex($type = null, $limit = 20)
+    {
+        $ins = new static;
+
+        if ( $type) {
+            $ins = $ins->where('type', $type);
+        }
+
+        return $ins->with('user')->paginate($limit);
+    }
+
     public static function getByIdForUser($id, $user)
     {
         $ins = new static;

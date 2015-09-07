@@ -13,6 +13,18 @@
 
 				@include('partials.search', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key...'])
 
+				<div class="row">
+					<div class="col s4">
+						<a href="?type=web" class="waves-effect waves-light btn-large indigo darken-2">Web Applications Only</a>
+					</div>
+					<div class="col s4">
+						<a href="?type=android" class="waves-effect waves-light btn-large indigo darken-2">Android Applications Only</a>
+					</div>
+					<div class="col s4">
+						<a href="?type=ios" class="waves-effect waves-light btn-large indigo darken-2">iOS Applications Only</a>
+					</div>
+				</div>
+
 				@if ( $applications->isEmpty())
 				<div class="empty">
 					<p class="center-align">

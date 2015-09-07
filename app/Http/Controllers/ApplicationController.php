@@ -46,7 +46,7 @@ class ApplicationController extends Controller
 	{
 		if ( $this->user->isAdmin())
 		{
-			$applications = Application::with('user')->paginate(20);
+			$applications = Application::getForAdminIndex(app('request')->get('type'));
 
             return view('app.admin-index', compact('applications'));
 		}
