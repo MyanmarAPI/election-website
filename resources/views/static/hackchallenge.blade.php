@@ -60,11 +60,6 @@
 
 
 <li>
-<p class="question">Q. Can we hack at Phandeeyar? </p>
-<p>Yes! Phandeeyar will be open on the weekends if teams want to work there.</p>
-</li>
-
-<li>
 <p class="question">Q. Do I have to hack at Phandeeyar?</p>
 <p>You can hack wherever you want. We'll have good internet, food, drinks and a cool vibe, but you don't have to work at Phandeeyar</p>
 </li>
@@ -110,7 +105,7 @@
 
 <li>
 <p class="question">Q. How do I participate if I’m not in Yangon?</p>
-<p>Join HERE, and we’ll make sure you have all the information you need to compete!</p>
+<p>Join <a href="https://j.mp/mpshackchallenge">HERE</a>, and we’ll make sure you have all the information you need to compete!</p>
 </li>
 
 
