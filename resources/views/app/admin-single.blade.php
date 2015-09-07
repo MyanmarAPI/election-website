@@ -11,7 +11,10 @@
         <div class="row">
 
             <div class="col s12">
-                <h4>Report for {{ $application->name }}</h4>        
+                <h4>Report for {{ $application->name }}</h4>  
+                <p>Key : {{ $application->key }}</p> 
+                <p>Type : {{ $application->type }}</p>
+                <p>Developer : {{ $application->user->name }} ({{ $application->user->email }})</p>
             </div>
 
         </div>
