@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -13,7 +15,8 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+        HttpException::class,
+        ModelNotFoundException::class
     ];
 
     /**
@@ -38,7 +41,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if (app()->environment() == 'production') {
+        if (app()->environment() !== 'production') {
             return $this->renderForProduction($request, $e);
         }
 
@@ -54,10 +57,14 @@ class Handler extends ExceptionHandler
      */
     protected function renderForProduction($request, Exception $e)
     {
+        if ( $e instanceof ModelNotFoundException) {
+            $e = new HttpException(404);
+        }
+
         if ($this->isHttpException($e)) {
             return $this->toIlluminateResponse($this->renderHttpException($e), $e);
-        } else {
-            return response()->view('errors.500', [], 500);
         }
+
+        return response()->view('errors.500', [], 500);
     }
 }
