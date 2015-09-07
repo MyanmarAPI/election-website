@@ -55,6 +55,27 @@ class ApplicationController extends Controller
 		return view('app.user-index', compact('applications'));
 	}
 
+    /**
+     * Display a application single page.
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
+        $application = Application::findOrFail($id);
+
+        $total_users = (new Token)->getTokenCountByApp($application->key);
+
+        $analytic = app('App\Services\Analytics')->totalHits([
+            'api_key' => $application->key, 
+            'hit_contents' => 'endpoint|api_key'
+        ]);
+
+        $analytic = json_decode($analytic->getBody()->getContents());
+
+        return view('app.admin-single', compact('application', 'total_users', 'analytic'));
+    }
+
 	/**
      * Show the form for creating a new resource.
      *

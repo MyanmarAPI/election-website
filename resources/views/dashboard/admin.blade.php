@@ -44,7 +44,7 @@
 		</div>
 
 		<div class="row">
-			@include('partials.analytic-views')
+			@include('partials.analytic-views', ['isDashboard' => true])
 		</div>
 
 		<div class="row">

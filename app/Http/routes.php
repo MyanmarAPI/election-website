@@ -95,6 +95,12 @@ function() {
 			'as' => 'application.enable',
 			'uses' => 'ApplicationController@enable'
 		]);
+
+		Route::get('{id}', [
+			'middleware' => 'admin',
+			'as' => 'application.view',
+			'uses' => 'ApplicationController@show'
+		]);
 	});
 
 

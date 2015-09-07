@@ -1,22 +1,23 @@
 <div class="col s12" id="analytics-view">
+
 	<h4>Analytics</h4>
+
 	<div id="analytic-links" class="col s6">
-		<a href="#" id="getHourly"data-type="hourly" class="analytic-btn waves-effect waves-light btn indigo darken-2">Hourly</a>
-		<a href="#" id="getDaily" data-type="daily" class="analytic-btn waves-effect waves-light btn indigo darken-2">Daily</a>
+		<a href="#" id="getHourly"data-type="hourly" 
+			class="analytic-btn waves-effect waves-light btn indigo darken-2">
+			Hourly
+		</a>
+		<a href="#" id="getDaily" data-type="daily" 
+			class="analytic-btn waves-effect waves-light btn indigo darken-2">
+			Daily
+		</a>
 		{{-- <a href="#" id="getWeekly" data-type="weekly" class="analytic-btn waves-effect waves-light btn indigo darken-2">Weekly</a> --}}
-		<a href="#" id="getMonthly" data-type="monthly" class="analytic-btn waves-effect waves-light btn indigo darken-2">Monthly</a>
+		<a href="#" id="getMonthly" data-type="monthly" 
+			class="analytic-btn waves-effect waves-light btn indigo darken-2">
+			Monthly
+		</a>
 	</div>
-	<div class="col s4">
-	    <select class="browser-default" id="analytic-app">
-	      <option value="" selected>All Applications</option>
-	      @foreach ($opt_app as $app)
-	      	<option value="{{ $app['key'] }}">{{ $app['name'] }}</option>
-	      @endforeach
-	    </select>
-	</div>
-	<div class="col s2">
-		<div id="uu_count_wrapper" style="display:none;">Unique users : <span id="uu_count"></span></div>
-	</div>
+
 	<div id="analytic-filter" class="col s12">
 		<div class="row">
 			<form action="#" class="col s12" id="analytic-filter">
@@ -54,11 +55,13 @@
 		</div>
 	</div>
 
-	<div class="loading"><i class="fa fa-spinner fa-spin spinner hide"></i></div>
+	<div class="loading">
+		<i class="fa fa-spinner fa-spin spinner hide"></i>
+	</div>
 
 	<div id="report-analytics" style="height: 250px;"></div>
 	
-	@if (Auth::user()->isAdmin())
+	@if (Auth::user()->isAdmin() && $isDashboard)
 		<ul class="collapsible" data-collapsible="accordion">
 		    <li>
 		      <div class="collapsible-header"><i class="material-icons">info</i>Total Hits by Request Info</div>

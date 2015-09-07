@@ -53,9 +53,10 @@
 							</span>
 						</td>
 						<td>
-							<button title="View APP Key" class="btn key-button" data-key-text="{{ $app->key }}">
+							<a title="View Application" class="waves-effect waves-light btn"
+								href="{{ route('application.view', $app->id) }}">
 								<i class="material-icons">visibility</i>
-							</button>
+							</a>
 							@if ($app->disable)
 							<a title="Change Status" href="{{ route('application.enable', $app->id) }}" 
 							class="waves-effect waves-light btn red">
