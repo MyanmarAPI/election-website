@@ -74,7 +74,7 @@ class ApplicationController extends Controller
 
         $analytic = json_decode($analytic->getBody()->getContents());
 
-        return view('app.admin-single', compact('application', 'total_users', 'analytic'));
+        return view('app.single', compact('application', 'total_users', 'analytic'));
     }
 
 	/**

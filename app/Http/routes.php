@@ -105,7 +105,6 @@ function() {
 		]);
 
 		Route::get('{id}', [
-			'middleware' => 'admin',
 			'as' => 'application.view',
 			'uses' => 'ApplicationController@show'
 		]);

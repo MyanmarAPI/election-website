@@ -45,6 +45,9 @@
 									</div> <!-- end of div.card-content -->
 
 									<div class="card-action">
+										<a href="{{ route('application.view', $app->id) }}" class="indigo-text">
+											View Detail
+										</a>
 										<a href="{{ route('application.edit', $app->id) }}" class="indigo-text">
 											Edit
 										</a>
