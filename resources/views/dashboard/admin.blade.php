@@ -69,7 +69,7 @@
 							@foreach($most_used_app as $app)
 								<tr>
 									<td>
-										<a href="{{ route('application.view', $app['id']) }}">{{ $app['name'] }}</a>
+										<a href="{{ route('application.view', $app['id']) }}" class="black-text">{{ $app['name'] }}</a>
 										{{-- <p>API Key : {{ $app['key'] }}</p> --}}
 									</td>
 									<td>{{ $app['users'] }}</td>
@@ -94,7 +94,7 @@
 								@foreach($most_active_app as $app)
 									<tr>
 										<td>
-											<a href="{{ route('application.view', $app['id']) }}">{{ $app['name'] }}</a>
+											<a href="{{ route('application.view', $app['id']) }}" class="black-text">{{ $app['name'] }}</a>
 											{{-- <p>API Key : {{ $app['key'] }}</p> --}}
 										</td>
 										<td>{{ $app['hit'] }}</td>
