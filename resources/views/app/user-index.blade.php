@@ -45,13 +45,19 @@
 									</div> <!-- end of div.card-content -->
 
 									<div class="card-action">
-										<a href="{{ route('application.view', $app->id) }}" class="indigo-text">
+										<a href="{{ route('application.view', $app->id) }}" 
+											class="indigo-text"
+											data-ga-event="Application|Click|DetailView">
 											View Detail
 										</a>
-										<a href="{{ route('application.edit', $app->id) }}" class="indigo-text">
+										<a href="{{ route('application.edit', $app->id) }}" 
+											class="indigo-text"
+											data-ga-event="Application|Click|Edit">
 											Edit
 										</a>
-										<a href="{{ route('application.delete', $app->id) }}" class="confirm_delete red-text">
+										<a href="{{ route('application.delete', $app->id) }}" 
+											class="confirm_delete red-text"
+											data-ga-event="Application|Click|Delete">
 											Delete
 										</a>
 									</div> <!-- end of div.card-action -->
