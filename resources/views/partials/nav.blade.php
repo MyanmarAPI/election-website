@@ -9,6 +9,7 @@
 <!--<li><a href="{{ url('showcase') }}">Showcase</a></li>-->
 <li><a href="{{ url('about') }}">About</a></li>
 <li><a href="{{ url('hackchallenge') }}">Hack Challenge</a></li>
+<li><a href="{{ url('hackchallenge') }}">Press Release</a></li>
 <li><a href="{{ url('faq') }}">FAQ</a></li>
 <li><a href="http://maepaysoh.tumblr.com">Blog</a></li>
 <li><a href="http://myanmarapi.github.io">Documentation</a></li>
