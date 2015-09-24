@@ -14,16 +14,22 @@
 			@if (Auth::guest())
 
 				@if (env('REGISTRATION_ENABLE'))
-					<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('auth/register') }}">
+					<a class="waves-effect waves-light btn-large indigo darken-2" 
+						href="{{ url('auth/register') }}"
+						data-ga-event="Button|Click|CreateAccountButton">
 						<i class="material-icons left">create</i>Create Your Account
 					</a>
 				@else
-					<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('beta') }}">
+					<a class="waves-effect waves-light btn-large indigo darken-2" 
+						href="{{ url('beta') }}"
+						data-ga-event="Button|Click|CreateBetaAccountButton">
 						<i class="material-icons left">create</i>Apply As Beta Developer
 					</a>
 				@endif
 			@else
-			<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('dashboard') }}">
+			<a class="waves-effect waves-light btn-large indigo darken-2" 
+				href="{{ url('dashboard') }}"
+				data-ga-event="Button|Click|MyDashboardButton">
 				<i class="material-icons left">dashboard</i>My Dashboard
 			</a>
 			@endif
@@ -52,29 +58,37 @@
 			<h4>Try Our Endpoints</h4>
 			<p>Build your app using our election data</p>
 			<div class="row">
-			<div class="col m3 s12">
-				<a href="http://myanmarapi.github.io/endpoints/candidate.html"><i class="material-icons md-36">supervisor_account</i>
-				</a>
-				<p>Candidate</p>
-			</div>
-			<div class="col m3 s12">
-			<a href="http://myanmarapi.github.io/endpoints/party.html"><i class="material-icons">account_balance</i>
-			</a>
-			<p>Party</p>
-			</div>
-			<div class="col m3 s12">
-			<a href="http://myanmarapi.github.io/endpoints/geolocation.html"><i class="material-icons">room</i>
-			</a>
-			<p>Geolocation</p>
-			</div>
-			<div class="col m3 s12">
-			<a href="http://myanmarapi.github.io/endpoints/faq.html"><i class="material-icons">question_answer</i>
-			</a>
-			<p>FAQ</p>
-			</div>
+				<div class="col m3 s12">
+					<a href="http://myanmarapi.github.io/endpoints/candidate.html" 
+						data-ga-event="DocumentationLink|Click|CandidateEndpoint">
+						<i class="material-icons md-36">supervisor_account</i>
+					</a>
+					<p>Candidate</p>
+				</div>
+				<div class="col m3 s12">
+					<a href="http://myanmarapi.github.io/endpoints/party.html"
+						data-ga-event="DocumentationLink|Click|PartyEndpoint">
+						<i class="material-icons">account_balance</i>
+					</a>
+					<p>Party</p>
+				</div>
+				<div class="col m3 s12">
+					<a href="http://myanmarapi.github.io/endpoints/geolocation.html"
+						data-ga-event="DocumentationLink|Click|GeolocationEndpoint">
+						<i class="material-icons">room</i>
+					</a>
+					<p>Geolocation</p>
+				</div>
+				<div class="col m3 s12">
+					<a href="http://myanmarapi.github.io/endpoints/faq.html"
+						data-ga-event="DocumentationLink|Click|FAQEndpoint">
+						<i class="material-icons">question_answer</i>
+					</a>
+					<p>FAQ</p>
+				</div>
 			</div>
 		</div>
-                <div class="clearfix"></div>
+        <div class="clearfix"></div>
 	</div> <!-- end of div.hero -->
 
 	
@@ -141,7 +155,9 @@
 					
 					<div class="wrapper">
 						<input type="email" value="" name="EMAIL" placeholder="Email" class="required email" id="mce-EMAIL" style="display:inline-block; width:200px;">
-						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn indigo darken-2" style="background:none;border:0;">
+						<input type="submit" value="Subscribe" name="subscribe" 
+							id="mc-embedded-subscribe" class="btn indigo darken-2" style="background:none;border:0;"
+							data-ga-event="Subscribe|Submit|SubmitTheSubscribeForm">
 					</div>
 					<div id="mce-responses" class="clear">
 						<div class="response" id="mce-error-response" style="display:none"></div>

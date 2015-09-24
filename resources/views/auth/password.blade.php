@@ -29,7 +29,9 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">
+						<button class="btn waves-effect waves-light indigo darken-2" 
+							type="submit" name="action"
+							data-ga-event="Button|Click|SubmitSendPasswordResetLink">
 							Send Password Reset Link
 	  					</button>
 					</div>
@@ -38,7 +40,9 @@
 				{!! Form::close() !!}
 			</div> <!-- end of div#login -->
 				
-			<p class="center-align">Don't have an account? Sign Up for <a href="{{ url('auth/register') }}">New Account</a></p>
+			<p class="center-align">
+			Don't have an account? Sign Up for <a href="{{ url('auth/register') }}" data-ga-event="Link|Click|RegsiterFromPasswordReset">New Account</a>
+			</p>
 
 		</div> 
 	</div>

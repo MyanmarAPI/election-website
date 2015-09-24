@@ -3,8 +3,12 @@
 @section('title', 'Application ' . $application->name)
 
 @section('content')
-
-    @include('partials.admin-toolbar')
+    
+    @if (Auth::user()->isAdmin())
+        @include('partials.admin-toolbar')
+    @else
+        @include('partials.user-toolbar')
+    @endif
 
     <div class="row app-container mg-top">
 

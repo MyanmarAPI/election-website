@@ -28,6 +28,10 @@ Route::get('/hackchallenge', function () {
 	return view('static.hackchallenge');
 });
 
+Route::get('/pressrelease', function () {
+	return view('static.pressrelease');
+});
+
 Route::get('/faq', function () {
 	return view('static.faq');
 });

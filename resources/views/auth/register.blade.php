@@ -48,7 +48,9 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Register
+						<button class="btn waves-effect waves-light indigo darken-2" 
+							type="submit" name="action"
+							data-ga-event="Button|Click|SubmitRegisterForm">Register
 	    					<i class="mdi-content-send right"></i>
 	  					</button>
 					</div>

@@ -37,3 +37,10 @@ $('.confirm_delete').on('click', function(e){
 		}
 	});
 });
+
+// Send Google Analytics Event
+$("[data-ga-event]").on('click', function(event){
+  var args = ['send', 'event'];
+  args = args.concat( $(this).data('ga-event').split("|") );
+  ga.apply(null, args);
+});
