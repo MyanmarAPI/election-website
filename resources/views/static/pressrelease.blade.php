@@ -43,6 +43,7 @@ Yan Naung Oak, Program Manager<br/>
 Mobile: +95 925499181<br/>
 <a href="mailto:yan@phandeeyar.org">yan@phandeeyar.org</a><br/>
 </p>
+<p><a href="pdf/MPS_PressRelease_EN_FINAL.pdf">Download English Press Release</a></p>
 </article>	
 <hr>
 <article>
@@ -71,6 +72,7 @@ Susan Lee, ပ႐ိုဂရမ္ မန္ေနဂ်ာ<br/>
 မိုဘိုင္း- +၉၅ ၉၂၅၄၉၉၁၈၁<br/>
 <a href="mailto:yan@phandeeyar.org">yan@phandeeyar.org</a><br/>
 </p>
+<p><a href="pdf/MPS_PressRelease_Myanmar_Final.pdf">ၿမန္မာဘာသာစကားၿဖင္႔ သတင္းထုတ္ၿပန္ခ်က္ကို ဤေနရာတြင္ေဒါင္းလုပ္ဆြဲပါ။</a></p>
 </article>
 
 		</div>
