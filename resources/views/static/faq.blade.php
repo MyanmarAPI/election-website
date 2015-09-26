@@ -38,7 +38,7 @@
 <p class="question">Q. How will MaePaySoh benefit developers?</p>
 <p>The MaePaySoh initiative supports local Myanmar developers by providing them with the tools that they need to build compelling, and valuable web services, SMS tools, and Android mobile apps that voters can use to learn more about the 2015 election. Together with local developer communities Phandeeyar, GDG Yangon, and Geek Girls, MaePaySoh delivered a series of technical trainings on topics relating to the development of API-driven applications: MaePaySoh API Design Sprint, Node.Js Tutorial, Building Android Apps with Web Tech, and Facebook Developers Tools.</p>
 
-<p>The MaePaySoh Hack Challenge will provide a unique platform for local developers to showcase their talent while contributing to public access to elections information. Teams will compete for prizes that can help propel their start-ups or companies to </p>
+<p>The MaePaySoh Hack Challenge will provide a unique platform for local developers to showcase their talent while contributing to public access to elections information. </p>
 </li>
 <li>
 <p class="question">Q. Who is MaePaySoh?</p>
