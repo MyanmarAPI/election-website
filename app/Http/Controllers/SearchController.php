@@ -59,6 +59,8 @@ class SearchController extends Controller
 
 		$applications = Application::where('key', $query)->paginate();
 
-		return view('app.admin-index', compact('applications'));
+		$hideFilter = true;
+
+		return view('app.admin-index', compact('applications', 'hideFilter'));
 	}
 }

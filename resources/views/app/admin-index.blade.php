@@ -12,7 +12,8 @@
 				<h4>Register Applications</h4>
 
 				@include('partials.search', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key...'])
-
+				
+				@if ( ! isset($hideFilter))
 				<div class="row">
 					<div class="col s4">
 						<a href="?type=web" class="waves-effect waves-light btn-large indigo darken-2">Web Applications Only</a>
@@ -24,6 +25,7 @@
 						<a href="?type=ios" class="waves-effect waves-light btn-large indigo darken-2">iOS Applications Only</a>
 					</div>
 				</div>
+				@endif
 
 				@if ( $applications->isEmpty())
 				<div class="empty">
