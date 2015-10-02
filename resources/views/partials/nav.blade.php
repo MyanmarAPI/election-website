@@ -35,6 +35,9 @@
     <a href="{{ url('about') }}" data-ga-event="Navigation|Click|About">About</a>
 </li>
 <li>
+    <a href="{{ url('showcase') }}" data-ga-event="Navigation|Click|Showcae">Showcase</a>
+</li>
+<li>
     <a href="{{ url('hackchallenge') }}" data-ga-event="Navigation|Click|HacKChellenge">Hack Challenge</a>
 </li>
 <li>
@@ -48,9 +51,6 @@
 </li>
 <li>
     <a href="http://myanmarapi.github.io" data-ga-event="Navigation|Click|Documentation">Documentation</a>
-</li>
-<li>
-    <a href="{{ url('contact') }}" data-ga-event="Navigation|Click|Contact">Contact</a>
 </li>
 <li>
     <a href="{{ url('auth/login') }}" data-ga-event="Navigation|Click|Login">Login</a>
