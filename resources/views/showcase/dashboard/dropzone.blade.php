@@ -6,7 +6,18 @@
 		<div class="col s12">
 
 			<div class="row">
-				<h4>Upload Image for Showcase Application</h4>
+				
+				@if ( $prop['type'] == 'icon')
+					<h4>Upload Icon Image for Showcase Application</h4>
+					<p class="img-info">Icon image size is 512x512 px</p>
+				@else
+					<h4>Upload Screenshot Images for Showcase Application</h4>
+					<p class="img-info">
+						Minimum screenshots - 2 images.<br>
+						Maximum screenshots - 8 images.
+					</p>
+				@endif
+
 				<div class="col s9">			
 					<form action="{{ route($route, $id) }}" class="dropzone" id="image-uploader">
 		      			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
@@ -24,7 +35,7 @@
 			</div> <!-- end of div.row -->
 
       		<div id="image-container">
-      			@if( isset($for))
+      			@if( $prop['type'] == 'screenshots')
       				@if ( ! is_null($showcase->screenshots))
       				<ul id="screenshots-lists">
       				@foreach($showcase->screenshots as $s)
@@ -53,16 +64,14 @@
 @section('scripts')
 	
 	// Variable for uploading is 'icon' or 'screenshots'
-	var IMAGE_FOR = '{{ isset($for) ? $for : 'icon'  }}';
+	var IMAGE_FOR = '{{ $prop['type']  }}';
 
 	Dropzone.autoDiscover = false;
 
 	$(function() {
 		var myDropzone = new Dropzone("#image-uploader", {
-			acceptedFiles: 'image/*'
-			@if ( isset($maxFiles))
-			,maxFiles: {{ $maxFiles }}
-			@endif
+			acceptedFiles: 'image/*',
+			maxFiles: {{ $prop['max_files'] }}
 		});
 
 		myDropzone.on('success', function(file, res) {

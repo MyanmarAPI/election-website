@@ -28,7 +28,36 @@ class Showcase extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'slug', 'description', 'url', 'type', 'icon', 'screenshots', 'published'];
+    protected $fillable = [
+        'name', 
+        'slug', 
+        'description', 
+        'store_url', 
+        'website_url', 
+        'type', 
+        'icon', 
+        'screenshots', 
+        'published',
+        'approved',
+        'user_id'
+    ];
+
+     /**
+     * Relationship for user model
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function scopeOwnBy($query, $user)
+    {
+        $userId = ($user instanceof User) ? $user->id : $user;
+
+        return $query->where('user_id', '=', $userId);
+    }
 
     public function setSlugAttribute($value)
     {
@@ -48,10 +77,24 @@ class Showcase extends Model
      */
     public function readyToPublish()
     {
-        if ( count($this->screenshots) > 0 && ! is_null($this->icon)) {
+        if ( count($this->screenshots) > 1 && ! is_null($this->icon)) {
             return true;
         }
 
+        return false;
+    }
+
+    /**
+     * Check showcase is already published.
+     *
+     * @return boolean
+     */
+    public function alreadyPublished()
+    {
+        if ( $this->published == 'p' && $this->activated == true) {
+            return true;
+        }
+        
         return false;
     }
 }

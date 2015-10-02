@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Showcase;
 use App\Traits\ShowcaseValidator;
@@ -23,13 +24,32 @@ class ShowcaseController extends Controller
     use ShowcaseValidator, IconAndScreenshots;
 
     /**
+     * Current logged in user
+     *
+     * @var \App\User
+     */
+    protected $user;
+
+    /**
+     * Create new application controller instance.
+     */
+    public function __construct()
+    {
+        $this->user = Auth::user();
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return Response
      */
     public function index()
     {
-        $apps = Showcase::latest()->paginate(20);
+        if ( $this->user->isAdmin()) {
+            $apps = Showcase::latest()->paginate(20);    
+        } else {
+            $apps = Showcase::ownBy($this->user)->latest()->paginate(20);    
+        }
 
         return view('showcase.dashboard.index', compact('apps'));
     }
@@ -63,6 +83,7 @@ class ShowcaseController extends Controller
 
         $data['published'] = 'd';
         $data['slug'] = str_slug($data['name']);
+        $data['user_id'] = $this->user->id;
 
         $showcase = new Showcase($data);
 
@@ -98,7 +119,7 @@ class ShowcaseController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $showcase = Showcase::findOrFail($id);
 
@@ -147,7 +168,7 @@ class ShowcaseController extends Controller
         $app->published = 'p';
 
         if ( $app->save()) {
-            session()->flash('success', 'Showcase App is successfully published.');
+            session()->flash('success', 'Showcase App is successfully published. Wait to addproved from admin.');
         } else {
             session()->flash('error', 'Error occured to publish the showcase app.');
         }
@@ -166,6 +187,9 @@ class ShowcaseController extends Controller
         $app = Showcase::findOrFail($id);
 
         $app->published = 'd';
+        if ($app->activated) {
+            $app->activated = false;
+        }
 
         if ( $app->save()) {
             session()->flash('success', 'Showcase App is successfully draft.');

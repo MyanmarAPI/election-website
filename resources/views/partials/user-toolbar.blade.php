@@ -4,6 +4,9 @@
 			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('application') }}">
 				<i class="material-icons left">list</i>Applications
 			</a>
+			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('showcase') }}">
+				<i class="material-icons left">apps</i>Showcase
+			</a>
 			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('application.create') }}">
 				<i class="material-icons left">create</i>Create Application
 			</a>

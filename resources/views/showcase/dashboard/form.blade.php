@@ -17,7 +17,7 @@
 							'class' => 'form'
 						]) !!}
 				@else
-					<h4 class="box-header cyan-text text-darken-3">Crete new showcase</h4>
+					<h4 class="box-header cyan-text text-darken-3">Create new showcase</h4>
 
 					{!! Form::open([
 							'route' => 'showcase.create', 
@@ -37,9 +37,17 @@
 
 						<div class="row">
 							<div class="input-field col s12">
-								{!! Form::url('url', null, ['class' => $errors->has('url') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Application Url</label>
-								<p class="form-error">{{ $errors->first('url') }}</p>
+								{!! Form::url('store_url', null, ['class' => $errors->has('store_url') ? 'validate invalid' : 'validate']) !!}
+								<label for="name">Store Url</label>
+								<p class="form-error">{{ $errors->first('store_url') }}</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								{!! Form::url('website_url', null, ['class' => $errors->has('website_url') ? 'validate invalid' : 'validate']) !!}
+								<label for="name">Website Url</label>
+								<p class="form-error">{{ $errors->first('website_url') }}</p>
 							</div>
 						</div>
 

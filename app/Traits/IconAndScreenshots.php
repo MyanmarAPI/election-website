@@ -32,9 +32,10 @@ trait IconAndScreenshots
 
         $showcase = Showcase::findOrFail($id);
 
-        $maxFiles = 1;
+        $prop['max_files'] = 1;
+        $prop['type'] = 'icon';
 
-        return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'maxFiles'));
+        return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'prop'));
     }
 
     /**
@@ -79,9 +80,10 @@ trait IconAndScreenshots
 
         $showcase = Showcase::findOrFail($id);
 
-        $for = 'screenshots';
+        $prop['max_files'] = 8;
+        $prop['type'] = 'screenshots';
 
-        return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'for'));
+        return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'prop'));
     }
 
      /**

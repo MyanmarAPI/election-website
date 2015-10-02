@@ -40,11 +40,24 @@ Route::get('/contact', function () {
 	return view('static.contact');
 });
 
-Route::get('/showcase', function () {
-	
-	$apps = App\Showcase::where('published', 'p')->latest()->paginate(20);
+// Showcase Frontend Controller
+Route::group(['prefix' => 'showcase'], 
+function() {
+	Route::get('/', [
+		'as' => 'showcase.lists',
+		'uses' => 'ShowcaseFrontendController@index'
+	]);
 
-    return view('showcase.index', compact('apps'));
+	Route::get('/preview/{slug}', [
+		'as' => 'showcase.preview',
+		'uses' => 'ShowcaseFrontendController@preview',
+		'middleware' => 'auth'
+	]);
+
+	Route::get('/{slug}', [
+		'as' => 'showcase.show',
+		'uses' => 'ShowcaseFrontendController@show'
+	]);
 });
 
 // Authentication process routes.
@@ -116,7 +129,7 @@ function() {
 
 
 	// Showcase Backend Routes
-	Route::group(['middleware' => 'admin', 'prefix' => 'showcase'], 
+	Route::group(['prefix' => 'showcase'], 
 	function() {
 		Route::get('/', [
 			'as' => 'showcase',
@@ -282,6 +295,16 @@ function() {
 	Route::get('/{id}/downgrade', [
 		'as' => 'action.downgrade',
 		'uses' => 'AdminActionController@downgradeAdminToUser'
+	]);
+
+	Route::get('/showcase/{id}/activate', [
+		'as' => 'action.showcase.activate',
+		'uses' => 'AdminActionController@activateShowcase'
+	]);
+
+	Route::get('/showcase/{id}/deactivate', [
+		'as' => 'action.showcase.deactivate',
+		'uses' => 'AdminActionController@deactivateShowcase'
 	]);
 });
 

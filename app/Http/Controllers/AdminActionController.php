@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Showcase;
 
 /**
  * Controller for the Actions of Admin.
@@ -52,5 +53,47 @@ class AdminActionController extends Controller
 		}
 
 		return back();
+	}
+
+	/**
+	 * Activate the showcase app.
+	 *
+	 * @param  string $id
+	 * @return \Redirect
+	 */
+	public function activateShowcase($id)
+	{
+	    $app = Showcase::findOrFail($id);
+
+	    $app->activated = true;
+
+	    if ( $app->save()) {
+	    	session()->flash('success', 'Showcase app is successfully activated.');
+	    } else {
+	    	session()->flash('error', 'Error occured to activate showcase app.');	
+	    }
+
+	    return back();
+	}
+
+	/**
+	 * Deactivate the showcase app.
+	 *
+	 * @param  string $id
+	 * @return \Redirect
+	 */
+	public function deactivateShowcase($id)
+	{
+	    $app = Showcase::findOrFail($id);
+
+	    $app->activated = false;
+
+	    if ( $app->save()) {
+	    	session()->flash('success', 'Showcase app is successfully deactivated.');
+	    } else {
+	    	session()->flash('error', 'Error occured to deactivate showcase app.');	
+	    }
+
+	    return back();
 	}
 }

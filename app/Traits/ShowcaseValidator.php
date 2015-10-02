@@ -28,7 +28,7 @@ trait ShowcaseValidator
     {
         $v = Validator::make($data, [
             'name' => 'required|max:255',
-            'url' => 'required|url'
+            //'url' => 'required|url'
         ]);
 
         return $v;

@@ -3,20 +3,27 @@
 @section('title', 'Showcase App')
 
 @section('content')
-
-	@include('partials.admin-toolbar')
+	
+	@if (Auth::user()->isAdmin())
+		@include('partials.admin-toolbar')
+	@else
+		@include('partials.user-toolbar')
+	@endif
 	
 	<div class="row app-container mg-top white-container">
 		<div class="row">
 			<div class="col s12" id="admin-apps">
 				<h4>
-					Showcase Applications
+					Application Showcase
+
+					@if ( ! Auth::user()->isAdmin())
 					<small class="right">
 						<a href="{{ route('showcase.create') }}"
 						class="waves-effect waves-indigo btn-flat indigo-text text-size-small">
 							<i class="material-icons">add</i> Create New
 						</a>
 					</small>
+					@endif
 				</h4>
 
 				@if ( $apps->isEmpty())
@@ -26,61 +33,13 @@
 					</p>
 				</div>
 				@else
-				<table class="bordered">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Type</th>
-							<th>Status</th>
-							<th>Screenshots</th>
-							<th>Icon Image</th>
-							<th width="380px">Actions</th>
-						</tr>					
-					</thead>
-	
-					@foreach ( $apps as $app)
-
-					<tr>
-						<td>{{ $app->name }}</td>
-						<td>{{ $app->type }}</td>
-						<td>{{ ($app->published == 'p') ? 'Publish' : 'Draft' }}</td>
-						<td>{{ count($app->screenshots) }}</td>
-						<td>
-							@if (is_null($app->icon))
-							<i class="material-icons red-text" title="Require Icon Image">error_outline</i>
-							@else
-							<i class="material-icons green-text" title="Icon Image Is Ok">done</i>
-							@endif
-						<td>
-							<a title="Add Icon" href="{{ route('showcase.icon', $app->id) }}" 
-							class="waves-effect waves-light btn indigo">
-								<i class="material-icons">photo</i>
-							</a>
-							<a title="Add Screenshots" href="{{ route('showcase.screenshots', $app->id) }}" 
-							class="waves-effect waves-light btn teal">
-								<i class="material-icons">photo_library</i>
-							</a>
-							@if ($app->published == 'p')
-							<a title="Draft" href="{{ route('showcase.draft', $app->id) }}" 
-							class="waves-effect waves-light btn red">
-								<i class="material-icons">visibility_off</i>
-							</a>
-							@else
-							<a title="Publish" href="{{ route('showcase.publish', $app->id) }}" 
-							class="waves-effect waves-light btn green">
-								<i class="material-icons">visibility</i>
-							</a>
-							@endif
-							<a title="Edit" href="{{ route('showcase.edit', $app->id) }}" 
-							class="waves-effect waves-light btn indigo">
-								<i class="material-icons">open_in_new</i>
-							</a>
-						</td>
-					</tr>
-
-					@endforeach
 					
-				</table>
+					@if (Auth::user()->isAdmin())
+						@include('showcase.dashboard.partials.admin_table')
+					@else
+						@include('showcase.dashboard.partials.user_table')
+					@endif
+
 				@endif
 			</div>
 		</div>

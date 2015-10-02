@@ -5,7 +5,7 @@
 				<i class="material-icons left">apps</i>Applications
 			</a>
 			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('showcase') }}">
-				<i class="material-icons left">apps</i>Showcase App
+				<i class="material-icons left">apps</i>Showcase
 			</a>
 			<a class="waves-effect waves-light btn-flat white-text" href="{{ route('user') }}">
 				<i class="material-icons left">people</i>Register Users
