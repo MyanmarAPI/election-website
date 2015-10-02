@@ -173,7 +173,7 @@ class ShowcaseController extends Controller
 
         $app->published = 'p';
 
-        if ( env('SHOWCASE_AUTO_PUBLISH', true)) {
+        if ( env('SHOWCASE_AUTO_APPROVED', true)) {
             $app->approved = true;
         }
 

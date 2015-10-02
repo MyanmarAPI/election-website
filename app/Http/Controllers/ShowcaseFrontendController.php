@@ -19,7 +19,7 @@ class ShowcaseFrontendController extends Controller
     public function index()
     {
         $apps = Showcase::where('published', 'p')
-                        ->where('activated', true)
+                        ->where('approved', true)
                         ->latest()
                         ->paginate(20);
 
@@ -35,7 +35,7 @@ class ShowcaseFrontendController extends Controller
     public function show($slug)
     {
         $app = Showcase::where('published', 'p')
-                        ->where('activated', true)
+                        ->where('approved', true)
                         ->where('slug', $slug)
                         ->firstOrFail();
 
