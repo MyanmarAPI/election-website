@@ -32,14 +32,16 @@ class Showcase extends Model
         'name', 
         'slug', 
         'description', 
-        'store_url', 
+        'store_url',
+        'direct_url',
         'website_url', 
         'type', 
         'icon', 
         'screenshots', 
         'published',
         'approved',
-        'user_id'
+        'user_id',
+        'developer'
     ];
 
      /**
@@ -57,6 +59,15 @@ class Showcase extends Model
         $userId = ($user instanceof User) ? $user->id : $user;
 
         return $query->where('user_id', '=', $userId);
+    }
+
+    public function getDeveloper()
+    {
+        if ( is_null($this->developer)) {
+            return $this->user->name;
+        }
+
+        return $this->developer;
     }
 
     public function setSlugAttribute($value)

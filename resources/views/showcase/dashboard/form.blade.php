@@ -38,7 +38,7 @@
 						<div class="row">
 							<div class="input-field col s12">
 								{!! Form::url('store_url', null, ['class' => $errors->has('store_url') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Store Url</label>
+								<label for="store_url">Store Url</label>
 								<p class="form-error">{{ $errors->first('store_url') }}</p>
 							</div>
 						</div>
@@ -46,8 +46,24 @@
 						<div class="row">
 							<div class="input-field col s12">
 								{!! Form::url('website_url', null, ['class' => $errors->has('website_url') ? 'validate invalid' : 'validate']) !!}
-								<label for="name">Website Url</label>
+								<label for="website_url">Website Url</label>
 								<p class="form-error">{{ $errors->first('website_url') }}</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								{!! Form::url('direct_url', null, ['class' => $errors->has('direct_url') ? 'validate invalid' : 'validate']) !!}
+								<label for="direct_url">Direct Download Link</label>
+								<p class="form-error">{{ $errors->first('direct_url') }}</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								{!! Form::text('developer', null, ['class' => $errors->has('developer') ? 'validate invalid' : 'validate']) !!}
+								<label for="developer">Developer</label>
+								<p class="form-error">{{ $errors->first('developer') }}</p>
 							</div>
 						</div>
 
@@ -64,7 +80,7 @@
 						
 						<div class="row">
 							<div class="input-field col s12">
-								{!! Form::textarea('description', null, ['class' => 'materialize-textarea']) !!}
+								{!! Form::textarea('description', null, ['class' => 'materialize-textarea', 'rows' => 15]) !!}
 								<label for="description">Application Description</label>
 							</div>
 						</div>
