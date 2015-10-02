@@ -25,6 +25,20 @@
 					</small>
 					@endif
 				</h4>
+				
+				@if ( ! Auth::user()->isAdmin())
+				<div class="img-info">
+					<strong>Requirement for showcase application</strong>
+					<ul class="bullet-list">
+						<li>Application Name</li>
+						<li>Application Description</li>
+						<li>Store URL (Android, iOS)</li>
+						<li>Website URL (Web App)</li>
+						<li>Icon Image (512x512)</li>
+						<li>Screenshots Image (Min 2)</li>
+					</ul>
+				</div>
+				@endif
 
 				@if ( $apps->isEmpty())
 				<div class="empty">

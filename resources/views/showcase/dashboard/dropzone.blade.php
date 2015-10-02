@@ -9,12 +9,16 @@
 				
 				@if ( $prop['type'] == 'icon')
 					<h4>Upload Icon Image for Showcase Application</h4>
-					<p class="img-info">Icon image size is 512x512 px</p>
+					<p class="img-info">
+						Icon image dimension is 512x512 px.<br>
+						Maximum Image File Size is 8MB.
+					</p>
 				@else
 					<h4>Upload Screenshot Images for Showcase Application</h4>
 					<p class="img-info">
 						Minimum screenshots - 2 images.<br>
-						Maximum screenshots - 8 images.
+						Maximum screenshots - 8 images.<br>
+						Maximum Image File Size is 8MB.
 					</p>
 				@endif
 
