@@ -14,6 +14,7 @@
                 <div class="col s12 m9 l8">
                     <h4>{{ $app->name }}</h4> 
                     <p>Developed By {{ $app->getDeveloper() }}</p>
+                    <p>{{ ucfirst($app->type) }} Application</p>
 
                     <div class="info-dl">
                         @if ( $app->store_url)
