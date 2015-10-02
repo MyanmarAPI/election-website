@@ -102,7 +102,7 @@ class Showcase extends Model
      */
     public function alreadyPublished()
     {
-        if ( $this->published == 'p' && $this->activated == true) {
+        if ( $this->published == 'p' && $this->approved == true) {
             return true;
         }
         

@@ -65,7 +65,7 @@ class AdminActionController extends Controller
 	{
 	    $app = Showcase::findOrFail($id);
 
-	    $app->activated = true;
+	    $app->approved = true;
 
 	    if ( $app->save()) {
 	    	session()->flash('success', 'Showcase app is successfully activated.');
@@ -86,7 +86,7 @@ class AdminActionController extends Controller
 	{
 	    $app = Showcase::findOrFail($id);
 
-	    $app->activated = false;
+	    $app->approved = false;
 
 	    if ( $app->save()) {
 	    	session()->flash('success', 'Showcase app is successfully deactivated.');

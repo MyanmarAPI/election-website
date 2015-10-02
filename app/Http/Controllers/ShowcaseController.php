@@ -165,7 +165,17 @@ class ShowcaseController extends Controller
     {
         $app = Showcase::findOrFail($id);
 
+        if ( ! $app->readyToPublish()) {
+            session()->flash('error', 'You are not ready to publish this showcase application.');
+
+            return redirect()->route('showcase');
+        }
+
         $app->published = 'p';
+
+        if ( env('SHOWCASE_AUTO_PUBLISH', true)) {
+            $app->approved = true;
+        }
 
         if ( $app->save()) {
             session()->flash('success', 'Showcase App is successfully published. Wait to addproved from admin.');
@@ -187,8 +197,8 @@ class ShowcaseController extends Controller
         $app = Showcase::findOrFail($id);
 
         $app->published = 'd';
-        if ($app->activated) {
-            $app->activated = false;
+        if ($app->approved) {
+            $app->approved = false;
         }
 
         if ( $app->save()) {
