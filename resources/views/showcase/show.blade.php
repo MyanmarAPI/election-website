@@ -48,13 +48,15 @@
                     </div>
 
                     <div class="info-slider">
-                        <ul class="screenshots">
-                            @foreach($app->screenshots as $screenshot)
-                                <li>
-                                    <img src="/{{ $screenshot }}">
-                                </li>
-                            @endforeach
-                        </ul>
+                        @if ( ! empty($app->screenshots))
+                            <ul class="screenshots">
+                                @foreach($app->screenshots as $screenshot)
+                                    <li>
+                                        <img src="/{{ $screenshot }}">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                         
                 </div>
