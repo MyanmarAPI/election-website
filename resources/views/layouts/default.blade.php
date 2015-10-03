@@ -6,6 +6,8 @@
 	<!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
+    @yield('header_meta')
+
     <link href="{{ url('img/favicon.png') }}" rel="icon" type="image/png">
 
 	<!--Import materialize.css-->

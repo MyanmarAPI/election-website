@@ -2,6 +2,15 @@
 
 @section('title', $app->name)
 
+@section('header_meta')
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ $app->name }} Application" />
+<meta property="og:url" content="{{ URL::current() }}" />
+<meta property="og:site_name" content="MaePaySoh"/>
+<meta property="og:description" content="{{ $app->description }}" />
+<meta property="og:image" content="{{ url($app->icon) }}" />
+@endsection
+
 @section('content')
     
     <div class="row app-container mg-top">
@@ -53,7 +62,7 @@
                             <ul class="screenshots">
                                 @foreach($app->screenshots as $screenshot)
                                     <li>
-                                        <img src="/{{ $screenshot }}">
+                                        <img src="/{{ $screenshot }}" class="materialboxed">
                                     </li>
                                 @endforeach
                             </ul>
@@ -66,4 +75,8 @@
         </div> <!-- end of col s12 box-content white -->
 
     </div>
+@endsection
+
+@section('scripts')
+    $('.materialboxed').materialbox();
 @endsection
