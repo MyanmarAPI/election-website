@@ -11,13 +11,11 @@
                 <div class="col s12 center">
                     <h4>{{ $app->name }}</h4> 
                     <p><img width="300" src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
-                    <p>Developed By {{ $app->getDeveloper() }}</p>
-                    <p>{{ ucfirst($app->type) }} Application</p>
-
+                    <h5>Developed By {{ $app->getDeveloper() }}</h5>
+                
                     <div class="info-desc">
-                        <h5>Description</h5>
-
                         <p>{{ $app->description }}</p>
+                        <p>{{ ucfirst($app->type) }} Application</p>
                     </div>
                     <div class="info-dl">
                         @if ( $app->direct_url)
