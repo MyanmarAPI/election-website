@@ -11,7 +11,7 @@
                 <div class="col s12 center">
                     <h4>{{ $app->name }}</h4> 
                     <p>Winner of MaePaySoh Hack Challenge</p>
-                    <p><img width="300" src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
+                    <p><img style="width:50%;" src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
                     <h5>Developed By {{ $app->getDeveloper() }}</h5>
                 
                     <div class="info-desc">
