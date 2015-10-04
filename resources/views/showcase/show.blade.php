@@ -29,7 +29,7 @@
                         @if ( $app->direct_url)
                         <p><a href="{{ $app->direct_url }}" 
                             target="_blank"
-                            class="waves-effect waves-light indigo darken-2">
+                            class="waves-effect waves-light btn indigo darken-2">
                             Direct Download
                         </a></p>
                         @endif

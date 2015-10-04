@@ -4,15 +4,13 @@
 
 @section('hero')
 	<div class="hero center white">
-		<<div class="row app-container mg-top">
+		<div class="row app-container mg-top">
 
         <div class="col s12 box-content white">
             <div class="row info-row">
-                <div class="col s12 m3 l4 info-img">
-                    
-                </div>
-                <div class="col s12 m9 l8">
+                <div class="col s12 center">
                     <h4>{{ $app->name }}</h4> 
+                    <p><img src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
                     <p>Developed By {{ $app->getDeveloper() }}</p>
                     <p>{{ ucfirst($app->type) }} Application</p>
 
@@ -20,7 +18,7 @@
                         @if ( $app->direct_url)
                         <p><a href="{{ $app->direct_url }}" 
                             target="_blank"
-                            class="waves-effect waves-light indigo darken-2">
+                            class="waves-effect waves-light btn indigo darken-2">
                             Direct Download
                         </a></p>
                         @endif
