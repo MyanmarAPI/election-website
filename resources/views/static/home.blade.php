@@ -10,42 +10,40 @@
             <div class="row info-row">
                 <div class="col s12 center">
                     <h4>{{ $app->name }}</h4> 
-                    <p><img src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
+                    <p><img width="300" src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
                     <p>Developed By {{ $app->getDeveloper() }}</p>
                     <p>{{ ucfirst($app->type) }} Application</p>
-
-                    <div class="info-dl">
-                        @if ( $app->direct_url)
-                        <p><a href="{{ $app->direct_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            Direct Download
-                        </a></p>
-                        @endif
-
-                        @if ( $app->store_url)
-                        <p><a href="{{ $app->store_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            <i class="material-icons left">file_download</i>Download From Store
-                        </a></p>
-                        @endif
-
-                        @if ( $app->website_url)
-                        <p><a href="{{ $app->website_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            Visit To Website
-                        </a></p>
-                        @endif
-                    </div>
 
                     <div class="info-desc">
                         <h5>Description</h5>
 
                         <p>{{ $app->description }}</p>
                     </div>
+                    <div class="info-dl">
+                        @if ( $app->direct_url)
+                        <a href="{{ $app->direct_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            Direct Download
+                        </a>
+                        @endif
 
+                        @if ( $app->store_url)
+                        <a href="{{ $app->store_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">file_download</i>Download From Store
+                        </a>
+                        @endif
+
+                        @if ( $app->website_url)
+                        <a href="{{ $app->website_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            Visit To Website
+                        </a>
+                        @endif
+                    </div>
                     <div class="info-slider">
                         @if ( ! empty($app->screenshots))
                             <ul class="screenshots">
