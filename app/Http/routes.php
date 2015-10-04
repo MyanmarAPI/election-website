@@ -1,5 +1,5 @@
 <?php
-
+use App\Showcase;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,7 +13,13 @@
 
 // Frontend page routes.
 Route::get('/', function () {
-    return view('static.home');
+	
+	$slug='mvoter-2015';
+	$app = Showcase::where('published', 'p')
+                        ->where('approved', true)
+                        ->where('slug', $slug)
+                        ->firstOrFail();
+    return view('static.home', compact('app'));
 });
 
 Route::get('/about', function () {

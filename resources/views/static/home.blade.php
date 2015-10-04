@@ -4,38 +4,68 @@
 
 @section('hero')
 	<div class="hero center white">
-		<div class="app-container row">
-			<div class="col m8 offset-m2">
-			<img src="{{ asset('img/mps-logo.png') }}" alt="MaePaySoh Logo" width="80%">
-			<h2>Mae Pay Soh Elections API</h2>
-			<p>Starting September 12, 2015, developers can use MaePaySoh API to power mobile and web applications to help voters access essential information about Myanmar’s general elections.
-</p>
+		<<div class="row app-container mg-top">
 
-			@if (Auth::guest())
+        <div class="col s12 box-content white">
+            <div class="row info-row">
+                <div class="col s12 m3 l4 info-img">
+                    
+                </div>
+                <div class="col s12 m9 l8">
+                    <h4>{{ $app->name }}</h4> 
+                    <p>Developed By {{ $app->getDeveloper() }}</p>
+                    <p>{{ ucfirst($app->type) }} Application</p>
 
-				@if (env('REGISTRATION_ENABLE'))
-					<a class="waves-effect waves-light btn-large indigo darken-2" 
-						href="{{ url('auth/register') }}"
-						data-ga-event="Button|Click|CreateAccountButton">
-						<i class="material-icons left">create</i>Create Your Account
-					</a>
-				@else
-					<a class="waves-effect waves-light btn-large indigo darken-2" 
-						href="{{ url('beta') }}"
-						data-ga-event="Button|Click|CreateBetaAccountButton">
-						<i class="material-icons left">create</i>Apply As Beta Developer
-					</a>
-				@endif
-			@else
-			<a class="waves-effect waves-light btn-large indigo darken-2" 
-				href="{{ url('dashboard') }}"
-				data-ga-event="Button|Click|MyDashboardButton">
-				<i class="material-icons left">dashboard</i>My Dashboard
-			</a>
-			@endif
-		</div>
-                <div class="clearfix"></div>
-        </div>
+                    <div class="info-dl">
+                        @if ( $app->direct_url)
+                        <p><a href="{{ $app->direct_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light indigo darken-2">
+                            Direct Download
+                        </a></p>
+                        @endif
+
+                        @if ( $app->store_url)
+                        <p><a href="{{ $app->store_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">file_download</i>Download From Store
+                        </a></p>
+                        @endif
+
+                        @if ( $app->website_url)
+                        <p><a href="{{ $app->website_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            Visit To Website
+                        </a></p>
+                        @endif
+                    </div>
+
+                    <div class="info-desc">
+                        <h5>Description</h5>
+
+                        <p>{{ $app->description }}</p>
+                    </div>
+
+                    <div class="info-slider">
+                        @if ( ! empty($app->screenshots))
+                            <ul class="screenshots">
+                                @foreach($app->screenshots as $screenshot)
+                                    <li>
+                                        <img src="/{{ $screenshot }}" class="materialboxed">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                        
+                </div>
+            </div>
+
+        </div> <!-- end of col s12 box-content white -->
+
+    </div>
 	</div> <!-- end of div.hero -->
 	<div class="hero center">
 		<div class="app-container row">
@@ -178,4 +208,8 @@
 			<h3>API Lists</h3>
 		</div> -->
 	</div>
+@endsection
+
+@section('scripts')
+    $('.materialboxed').materialbox();
 @endsection

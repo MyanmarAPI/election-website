@@ -26,28 +26,28 @@
                     <p>{{ ucfirst($app->type) }} Application</p>
 
                     <div class="info-dl">
+                        @if ( $app->direct_url)
+                        <p><a href="{{ $app->direct_url }}" 
+                            target="_blank"
+                            class="waves-effect waves-light indigo darken-2">
+                            Direct Download
+                        </a></p>
+                        @endif
+
                         @if ( $app->store_url)
-                        <a href="{{ $app->store_url }}" 
+                        <p><a href="{{ $app->store_url }}" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">file_download</i>Download From Store
-                        </a>
+                        </a></p>
                         @endif
 
                         @if ( $app->website_url)
-                        <a href="{{ $app->website_url }}" 
+                        <p><a href="{{ $app->website_url }}" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
                             Visit To Website
-                        </a>
-                        @endif
-
-                        @if ( $app->direct_url)
-                        <a href="{{ $app->direct_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn-flat">
-                            Direct Download
-                        </a>
+                        </a></p>
                         @endif
                     </div>
 
