@@ -55,12 +55,16 @@ class SearchController extends Controller
 	 */
 	public function application(Request $request)
 	{
-		$query = $request->query('s');
+		$keyword = $request->query('s');
 
-		$applications = Application::where('key', $query)->paginate();
+		$applications = Application::where('key', $keyword)
+									->orWhere('name', 'like', '%'.$keyword.'%')
+									->paginate();
 
 		$hideFilter = true;
 
-		return view('app.admin-index', compact('applications', 'hideFilter'));
+		$query = ['s' => $keyword];
+
+		return view('app.admin-index', compact('applications', 'hideFilter', 'query'));
 	}
 }

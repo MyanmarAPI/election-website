@@ -11,7 +11,7 @@
 			<div class="col s12" id="admin-apps">
 				<h4>Register Applications</h4>
 
-				@include('partials.search', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key...'])
+				@include('partials.search', ['routeName' => 'search::application', 'placeHolder' => 'Search Application By Key or Name...'])
 				
 				@if ( ! isset($hideFilter))
 				<div class="row">
@@ -89,8 +89,8 @@
 					
 				</table>
 				
-					@if ( isset($type) && ! is_null($type))
-						{!! $applications->appends(['type' => $type])->render() !!}
+					@if ( isset($query) && ! empty($query))
+						{!! $applications->appends($query)->render() !!}
 					@else
 						{!! $applications->render() !!}
 					@endif

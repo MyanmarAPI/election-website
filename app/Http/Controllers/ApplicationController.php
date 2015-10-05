@@ -49,7 +49,13 @@ class ApplicationController extends Controller
 
 			$applications = Application::getForAdminIndex($type);
 
-            return view('app.admin-index', compact('applications', 'type'));
+            $query = [];
+
+            if ( ! is_null($type)) {
+                $query = ['type' => $type];
+            }
+
+            return view('app.admin-index', compact('applications', 'query'));
 		}
 		
         $applications = Application::ownBy($this->user)->latest()->get(); 
