@@ -29,10 +29,10 @@
     <a href="{{ url('/') }}" data-ga-event="Navigation|Click|Home">Home</a>
 </li>
 <li>
-    <a href="{{ url('about') }}" data-ga-event="Navigation|Click|About">About</a>
+    <a href="{{ url('showcase') }}" data-ga-event="Navigation|Click|Showcae">Showcase</a>
 </li>
 <li>
-    <a href="{{ url('showcase') }}" data-ga-event="Navigation|Click|Showcae">Showcase</a>
+    <a href="{{ url('about') }}" data-ga-event="Navigation|Click|About">About</a>
 </li>
 <!-- <li>
     <a href="{{ url('hackchallenge') }}" data-ga-event="Navigation|Click|HacKChellenge">Hack Challenge</a>
