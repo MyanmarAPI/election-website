@@ -7,6 +7,8 @@ var default_data = [
   }
 ];
 
+var total_hits_data;
+
 var graph = MorrisGraph('report-analytics', default_data);
 
 var range = $('#analytic-date');
@@ -21,6 +23,10 @@ function fetchData(url) {
     graph.setData(data.hourly.data);
 
     $('#hourly-date-input').val(current_data['hourly']['date_range']['date']);
+
+    if (current_data['hourly']['total_hits']) {
+      assignTotalHitData(current_data['hourly']['total_hits']);
+    };
 
     $( ".loading .spinner" ).addClass('hide');
 
@@ -39,9 +45,21 @@ function fetchSingleData(type, query_str) {
     graph.setData(current_data[type]['data']);
     var date_range = current_data[type]['date_range'];
     setDateRange(date_range, type);
+    if (current_data[type]['total_hits']) {
+      total_hits_data.$data.total_hits = current_data[type]['total_hits'];
+    };
     $( ".loading .spinner" ).addClass('hide');
   });
 
+}
+
+function assignTotalHitData(data) {
+  total_hits_data = new Vue({
+    el: '#total_hits',
+    data : {
+      total_hits : data
+    }
+  });
 }
 
 function fetchTotalHits(url) {
@@ -66,6 +84,9 @@ $('.analytic-btn').click(function(e){
   setDateRange(date_range, type);
   $('#'+type+'-date-input-wrapper').show();
   //range.text(current_data[type]['date_range']);
+  if (current_data[type]['total_hits']) {
+    total_hits_data.$data.total_hits = current_data[type]['total_hits'];
+  }
 });
 
 function setDateRange(date_range, type)

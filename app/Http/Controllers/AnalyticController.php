@@ -49,6 +49,11 @@ class AnalyticController extends Controller
 
         if (!$this->user->isAdmin()) {
             $query['user_id'] = $this->user->id;
+            if (isset($query['thd'])) {
+                unset($query['thd']);
+            }
+        } else {
+            $query['thd'] = true;
         }
 
         if ($type == 'default') {
