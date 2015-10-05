@@ -45,9 +45,11 @@ class ApplicationController extends Controller
 	public function index()
 	{
 		if ( $this->user->isAdmin()) {
-			$applications = Application::getForAdminIndex(app('request')->get('type'));
+            $type = app('request')->get('type');
 
-            return view('app.admin-index', compact('applications'));
+			$applications = Application::getForAdminIndex($type);
+
+            return view('app.admin-index', compact('applications', 'type'));
 		}
 		
         $applications = Application::ownBy($this->user)->latest()->get(); 

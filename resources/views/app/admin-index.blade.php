@@ -88,8 +88,13 @@
 					@endforeach
 					
 				</table>
-
-				{!! $applications->render() !!}
+				
+					@if ( isset($type) && ! is_null($type))
+						{!! $applications->appends(['type' => $type])->render() !!}
+					@else
+						{!! $applications->render() !!}
+					@endif
+				
 				@endif
 			</div>
 		</div>
