@@ -95,7 +95,6 @@
 									<tr>
 										<td>
 											<a href="{{ route('application.view', $app['id']) }}" class="black-text">{{ $app['name'] }}</a>
-											{{-- <p>API Key : {{ $app['key'] }}</p> --}}
 										</td>
 										<td>{{ $app['hit'] }}</td>
 									</tr>
@@ -153,9 +152,9 @@
 
 	<script>
 
-		fetchData('{{ route('api.analytic.data') }}');
+		fetchData('{{ route('api.analytic.data') }}?thd=true');
 
-		fetchTotalHits('{{ route('api.analytic.total_hits') }}');
+		//fetchTotalHits('{{ route('api.analytic.total_hits') }}');
 
 	</script>
 
