@@ -28,21 +28,18 @@
 <li>
     <a href="{{ url('/') }}" data-ga-event="Navigation|Click|Home">Home</a>
 </li>
-<!--<li>
-    <a href="{{ url('showcase') }}" data-ga-event="Navigation|Click|Showcase">Showcase</a>
-</li>-->
 <li>
     <a href="{{ url('about') }}" data-ga-event="Navigation|Click|About">About</a>
 </li>
 <li>
     <a href="{{ url('showcase') }}" data-ga-event="Navigation|Click|Showcae">Showcase</a>
 </li>
-<li>
+<!-- <li>
     <a href="{{ url('hackchallenge') }}" data-ga-event="Navigation|Click|HacKChellenge">Hack Challenge</a>
 </li>
 <li>
     <a href="{{ url('pressrelease') }}" data-ga-event="Navigation|Click|PressRelease">Press Release</a>
-</li>
+</li> -->
 <li>
     <a href="{{ url('faq') }}" data-ga-event="Navigation|Click|FAQ">FAQ</a>
 </li>
