@@ -6,7 +6,7 @@
 	<div class="hero center white">
 		<div class="row app-container mg-top">
 
-        <div class="col s12 box-content white">
+        <div class="col s12 white">
             <div class="row info-row">
                 <div class="col s12 center">
                     <h4>{{ $app->name }}</h4> 
