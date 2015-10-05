@@ -9,6 +9,8 @@ var default_data = [
 
 var total_hits_data;
 
+var get_total_hit = false;
+
 var graph = MorrisGraph('report-analytics', default_data);
 
 var range = $('#analytic-date');
@@ -26,6 +28,7 @@ function fetchData(url) {
 
     if (current_data['hourly']['total_hits']) {
       assignTotalHitData(current_data['hourly']['total_hits']);
+      get_total_hit = true;
     };
 
     $( ".loading .spinner" ).addClass('hide');
@@ -38,6 +41,9 @@ function fetchSingleData(type, query_str) {
   var app = $('#analytic-app').val();
   if (app) {
     query_str = query_str+'&api_key='+app;
+  };
+  if (get_total_hit) {
+    query_str += '&thd=true';
   };
   $.ajax(ANALYTIC_BASE+'/data/'+type+query_str)
   .done(function(data){
