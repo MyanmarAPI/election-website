@@ -358,12 +358,3 @@ function(){
 	]);
 
 });
-
-Route::get('tempfix', function() {
-	$all = App\Showcase::all();
-
-	foreach ($all as $key => $value) {
-		$value->type = (array) $value->type;
-		$value->save();
-	}
-});
