@@ -17,7 +17,7 @@
 					<h4>Upload Screenshot Images for Showcase Application</h4>
 					<p class="img-info">
 						Minimum screenshots - 2 images.<br>
-						Maximum screenshots - 8 images.<br>
+						Maximum screenshots - 25 images.<br>
 						Maximum Image File Size is 8MB.
 					</p>
 				@endif

@@ -80,7 +80,7 @@ trait IconAndScreenshots
 
         $showcase = Showcase::findOrFail($id);
 
-        $prop['max_files'] = 8;
+        $prop['max_files'] = 25;
         $prop['type'] = 'screenshots';
 
         return view('showcase.dashboard.dropzone', compact('id', 'route', 'showcase', 'prop'));
