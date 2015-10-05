@@ -68,7 +68,7 @@
 		      <div class="collapsible-body" id="total_hits">
 		      	<div class="row">
 		      		<div class="col s6" v-repeat="item: total_hits">
-		      			<h5 v-text="item.title"></h5>
+		      			<h5><span v-text="item.title"></span> (<span v-text="item.count"></span>)</h5>
 		      			<table class="bordered">
 		      				<tr>
 		      					<th v-text="item.title"></th>
