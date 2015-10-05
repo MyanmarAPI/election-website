@@ -20,6 +20,7 @@ class ShowcaseFrontendController extends Controller
     {
         $apps = Showcase::where('published', 'p')
                         ->where('approved', true)
+                        ->orderBy('sticky', 'desc')
                         ->latest()
                         ->paginate(20);
 

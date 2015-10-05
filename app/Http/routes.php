@@ -312,6 +312,16 @@ function() {
 		'as' => 'action.showcase.deactivate',
 		'uses' => 'AdminActionController@deactivateShowcase'
 	]);
+
+	Route::get('/showcase/{id}/sticky', [
+		'as' => 'action.showcase.sticky',
+		'uses' => 'AdminActionController@stickyShowcase'
+	]);
+
+	Route::get('/showcase/{id}/homepage', [
+		'as' => 'action.showcase.homepage',
+		'uses' => 'AdminActionController@homepageShowcase'
+	]);
 });
 
 // Authentication api route.

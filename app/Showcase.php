@@ -41,7 +41,9 @@ class Showcase extends Model
         'published',
         'approved',
         'user_id',
-        'developer'
+        'developer',
+        'sticky',
+        'show_in_homepage'
     ];
 
      /**

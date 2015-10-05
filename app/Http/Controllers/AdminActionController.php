@@ -96,4 +96,59 @@ class AdminActionController extends Controller
 
 	    return back();
 	}
+
+	/**
+	 * Sticky the showcase app.
+	 *
+	 * @param  string $id
+	 * @return \Redirect
+	 */
+	public function stickyShowcase($id)
+	{
+	    $app = Showcase::findOrFail($id);
+
+	    if ( $app->sticky) {
+	    	$app->unset('sticky');
+	    	session()->flash('success', 'Showcase app is successfully remove from sticky lists.');
+	    	
+	    	return back();
+	    }
+	    
+	    $app->sticky = true;
+
+	    if ( $app->save()) {
+	    	session()->flash('success', 'Showcase app is successfully add to sticky lists.');
+	    } else {
+	    	session()->flash('error', 'Error occured to add to sticky lists showcase app.');	
+	    }
+
+	    return back();
+	}
+
+	/**
+	 * Homepage the showcase app.
+	 *
+	 * @param  string $id
+	 * @return \Redirect
+	 */
+	public function homepageShowcase($id)
+	{
+	    $app = Showcase::findOrFail($id);
+
+	    if ( $app->show_in_homepage) {
+	    	$app->show_in_homepage = false;
+	    	$message = 'remove from homepage';
+	    } else {
+	    	$app->show_in_homepage = true;
+	    	$message = 'add to homepage';
+	    }
+
+	    if ( $app->save()) {
+	    	session()->flash('success', 'Showcase app is successfully '.$message.'.');
+	    } else {
+	    	session()->flash('error', 'Error occured to '.$message.' showcase app.');	
+	    }
+
+	    return back();
+	}
 }

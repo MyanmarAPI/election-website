@@ -7,7 +7,7 @@
             <th>Screenshots</th>
             <th>Icon Image</th>
             <th>Owner</th>
-            <th width="250px">Actions</th>
+            <th width="350px">Actions</th>
         </tr>                   
     </thead>
 
@@ -39,6 +39,32 @@
             class="waves-effect waves-light btn indigo">
                 <i class="material-icons">open_in_new</i>
             </a>
+            
+            @if ($app->sticky)
+                <a title="Remove Sticky" href="{{ route('action.showcase.sticky', $app->id) }}" 
+                class="waves-effect waves-light btn deep-orange">
+                    <i class="material-icons">star</i>
+                </a>
+            @else
+                <a title="Sticky App" href="{{ route('action.showcase.sticky', $app->id) }}" 
+                class="waves-effect waves-light btn grey">
+                    <i class="material-icons">star_border</i>
+                </a>
+            @endif
+
+            @if ($app->show_in_homepage)
+                <a title="Remove From Homepage" href="{{ route('action.showcase.homepage', $app->id) }}" 
+                class="waves-effect waves-light btn deep-orange">
+                    <i class="material-icons">home</i>
+                </a>
+            @else
+                <a title="Show In Homepage" href="{{ route('action.showcase.homepage', $app->id) }}" 
+                class="waves-effect waves-light btn grey">
+                    <i class="material-icons">home</i>
+                </a>
+            @endif
+
+
 
             @if ($app->alreadyPublished())
                 <a title="Deactivate" href="{{ route('action.showcase.deactivate', $app->id) }}" 
