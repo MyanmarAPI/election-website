@@ -43,77 +43,13 @@
                         </a>
                         @endif
                     </div>
-                    <div class="info-slider">
-                        @if ( ! empty($app->screenshots))
-                            <ul class="screenshots">
-                                @foreach($app->screenshots as $screenshot)
-                                    <li>
-                                        <img src="/{{ $screenshot }}" class="materialboxed">
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
-                    </div>
-                        
+                       
                 </div>
             </div>
 
         </div> <!-- end of col s12 box-content white -->
 
     </div>
-	</div> <!-- end of div.hero -->
-	<div class="hero center">
-		<div class="app-container row">
-			<div class="col m8 offset-m2">
-			<img src="{{ asset('img/mps-hackchallenge.png') }}" alt="MaePaySoh Hack Challenge" width="100%">
-			
-			<h4>Calling developers &amp; designers!</h4>
-			<p class="large-text m8">Starting September 12, 2015, developers can use MaePaySoh API to power mobile and web applications to help voters access essential information about Myanmar’s general elections.</p>
-			<p>
-				<a class="waves-effect waves-light btn-large indigo darken-2" href="{{ url('hackchallenge') }}">
-					<i class="material-icons left">trending_flat</i>Learn More
-				</a>
-			</p>
-			</div>
-		</div>
-        <div class="clearfix"></div>
-	</div> <!-- end of div.hero -->
-	<div class="hero center white">
-		<div class="app-container endpoints">		
-			<h4>Try Our Endpoints</h4>
-			<p>Build your app using our election data</p>
-			<div class="row">
-				<div class="col m3 s12">
-					<a href="http://myanmarapi.github.io/endpoints/candidate.html" 
-						data-ga-event="DocumentationLink|Click|CandidateEndpoint">
-						<i class="material-icons md-36">supervisor_account</i>
-					</a>
-					<p>Candidate</p>
-				</div>
-				<div class="col m3 s12">
-					<a href="http://myanmarapi.github.io/endpoints/party.html"
-						data-ga-event="DocumentationLink|Click|PartyEndpoint">
-						<i class="material-icons">account_balance</i>
-					</a>
-					<p>Party</p>
-				</div>
-				<div class="col m3 s12">
-					<a href="http://myanmarapi.github.io/endpoints/geolocation.html"
-						data-ga-event="DocumentationLink|Click|GeolocationEndpoint">
-						<i class="material-icons">room</i>
-					</a>
-					<p>Geolocation</p>
-				</div>
-				<div class="col m3 s12">
-					<a href="http://myanmarapi.github.io/endpoints/faq.html"
-						data-ga-event="DocumentationLink|Click|FAQEndpoint">
-						<i class="material-icons">question_answer</i>
-					</a>
-					<p>FAQ</p>
-				</div>
-			</div>
-		</div>
-        <div class="clearfix"></div>
 	</div> <!-- end of div.hero -->
 
 	
