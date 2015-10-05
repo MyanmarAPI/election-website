@@ -38,8 +38,16 @@
 						<div class="row">
 							<div class="input-field col s12">
 								{!! Form::url('store_url', null, ['class' => $errors->has('store_url') ? 'validate invalid' : 'validate']) !!}
-								<label for="store_url">Store Url</label>
+								<label for="store_url">PlayStore Url (Android)</label>
 								<p class="form-error">{{ $errors->first('store_url') }}</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								{!! Form::url('apple_url', null, ['class' => $errors->has('apple_url') ? 'validate invalid' : 'validate']) !!}
+								<label for="store_url">Apple Store Url (iOS)</label>
+								<p class="form-error">{{ $errors->first('apple_url') }}</p>
 							</div>
 						</div>
 
@@ -72,9 +80,17 @@
 					<div class="col s12 m6">
 						<div class="row">
 							<div class="input-field col s12">
-								{!! Form::select('type', ['android' => 'Android App', 'ios' => 'iOS App', 'web' => 'Web', 'window' => 'Window Mobile']) !!}
-								<label>Application Type</label>
-								<p class="form-error">{{ $errors->first('type') }}</p>
+								<p for="type">Application Type</p>
+								@foreach (['android' => 'Android App', 'ios' => 'iOS App', 'web' => 'Web'] as $key => $value)
+								<p>
+									@if (isset($model) && $model->includeType($key))
+									<input name="type[{{ $key }}]" type="checkbox" id="{{ $key }}" class="filled-in" checked="checked" />
+									@else
+									<input name="type[{{ $key }}]" type="checkbox" id="{{ $key }}" class="filled-in" />
+									@endif
+							    	<label name="type[{{ $key }}]" for="{{ $key }}">{{ $value }}</label>
+							    </p>
+								@endforeach
 							</div>
 						</div>
 						

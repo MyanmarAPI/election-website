@@ -127,6 +127,8 @@ class ShowcaseController extends Controller
 
         $validator = $this->validator($data);
 
+        $data['type'] = array_keys($data['type']);
+
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator

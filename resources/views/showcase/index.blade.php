@@ -26,7 +26,7 @@
 							{{ $app->name }}
 						</span>
 					</a>
-					<p>{{ app_type($app->type) }}</p>
+					<p>{{ $app->getTypeString() }}</p>
 				</div>
 				<div class="card-action">
 					<a href="{{ route('showcase.show', $app->slug) }}">

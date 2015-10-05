@@ -33,6 +33,7 @@ class Showcase extends Model
         'slug', 
         'description', 
         'store_url',
+        'apple_url',
         'direct_url',
         'website_url', 
         'type', 
@@ -72,6 +73,13 @@ class Showcase extends Model
         return $this->developer;
     }
 
+    public function getTypeString()
+    {
+        return implode(', ', array_map(function($v) { 
+            return config('type.' . $v, $v);
+        }, $this->type));
+    }
+
     public function setSlugAttribute($value)
     {
         $ins = new static;
@@ -81,6 +89,13 @@ class Showcase extends Model
         }
 
         $this->attributes['slug'] = $value;
+    }
+
+    public function includeType($type)
+    {
+        $types = is_string($this->type) ? (array) $this->type : $this->type;
+
+        return in_array($type, $types);
     }
 
     /**

@@ -22,12 +22,13 @@
                 </div>
                 <div class="col s12 m9 l8">
                     <h4>{{ $app->name }}</h4> 
+                    <p>Application Type : {{ $app->getTypeString() }}</p>
                     <p>Developed By {{ $app->getDeveloper() }}</p>
-                    <p>{{ ucfirst($app->type) }} Application</p>
 
                     <div class="info-dl">
                         @if ( $app->direct_url)
-                        <p>
+                        <p class="app-download">
+                            <span>Android App Direct Download</span>
                             <a href="{{ $app->direct_url }}" 
                                 target="_blank"
                                 class="waves-effect waves-light btn indigo darken-2 mm3">
@@ -36,9 +37,21 @@
                         </p>
                         @endif
 
-                        @if ( $app->store_url)
-                        <p>
+                        @if ( $app->includeType('android') && $app->store_url)
+                        <p class="app-download">
+                            <span>Android App</span>
                             <a href="{{ $app->store_url }}" 
+                                target="_blank"
+                                class="waves-effect waves-light btn indigo darken-2 mm3">
+                                <i class="material-icons left">cloud_download</i>ရယူရန်
+                            </a>
+                        </p>
+                        @endif
+
+                        @if ( $app->includeType('ios') && $app->apple_url)
+                        <p class="app-download">
+                            <span>iOS App</span>
+                            <a href="{{ $app->apple_url }}" 
                                 target="_blank"
                                 class="waves-effect waves-light btn indigo darken-2 mm3">
                                 <i class="material-icons left">cloud_download</i>ရယူရန်

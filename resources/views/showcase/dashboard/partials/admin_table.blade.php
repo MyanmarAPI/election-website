@@ -15,7 +15,7 @@
 
     <tr>
         <td>{{ $app->name }}</td>
-        <td>{{ $app->type }}</td>
+        <td>{{ $app->getTypeString() }}</td>
         <td>
             @if ($app->alreadyPublished())
                 <span class="green-text text-darken-2">Published</span>
