@@ -16,7 +16,7 @@
                 
                     <div class="info-desc">
                         <p>{{ $app->description }}</p>
-                        <p>{{ ucfirst($app->type) }} Application</p>
+                        <p>Application Type : {{ $app->getTypeString() }}</p>
                     </div>
                     <div class="info-dl">
                         @if ( $app->direct_url)
