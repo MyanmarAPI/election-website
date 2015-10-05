@@ -21,9 +21,11 @@
 					<img src="{{ $app->icon }}">
 				</div>
 				<div class="card-content">
-					<span class="card-title activator grey-text text-darken-4">
-						{{ $app->name }}<i class="material-icons right">more_vert</i>
-					</span>
+					<a href="{{ route('showcase.show', $app->slug) }}">
+						<span class="card-title activator grey-text text-darken-4">
+							{{ $app->name }}
+						</span>
+					</a>
 					<p>{{ app_type($app->type) }}</p>
 				</div>
 				<div class="card-action">

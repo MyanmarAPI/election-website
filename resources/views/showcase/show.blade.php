@@ -27,27 +27,33 @@
 
                     <div class="info-dl">
                         @if ( $app->direct_url)
-                        <p><a href="{{ $app->direct_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            Direct Download
-                        </a></p>
+                        <p>
+                            <a href="{{ $app->direct_url }}" 
+                                target="_blank"
+                                class="waves-effect waves-light btn indigo darken-2 mm3">
+                                <i class="material-icons left">file_download</i>ရယူရန်
+                            </a>
+                        </p>
                         @endif
 
                         @if ( $app->store_url)
-                        <p><a href="{{ $app->store_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            <i class="material-icons left">file_download</i>Download From Store
-                        </a></p>
+                        <p>
+                            <a href="{{ $app->store_url }}" 
+                                target="_blank"
+                                class="waves-effect waves-light btn indigo darken-2 mm3">
+                                <i class="material-icons left">cloud_download</i>ရယူရန်
+                            </a>
+                        </p>
                         @endif
 
                         @if ( $app->website_url)
-                        <p><a href="{{ $app->website_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            Visit To Website
-                        </a></p>
+                        <p>
+                            <a href="{{ $app->website_url }}" 
+                                target="_blank"
+                                class="waves-effect waves-light btn indigo darken-2 mm3">
+                                <i class="material-icons left">web</i>ဝက်ဘ်ဆိုဒ်
+                            </a>
+                        </p>
                         @endif
                     </div>
 
