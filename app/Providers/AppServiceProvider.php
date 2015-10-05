@@ -15,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Tweak for Laravel DebugBar
+        if ($this->app['config']->get('app.debug')) {
+            \DB::enableQueryLog();
+        }
     }
 
     /**

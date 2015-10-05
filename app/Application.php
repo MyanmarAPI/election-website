@@ -44,6 +44,16 @@ class Application extends Model
     	return $this->belongsTo('App\User');
     }
 
+    /**
+     * Relationship for token model
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function tokens()
+    {
+        return $this->hasMany('App\Token', 'app_id');
+    }
+
     public function textOfType()
     {
         switch ($this->type) {
@@ -68,6 +78,8 @@ class Application extends Model
     public static function getForAdminIndex($type = null, $limit = 20)
     {
         $ins = new static;
+
+        $ins = $ins->with('tokens');
 
         if ( $type) {
             $ins = $ins->where('type', $type);
