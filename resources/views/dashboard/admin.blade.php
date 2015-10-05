@@ -152,7 +152,7 @@
 
 	<script>
 
-		fetchData('{{ route('api.analytic.data') }}');
+		fetchData('{{ route('api.analytic.data') }}?thd=true');
 
 		//fetchTotalHits('{{ route('api.analytic.total_hits') }}');
 

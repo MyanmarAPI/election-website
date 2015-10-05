@@ -52,8 +52,6 @@ class AnalyticController extends Controller
             if (isset($query['thd'])) {
                 unset($query['thd']);
             }
-        } else {
-            $query['thd'] = true;
         }
 
         if ($type == 'default') {
