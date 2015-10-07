@@ -6,48 +6,92 @@
 	<div class="hero center white">
 		<div class="row app-container mg-top">
 
-        <div class="col s12 white">
             <div class="row info-row">
                 <div class="col s12 center">
-                    <h4>{{ $app->name }}</h4> 
-                    <p>Winner of MaePaySoh Hack Challenge</p>
-                    <p><img style="width:40%;" src="/{{ $app->icon }}" alt="{{ $app->name }}"></p>
-                    <h5>Developed By {{ $app->getDeveloper() }}</h5>
+                    <h4>MVoter 2015</h4> 
+                    <p>First Winner of MaePaySoh Hack Challenge</p>
+                    <p><img style="width:40%;" src="/uploads/20151005102132mps_appicon.png" alt="MVoter 2015"></p>
+                    <h5>Developed By PopStack</h5>
                 
                     <div class="info-desc">
-                        <p>{{ $app->description }}</p>
-                        <p>Application Type : {{ $app->getTypeString() }}</p>
+                        <p>ရွေးကောက်ပွဲဝင်ကိုယ်စားလှယ်လောင်းများ၊ နိုင်ငံရေးပါတီများအကြောင်းနှင့် မည်သို့ဆန္ဒမဲဲပေးရမည်ကို ပထမဆုရ app တွင်လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
+						<p>Learn about your candidates and parties, and how to vote, in this first-prize winning app.</p>
+                        <p>Application Type : Android App</p>
                     </div>
                     <div class="info-dl">
-                        @if ( $app->direct_url)
-                        <a href="{{ $app->direct_url }}" 
+                        <a href="http://bit.ly/mvoter-apk" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
-                            Direct Download
+                            <i class="material-icons left">file_download</i>Direct Download
                         </a>
-                        @endif
 
-                        @if ( $app->store_url)
-                        <a href="{{ $app->store_url }}" 
+                        <a href="https://play.google.com/store/apps/details?id=com.popstack.mvoter2015" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
-                            <i class="material-icons left">file_download</i>Download From Store
+                            <i class="material-icons left">cloud_download</i>Download From Store
                         </a>
-                        @endif
-
-                        @if ( $app->website_url)
-                        <a href="{{ $app->website_url }}" 
-                            target="_blank"
-                            class="waves-effect waves-light btn indigo darken-2">
-                            Visit To Website
-                        </a>
-                        @endif
                     </div>
                        
                 </div>
-            </div>
+         	</div>
 
-        </div> <!-- end of col s12 box-content white -->
+         	<div class="row info-row">
+                <div class="col s12 center">
+                    <h4>Mae</h4> 
+                    <p>Second Winner of MaePaySoh Hack Challenge</p>
+                    <p><img style="width:40%;" src="/uploads/20151002124352ic_launcher-web.png" alt="Mae"></p>
+                    <h5>Developed By SSYGM (MMAUG)</h5>
+                
+                    <div class="info-desc">
+                        <p>နိုင်ငံရေးပါတီများအကြောင်း၊ ကိုယ်စားလှယ်လောင်းများအားနှိုင်းယှဉ်ခြင်းနှင့် မဲတံဆိပ်လေ့ကျင့်ရိုက်နှိပ်ခြင်းကို လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
+						<p>Learn about parties, compare candidates, and practice stamping the ballot.</p>
+                        <p>Application Type : Android App</p>
+                    </div>
+                    <div class="info-dl">
+                        <a href="https://bitly.com/mae-latest-apk" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">file_download</i>Direct Download
+                        </a>
+
+                        <a href="https://play.google.com/store/apps/details?id=org.mmaug.mae" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">cloud_download</i>Download From Store
+                        </a>
+                    </div>
+                       
+                </div>
+         	</div>
+
+         	<div class="row info-row">
+                <div class="col s12 center">
+                    <h4>Maepaysoh (မဲေပးစို႔)</h4> 
+                    <p>Third Winner of MaePaySoh Hack Challenge</p>
+                    <p><img style="width:40%;" src="/uploads/20151005102132mps_appicon.png" alt="Mae"></p>
+                    <h5>Developed By Koe Koe Wave Team</h5>
+                
+                    <div class="info-desc">
+                        <p>ရွေးကောက်ပွဲဝင်ကိုယ်စားလှယ်လောင်းများနှှင့် နိုင်ငံရေးပါတီများ၏ရပ်တည်ချက်အနေအထားများကို လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
+						<p>Learn about candidates and political party policy positions.</p>
+                        <p>Application Type : Android &amp; Web App</p>
+                    </div>
+                    <div class="info-dl">
+                        <a href="https://play.google.com/store/apps/details?id=com.koekoetech.maepaysoh" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">cloud_download</i>Store Download
+                        </a>
+
+                        <a href="http://vote.koekoetech.com/" 
+                            target="_blank"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">web</i>Access Web
+                        </a>
+                    </div>
+                       
+                </div>
+         	</div>
 
     </div>
 	</div> <!-- end of div.hero -->
