@@ -89,7 +89,9 @@
                        
                 </div>
          	</div>
-
+            <div class="row">
+                <a href="{{ route('showcase.lists') }}" class="waves-effect waves-light btn-large indigo darken-2">View more applications</a>
+            </div>
     </div>
 	</div> <!-- end of div.hero -->
 
