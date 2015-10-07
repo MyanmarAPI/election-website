@@ -56,7 +56,18 @@
 	</div>
 
 	<div class="loading">
-		<i class="fa fa-spinner fa-spin spinner hide"></i>
+		<div class="preloader-wrapper small spinner">
+		    <div class="spinner-layer spinner-blue-only">
+		      <div class="circle-clipper left">
+		        <div class="circle"></div>
+		      </div><div class="gap-patch">
+		        <div class="circle"></div>
+		      </div><div class="circle-clipper right">
+		        <div class="circle"></div>
+		      </div>
+		    </div>
+		</div>
+		{{-- <i class="fa fa-spinner fa-spin spinner hide"></i> --}}
 	</div>
 
 	<div id="report-analytics" style="height: 250px;"></div>

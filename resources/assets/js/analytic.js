@@ -31,7 +31,7 @@ function fetchData(url) {
       get_total_hit = true;
     };
 
-    $( ".loading .spinner" ).addClass('hide');
+    $( ".loading .spinner" ).removeClass('active');
 
   });
 }
@@ -54,7 +54,7 @@ function fetchSingleData(type, query_str) {
     if (current_data[type]['total_hits']) {
       total_hits_data.$data.total_hits = current_data[type]['total_hits'];
     };
-    $( ".loading .spinner" ).addClass('hide');
+    $( ".loading .spinner" ).removeClass('active');
   });
 
 }
@@ -121,7 +121,7 @@ $('.date-set-btn').on('click', function(e){
 });
 
 $( document ).ajaxStart(function() {
-  $( ".loading .spinner" ).removeClass('hide');
+  $( ".loading .spinner" ).addClass('active');
 });
 
 $('.analytic-date-range').pickadate({
