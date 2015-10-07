@@ -34,6 +34,16 @@
 								<p class="form-error">{{ $errors->first('name') }}</p>
 							</div>
 						</div>
+						
+						@if (isset($model))
+						<div class="row">
+							<div class="input-field col s12">
+								{!! Form::text('slug', $model->slug) !!}
+								<label for="slug">Slug</label>
+								<p class="form-error">{{ $errors->first('slug') }}</p>
+							</div>
+						</div>
+						@endif
 
 						<div class="row">
 							<div class="input-field col s12">

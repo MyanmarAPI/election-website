@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Slug</th>
             <th>Type</th>
             <th>Status</th>
             <th>Screenshots</th>
@@ -14,6 +15,7 @@
 
     <tr>
         <td>{{ $app->name }}</td>
+        <td>{{ $app->slug }}</td>
         <td>{{ $app->getTypeString() }}</td>
         <td>
             @if ($app->alreadyPublished())

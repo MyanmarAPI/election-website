@@ -82,7 +82,7 @@ class ShowcaseController extends Controller
         }
 
         $data['published'] = 'd';
-        $data['slug'] = strtolower(str_replace([' ', '.'], '-', $data['name']));
+        $data['slug'] = $this->makeSlug($data['name']);
         $data['user_id'] = $this->user->id;
 
         $showcase = new Showcase($data);
@@ -133,6 +133,11 @@ class ShowcaseController extends Controller
             $this->throwValidationException(
                 $request, $validator
             );
+        }
+
+        // Remove slug from data if slug's value not change.
+        if ( $showcase->slug == $data['slug']) {
+            unset($data['slug']);
         }
 
         if ( $showcase->fill($data)->save()) {
@@ -210,5 +215,16 @@ class ShowcaseController extends Controller
         }
 
         return redirect()->route('showcase');
+    }
+
+    /**
+     * Make slug for showcase.
+     *
+     * @param  string $value
+     * @return string
+     */
+    protected function makeSlug($value)
+    {
+        return strtolower(str_replace([' ', '.'], '-', $value));
     }
 }
