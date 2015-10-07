@@ -10,7 +10,7 @@
                 <div class="col s12 center">
                     <h4>MVoter 2015</h4> 
                     <p>First Winner of MaePaySoh Hack Challenge</p>
-                    <p><img style="width:40%;" src="/uploads/20151005102132mps_appicon.png" alt="MVoter 2015"></p>
+                    <p><img style="width:40%;" src="/uploads/20151005140619web_hi_res_512.png" alt="MVoter 2015"></p>
                     <h5>Developed By PopStack</h5>
                 
                     <div class="info-desc">
