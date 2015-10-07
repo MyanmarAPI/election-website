@@ -26,48 +26,37 @@
                     <p>Developed By {{ $app->getDeveloper() }}</p>
 
                     <div class="info-dl">
-                        @if ( $app->direct_url)
-                        <p class="app-download">
-                            <span>Android App Direct Download</span>
-                            <a href="{{ $app->direct_url }}" 
-                                target="_blank"
-                                class="waves-effect waves-light btn indigo darken-2 mm3">
-                                <i class="material-icons left">file_download</i>ရယူရန်
-                            </a>
-                        </p>
-                        @endif
+                        
 
-                        @if ( $app->includeType('android') && $app->store_url)
                         <p class="app-download">
-                            <span>Android App</span>
-                            <a href="{{ $app->store_url }}" 
-                                target="_blank"
-                                class="waves-effect waves-light btn indigo darken-2 mm3">
-                                <i class="material-icons left">cloud_download</i>ရယူရန်
-                            </a>
-                        </p>
-                        @endif
+                            @if ( $app->includeType('android') && $app->store_url)
+                                <a href="{{ $app->store_url }}">
+                                  <img alt="Get it on Google Play"
+                                       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+                                </a>
+                            @endif
 
-                        @if ( $app->includeType('ios') && $app->apple_url)
-                        <p class="app-download">
-                            <span>iOS App</span>
-                            <a href="{{ $app->apple_url }}" 
-                                target="_blank"
-                                class="waves-effect waves-light btn indigo darken-2 mm3">
-                                <i class="material-icons left">cloud_download</i>ရယူရန်
-                            </a>
+                            @if ( $app->includeType('ios') && $app->apple_url)
+                                <a href="{{ $app->apple_url }}" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+                            @endif
                         </p>
-                        @endif
 
-                        @if ( $app->website_url)
                         <p>
-                            <a href="{{ $app->website_url }}" 
-                                target="_blank"
-                                class="waves-effect waves-light btn indigo darken-2 mm3">
-                                <i class="material-icons left">web</i>ဝက်ဘ်ဆိုဒ်
-                            </a>
+                            @if ( $app->direct_url)
+                                <a href="{{ $app->direct_url }}" 
+                                    target="_blank"
+                                    class="waves-effect waves-light btn indigo darken-2 mm3">
+                                    <i class="material-icons left">file_download</i>ရယူရန်
+                                </a>
+                            @endif
+                             @if ( $app->website_url)
+                                <a href="{{ $app->website_url }}" 
+                                    target="_blank"
+                                    class="waves-effect waves-light btn indigo darken-2 mm3">
+                                    <i class="material-icons left">web</i>ဝက်ဘ်ဆိုဒ်
+                                </a>
+                            @endif
                         </p>
-                        @endif
                     </div>
 
                     <div class="info-desc">
