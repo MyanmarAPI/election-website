@@ -11,13 +11,7 @@
                     <h4>MVoter 2015</h4> 
                     <p><img style="width:40%;" src="/uploads/20151005140619web_hi_res_512.png" alt="MVoter 2015"></p>
                     <h5>Developed By PopStack</h5>
-                
-                    <div class="info-desc">
-                    	<p>ေရြးေကာက္ပြဲဝင္ကုိယ္စားလွယ္ေလာင္းမ်ား၊ ႏုိင္ငံေရးပါတီမ်ားအေၾကာင္းႏွင္႔ မည္သုိ႔ဆႏၵမဲဲေပးရမည္ကုိ ပထမဆုရ app တြင္ေလ႔လာၾကည္႔ရွဳသင္ယူႏုိင္ပါၿပီ။</p>
-                        <p>ရွေးကောက်ပွဲဝင်ကိုယ်စားလှယ်လောင်းများ၊ နိုင်ငံရေးပါတီများအကြောင်းနှင့် မည်သို့ဆန္ဒမဲဲပေးရမည်ကို ပထမဆုရ app တွင်လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
-						<p>Learn about your candidates and parties, and how to vote, in this first-prize winning app.</p>
-                    </div>
-                    <div class="info-dl">
+                	<div class="info-dl">
                         <a href="http://bit.ly/mvoter-apk" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
@@ -30,6 +24,12 @@
                             <i class="material-icons left">cloud_download</i>Google Play
                         </a>
                     </div>
+                    <div class="info-desc">
+                    	<p>ေရြးေကာက္ပြဲဝင္ကုိယ္စားလွယ္ေလာင္းမ်ား၊ ႏုိင္ငံေရးပါတီမ်ားအေၾကာင္းႏွင္႔ မည္သုိ႔ဆႏၵမဲဲေပးရမည္ကုိ ပထမဆုရ app တြင္ေလ႔လာၾကည္႔ရွဳသင္ယူႏုိင္ပါၿပီ။</p>
+                        <p>ရွေးကောက်ပွဲဝင်ကိုယ်စားလှယ်လောင်းများ၊ နိုင်ငံရေးပါတီများအကြောင်းနှင့် မည်သို့ဆန္ဒမဲဲပေးရမည်ကို ပထမဆုရ app တွင်လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
+						<p>Learn about your candidates and parties, and how to vote, in this first-prize winning app.</p>
+                    </div>
+                    
                        
                 </div>
          	</div>
@@ -39,13 +39,7 @@
                     <h4>Mae</h4> 
                     <p><img style="width:40%;" src="/uploads/20151002124352ic_launcher-web.png" alt="Mae"></p>
                     <h5>Developed By SSYGM (MMAUG)</h5>
-                
-                    <div class="info-desc">
-                    	<p>ႏုိင္ငံေရးပါတီမ်ားအေၾကာင္း၊ ကုိယ္စားလွယ္ေလာင္းမ်ားအားႏႈိင္းယွဥ္ၿခင္းႏွင္႔ မဲတံဆိပ္ေလ႔က်င္႔ရုိက္ႏွိပ္ၿခင္းကုိ ေလ႔လာၾကည္႔ရွဳသင္ယူႏုိင္ပါၿပီ။</p>
-                        <p>နိုင်ငံရေးပါတီများအကြောင်း၊ ကိုယ်စားလှယ်လောင်းများအားနှိုင်းယှဉ်ခြင်းနှင့် မဲတံဆိပ်လေ့ကျင့်ရိုက်နှိပ်ခြင်းကို လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
-						<p>Learn about parties, compare candidates, and practice stamping the ballot.</p>
-                    </div>
-                    <div class="info-dl">
+                	<div class="info-dl">
                         <a href="https://bitly.com/mae-latest-apk" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
@@ -58,6 +52,12 @@
                             <i class="material-icons left">cloud_download</i>Google Play
                         </a>
                     </div>
+                    <div class="info-desc">
+                    	<p>ႏုိင္ငံေရးပါတီမ်ားအေၾကာင္း၊ ကုိယ္စားလွယ္ေလာင္းမ်ားအားႏႈိင္းယွဥ္ၿခင္းႏွင္႔ မဲတံဆိပ္ေလ႔က်င္႔ရုိက္ႏွိပ္ၿခင္းကုိ ေလ႔လာၾကည္႔ရွဳသင္ယူႏုိင္ပါၿပီ။</p>
+                        <p>နိုင်ငံရေးပါတီများအကြောင်း၊ ကိုယ်စားလှယ်လောင်းများအားနှိုင်းယှဉ်ခြင်းနှင့် မဲတံဆိပ်လေ့ကျင့်ရိုက်နှိပ်ခြင်းကို လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
+						<p>Learn about parties, compare candidates, and practice stamping the ballot.</p>
+                    </div>
+                    
                        
                 </div>
          	</div>
@@ -67,13 +67,7 @@
                     <h4>Maepaysoh (မဲေပးစို႔)</h4> 
                     <p><img style="width:40%;" src="/uploads/20151005102132mps_appicon.png" alt="Mae"></p>
                     <h5>Developed By Koe Koe Wave Team</h5>
-                
-                    <div class="info-desc">
-                    	<p>ေရြးေကာက္ပြဲဝင္ကုိယ္စားလွယ္ေလာင္းမ်ားႏွွင္႔ ႏုိင္ငံေရးပါတီမ်ား၏ရပ္တည္ခ်က္အေနအထားမ်ားကုိ ေလ႔လာၾကည္႔ရွဳသင္ယူႏုိင္ပါၿပီ။</p>
-                        <p>ရွေးကောက်ပွဲဝင်ကိုယ်စားလှယ်လောင်းများနှှင့် နိုင်ငံရေးပါတီများ၏ရပ်တည်ချက်အနေအထားများကို လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
-						<p>Learn about candidates and political party policy positions.</p>
-                    </div>
-                    <div class="info-dl">
+                	<div class="info-dl">
                         <a href="https://play.google.com/store/apps/details?id=com.koekoetech.maepaysoh" 
                             target="_blank"
                             class="waves-effect waves-light btn indigo darken-2">
@@ -86,6 +80,12 @@
                             <i class="material-icons left">web</i>Web App
                         </a>
                     </div>
+                    <div class="info-desc">
+                    	<p>ေရြးေကာက္ပြဲဝင္ကုိယ္စားလွယ္ေလာင္းမ်ားႏွွင္႔ ႏုိင္ငံေရးပါတီမ်ား၏ရပ္တည္ခ်က္အေနအထားမ်ားကုိ ေလ႔လာၾကည္႔ရွဳသင္ယူႏုိင္ပါၿပီ။</p>
+                        <p>ရွေးကောက်ပွဲဝင်ကိုယ်စားလှယ်လောင်းများနှှင့် နိုင်ငံရေးပါတီများ၏ရပ်တည်ချက်အနေအထားများကို လေ့လာကြည့်ရှုသင်ယူနိုင်ပါပြီ။</p>
+						<p>Learn about candidates and political party policy positions.</p>
+                    </div>
+                    
                        
                 </div>
          	</div>
