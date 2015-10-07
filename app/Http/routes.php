@@ -13,13 +13,7 @@ use App\Showcase;
 
 // Frontend page routes.
 Route::get('/', function () {
-	
-	$slug='mvoter-2015';
-	$app = Showcase::where('published', 'p')
-                        ->where('approved', true)
-                        ->where('slug', $slug)
-                        ->firstOrFail();
-    return view('static.home', compact('app'));
+    return view('static.home');
 });
 
 Route::get('/about', function () {
