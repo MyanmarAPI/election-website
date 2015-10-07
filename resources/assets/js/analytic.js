@@ -126,10 +126,12 @@ $( document ).ajaxStart(function() {
 
 $('.analytic-date-range').pickadate({
   format: 'yyyy-mm-dd',
-  closeOnSelect: true,
-    selectMonths: true, 
-    selectYears: 10,
-    max: $(this).attr('max')
+  selectMonths: true, 
+  selectYears: 10,
+  max: true,
+  onClose: function() {
+      $(document.activeElement).blur();
+  }
 });
 
 function MorrisGraph(element, data) {
