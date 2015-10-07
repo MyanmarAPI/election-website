@@ -82,7 +82,7 @@ class ShowcaseController extends Controller
         }
 
         $data['published'] = 'd';
-        $data['slug'] = str_slug($data['name']);
+        $data['slug'] = strtolower(str_replace([' ', '.'], '-', $data['name']));
         $data['user_id'] = $this->user->id;
 
         $showcase = new Showcase($data);
