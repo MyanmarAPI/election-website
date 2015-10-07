@@ -4,7 +4,7 @@
 
 @section('content')
 	
-	<div class="row app-container mg-top">
+	<div class="row app-container mg-top" id="showcase-lists">
 
 		<h4>MaePaySoh Apps Showcase</h4>
 
@@ -21,11 +21,14 @@
 					<img src="{{ $app->icon }}">
 				</div>
 				<div class="card-content">
-					<a href="{{ route('showcase.show', $app->slug) }}">
-						<span class="card-title activator grey-text text-darken-4">
-							{{ $app->name }}
-						</span>
-					</a>
+					<div class="showcase-app-title">
+						<a href="{{ route('showcase.show', $app->slug) }}"
+							title="{{ $app->name }}">
+							<span class="card-title activator grey-text text-darken-4">
+								{{ $app->name }}
+							</span>
+						</a>
+					</div>
 					<p>{{ $app->getTypeString() }}</p>
 				</div>
 				<div class="card-action">
@@ -37,4 +40,9 @@
 		</div> <!-- end of card -->
 		@endforeach
 	</div>
+@endsection
+
+@section('scripts')
+var ciw = $('.card-image').width();
+$('.card-image').css({'height':ciw+'px'});
 @endsection
