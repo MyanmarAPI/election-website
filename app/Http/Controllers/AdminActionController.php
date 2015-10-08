@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Showcase;
+use App\Traits\ImageUpload;
 
 /**
  * Controller for the Actions of Admin.
@@ -17,6 +18,8 @@ use App\Showcase;
 
 class AdminActionController extends Controller
 {
+	use ImageUpload;
+
 	/**
 	 * Promote user to admin role.
 	 *
@@ -148,6 +151,33 @@ class AdminActionController extends Controller
 	    } else {
 	    	session()->flash('error', 'Error occured to '.$message.' showcase app.');	
 	    }
+
+	    return back();
+	}
+
+	/**
+	 * Remove the showcase app.
+	 *
+	 * @param  string $id
+	 * @return \Redirect
+	 */
+	public function removeShowcase($id)
+	{
+	    $app = Showcase::findOrFail($id);
+
+	    if ( $app->icon) {
+	    	$this->deleteImage($app->icon);
+	    }
+
+	    if ( $app->screenshots) {
+	    	foreach ($app->screenshots as $file) {
+	    		$this->deleteImage($file);
+	    	}
+	    }
+
+	    session()->flash('success', 'Showcase app is successfully deleted.');
+
+	    $app->delete();
 
 	    return back();
 	}

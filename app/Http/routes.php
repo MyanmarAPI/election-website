@@ -316,6 +316,11 @@ function() {
 		'as' => 'action.showcase.homepage',
 		'uses' => 'AdminActionController@homepageShowcase'
 	]);
+
+	Route::get('/showcase/{id}/remove', [
+		'as' => 'action.showcase.remove',
+		'uses' => 'AdminActionController@removeShowcase'
+	]);
 });
 
 // Authentication api route.

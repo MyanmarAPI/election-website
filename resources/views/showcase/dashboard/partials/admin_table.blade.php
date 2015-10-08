@@ -7,7 +7,7 @@
             <th>Screenshots</th>
             <th>Icon Image</th>
             <th>Owner</th>
-            <th width="350px">Actions</th>
+            <th width="440px">Actions</th>
         </tr>                   
     </thead>
 
@@ -82,6 +82,11 @@
                     <i class="material-icons">visibility</i>
                 </a>
             @endif
+
+            <a title="Remove" href="{{ route('action.showcase.remove', $app->id) }}" 
+                class="waves-effect waves-light btn red">
+                <i class="material-icons">delete</i>
+            </a>
         </td>
     </tr>
 
