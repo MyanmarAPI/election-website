@@ -30,14 +30,16 @@
 
                         <p class="app-download">
                             @if ( $app->includeType('android') && $app->store_url)
-                                <a href="{{ $app->store_url }}">
-                                  <img alt="Get it on Google Play"
+                                <a href="{{ $app->store_url }}" data-ga-event="Download|{{ $app->name }}|PlayStore">
+                                    <img alt="Get it on Google Play"
                                        src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
                                 </a>
                             @endif
 
                             @if ( $app->includeType('ios') && $app->apple_url)
-                                <a href="{{ $app->apple_url }}" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+                                <a href="{{ $app->apple_url }}" 
+                                    data-ga-event="Download|{{ $app->name }}|AppleStore"
+                                    style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
                             @endif
                         </p>
 
@@ -45,6 +47,7 @@
                             @if ( $app->direct_url)
                                 <a href="{{ $app->direct_url }}" 
                                     target="_blank"
+                                    data-ga-event="Download|{{ $app->name }}|DirectDownload"
                                     class="waves-effect waves-light btn indigo darken-2 mm3">
                                     <i class="material-icons left">file_download</i>ရယူရန်
                                 </a>
@@ -52,6 +55,7 @@
                              @if ( $app->website_url)
                                 <a href="{{ $app->website_url }}" 
                                     target="_blank"
+                                    data-ga-event="ViewAppWebsite|{{ $app->name }}"
                                     class="waves-effect waves-light btn indigo darken-2 mm3">
                                     <i class="material-icons left">web</i>ဝက်ဘ်ဆိုဒ်
                                 </a>

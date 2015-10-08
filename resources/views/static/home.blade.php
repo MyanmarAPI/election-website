@@ -14,12 +14,14 @@
                 	<div class="info-dl">
                         <a href="http://bit.ly/mvoter-apk" 
                             target="_blank"
+                            data-ga-event="Download|MVoter 2015|DirectDownload"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">file_download</i>ရယူရန်
                         </a>
 
                         <a href="https://play.google.com/store/apps/details?id=com.popstack.mvoter2015" 
                             target="_blank"
+                            data-ga-event="Download|MVoter 2015|PlayStore"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">cloud_download</i>Google Play
                         </a>
@@ -42,12 +44,14 @@
                 	<div class="info-dl">
                         <a href="https://bitly.com/mae-latest-apk" 
                             target="_blank"
+                            data-ga-event="Download|Mae|DirectDownload"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">file_download</i>ရယူရန်
                         </a>
 
                         <a href="https://play.google.com/store/apps/details?id=org.mmaug.mae" 
                             target="_blank"
+                            data-ga-event="Download|Mae|PlayStore"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">cloud_download</i>Google Play
                         </a>
@@ -70,12 +74,14 @@
                 	<div class="info-dl">
                         <a href="https://play.google.com/store/apps/details?id=com.koekoetech.maepaysoh" 
                             target="_blank"
+                            data-ga-event="Download|Maepaysoh (မဲေပးစို႔)|PlayStore"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">cloud_download</i>Google Play
                         </a>
 
                         <a href="http://vote.koekoetech.com/" 
                             target="_blank"
+                            data-ga-evnet="ViewAppWebsite|Maepaysoh (မဲေပးစို႔)"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">web</i>Web App
                         </a>
