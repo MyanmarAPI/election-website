@@ -62,7 +62,7 @@
                     <div class="info-desc">
                         <h5>Description</h5>
 
-                        <p>{{ $app->description }}</p>
+                        <p>{!! nl2br($app->description) !!}</p>
                     </div>
 
                     <div class="info-slider">
