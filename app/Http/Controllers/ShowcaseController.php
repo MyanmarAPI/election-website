@@ -81,6 +81,7 @@ class ShowcaseController extends Controller
             );
         }
 
+        $data['type'] = array_keys($data['type']);
         $data['published'] = 'd';
         $data['slug'] = $this->makeSlug($data['name']);
         $data['user_id'] = $this->user->id;
