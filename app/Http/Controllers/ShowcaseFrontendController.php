@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\Showcase;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ShowcaseFrontendController extends Controller
@@ -16,15 +15,31 @@ class ShowcaseFrontendController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $apps = Showcase::where('published', 'p')
-                        ->where('approved', true)
-                        ->orderBy('sticky', 'desc')
-                        ->latest()
-                        ->paginate(20);
+        $type = $request->input('t');
 
-        return view('showcase.index', compact('apps'));
+        if ( $type) {
+            $apps = Showcase::whereIn('type', [$type])
+                    ->where('published', 'p');
+        } else
+        {
+            $apps = Showcase::where('published', 'p');    
+        }
+
+        $apps = $apps->where('approved', true)
+                    ->orderBy('sticky', 'desc')
+                    ->latest()
+                    ->paginate(20);
+        
+        if ( $type) {
+            $hasPagination = true;
+            $apps->appends(['t' => $type]);
+        } else {
+            $hasPagination = $apps->hasPages();
+        }
+
+        return view('showcase.index', compact('apps', 'hasPagination'));
     }
 
     /**
