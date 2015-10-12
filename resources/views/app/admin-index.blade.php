@@ -41,7 +41,6 @@
 							<th>Application Name</th>
 							<th>Application Key</th>
 							<th>Application Type</th>
-							<!-- <th>User Count</th> -->
 							<th>Created By</th>
 							<th width="200px">Actions</th>
 						</tr>					
@@ -62,7 +61,6 @@
 							<div class="app-key fixed-width-200 truncate">{{ $app->key }}</div>
 						</td>
 						<td>{{ $app->type }}</td>
-						<!-- <td>{{ $app->tokens->count() }}</td> -->
 						<td>
 							@if ( $app->user)
 							<span class="tooltipped" data-position="top" data-delay="50" data-tooltip="{{ $app->user->email }}">
