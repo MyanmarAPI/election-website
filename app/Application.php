@@ -79,7 +79,7 @@ class Application extends Model
     {
         $ins = new static;
 
-        $ins = $ins->with('tokens');
+        //$ins = $ins->with('tokens');
 
         if ( $type) {
             $ins = $ins->where('type', $type);
