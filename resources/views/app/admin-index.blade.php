@@ -64,9 +64,15 @@
 						<td>{{ $app->type }}</td>
 						<!-- <td>{{ $app->tokens->count() }}</td> -->
 						<td>
+							@if ( $app->user)
 							<span class="tooltipped" data-position="top" data-delay="50" data-tooltip="{{ $app->user->email }}">
 								{{ $app->user->name }}
 							</span>
+							@else
+							<span class="tooltipped" data-position="top" data-delay="50" data-tooltip="Unknown">
+								Unknown
+							</span>
+							@endif
 						</td>
 						<td>
 							<a title="View Application" class="waves-effect waves-light btn"
