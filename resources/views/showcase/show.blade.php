@@ -32,7 +32,7 @@
                             @if ( $app->includeType('android') && $app->store_url)
                                 <a href="{{ $app->store_url }}" data-ga-event="Download|{{ $app->name }}|PlayStore">
                                     <img alt="Get it on Google Play"
-                                       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+                                       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" class="google_play_badge" />
                                 </a>
                             @endif
 
