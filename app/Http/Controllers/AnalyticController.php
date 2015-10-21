@@ -39,7 +39,7 @@ class AnalyticController extends Controller
     public function getDefault(Request $request, $type = 'default')
     {
 
-        $uri_type = ['default', 'hourly', 'daily', 'monthly'];
+        $uri_type = ['default', 'hourly', 'daily', 'monthly', 'per-minutes'];
 
         if (!in_array($type, $uri_type)) {
             return response_missing();

@@ -89,6 +89,8 @@ $('.analytic-btn').click(function(e){
   var date_range = current_data[type]['date_range'];
   setDateRange(date_range, type);
   $('#'+type+'-date-input-wrapper').show();
+  $('.analytic-btn, #getPerMinute').removeClass('active');
+  $(this).addClass('active');
   //range.text(current_data[type]['date_range']);
   if (current_data[type]['total_hits']) {
     total_hits_data.$data.total_hits = current_data[type]['total_hits'];
@@ -104,6 +106,19 @@ function setDateRange(date_range, type)
     $('#'+type+'-date-to').val(date_range['to']);
   };
 }
+
+//Get PerMinute Data - Click on Per Minute Button
+$('#getPerMinute').click(function(){
+  $.ajax(ANALYTIC_BASE+'/data/per-minutes')
+  .done(function(data){
+    graph.setData(data['data']);
+    $('.date-range-input').hide();
+    //$('#minute-date-input-wrapper').show();
+    $('.analytic-btn').removeClass('active');
+    $('#getPerMinute').addClass('active');
+    $( ".loading .spinner" ).removeClass('active');
+  });
+});
 
 //Hourly Data by Date
 $('#hourly-date-input').on('change', function(){

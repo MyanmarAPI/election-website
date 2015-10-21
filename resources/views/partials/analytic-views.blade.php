@@ -2,9 +2,12 @@
 
 	<h4>Analytics</h4>
 
-	<div id="analytic-links" class="col s6">
-		<a href="#" id="getHourly"data-type="hourly" 
-			class="analytic-btn waves-effect waves-light btn indigo darken-2">
+	<div id="analytic-links" class="col s12">
+		<a href="#" id="getPerMinute" class="waves-effect waves-light btn indigo darken-2">
+			Per Minute
+		</a>
+		<a href="#" id="getHourly" data-type="hourly" 
+			class="analytic-btn waves-effect waves-light btn indigo darken-2 active">
 			Hourly
 		</a>
 		<a href="#" id="getDaily" data-type="daily" 
@@ -24,6 +27,9 @@
 				<div class="col s6">
 					<div class="date-range-input col s12" id="hourly-date-input-wrapper">
 						<input name="analytic-date-from" type="date" class="datepicker analytic-date-range" id="hourly-date-input" value="{{ date('Y-m-d') }}" max="{{ date('Y-m-d') }}">
+					</div>
+					<div class="date-range-input col s12" id="minute-date-input-wrapper" style="display:none;">
+						
 					</div>
 					<div class="date-range-input col s12" id="daily-date-input-wrapper" style="display:none;">
 						<div class="col s5">
