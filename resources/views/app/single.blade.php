@@ -82,6 +82,10 @@
 
 @section('foot-js')
 
+    <script>
+        var analytic_app = '{{ $application->key }}';
+    </script>
+
     <script type="text/javascript" src="{{ url('js/analytic.js') }}"></script>
 
     <script>
