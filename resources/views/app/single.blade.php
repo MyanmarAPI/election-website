@@ -72,6 +72,8 @@
 
         <div class="row">
 
+           <input type="hidden" id="analytic-app" value="{{ $application->key }}">
+
            @include('partials.analytic-views', ['isDashboard' => false])
             
         </div>
@@ -81,10 +83,6 @@
 @endsection
 
 @section('foot-js')
-
-    <script>
-        var analytic_app = '{{ $application->key }}';
-    </script>
 
     <script type="text/javascript" src="{{ url('js/analytic.js') }}"></script>
 

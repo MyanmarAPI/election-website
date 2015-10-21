@@ -39,8 +39,8 @@ function fetchData(url) {
 function fetchSingleData(type, query_str) {
 
   var app = $('#analytic-app').val();
-  if (analytic_app) {
-    query_str = query_str+'&api_key='+analytic_app;
+  if (app) {
+    query_str = query_str+'&api_key='+app;
   };
   if (get_total_hit) {
     query_str += '&thd=true';
@@ -111,8 +111,9 @@ function setDateRange(date_range, type)
 $('#getPerMinute').click(function(e){
   e.preventDefault();
   var query_str = '';
-  if (analytic_app) {
-    query_str = query_str+'?api_key='+analytic_app;
+  var app = $('#analytic-app').val();
+  if (app) {
+    query_str = query_str+'?api_key='+app;
   };
   $.ajax(ANALYTIC_BASE+'/data/per-minutes'+query_str)
   .done(function(data){
