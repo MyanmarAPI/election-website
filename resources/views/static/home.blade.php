@@ -10,7 +10,11 @@
                     <i class="material-icons">stars</i> Winning App
                 </div>
                 <h4>MVoter 2015</h4> 
-                <p><a href="{{ url('showcase/mvoter-2015') }}"><img style="width:40%;" src="/uploads/20151005140619web_hi_res_512.png" alt="MVoter 2015"></a></p>
+                <p>
+                    <a href="http://app.mvoter2015.com" data-ga-event="ViewAppWebsite|MVoter 2015">
+                        <img style="width:40%;" src="/uploads/20151005140619web_hi_res_512.png" alt="MVoter 2015">
+                    </a>
+                </p>
                 <h5>Developed By <br/>PopStack</h5>
             	<div class="info-dl">
                     <p>
@@ -48,7 +52,11 @@
                     1st runner-up
                 </div>
                 <h4>Mae</h4> 
-                <p><a href="{{ url('showcase/mae') }}"><img style="width:40%;" src="/uploads/20151002124352ic_launcher-web.png" alt="Mae"></a></p>
+                <p>
+                    <a href="http://mae.mmaug.org/" data-ga-event="ViewAppWebsite|Mae">
+                        <img style="width:40%;" src="/uploads/20151002124352ic_launcher-web.png" alt="Mae">
+                    </a>
+                </p>
                 <h5>Developed By <br/>SSYGM (MMAUG)</h5>
             	<div class="info-dl">
                     <p>
@@ -80,7 +88,11 @@
                     2nd runner-up
                 </div>
                 <h4>Maepaysoh (မဲေပးစို႔)</h4> 
-                <p><a href="{{ url('showcase/maepaysoh') }}"><img style="width:40%;" src="/uploads/20151005102132mps_appicon.png" alt="Maepaysoh"></a></p>
+                <p>
+                    <a href="http://vote.koekoetech.com" data-ga-event="ViewAppWebsite|Maepaysoh (မဲေပးစို႔)">
+                        <img style="width:40%;" src="/uploads/20151005102132mps_appicon.png" alt="Maepaysoh">
+                    </a>
+                </p>
                 <h5>Developed By <br/>Koe Koe Wave Team</h5>
             	<div class="info-dl">
                     <p>
