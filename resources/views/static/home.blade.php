@@ -28,7 +28,12 @@
                             data-ga-event="Download|MVoter 2015|DirectDownload"
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">file_download</i>apk ရယူရန်
-                        </a>    
+                        </a>
+                        <a href="http://app.mvoter2015.com/"
+                            target="_blank"
+                            data-ga-evnet="ViewAppWebsite|MVoter 2015"
+                            class="waves-effect waves-light btn indigo darken-2">
+                            <i class="material-icons left">web</i>Web App</a>    
                     </p>
                 </div>
                 <div class="info-desc">
