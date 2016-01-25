@@ -16,7 +16,7 @@
                     <p>
                         <a href="https://play.google.com/store/apps/details?id=com.popstack.mvoter2015" data-ga-event="Download|MVoter 2015|PlayStore" target="_blank">
                             <img alt="Get it on Google Play"
-                               src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" class="google_play_badge" />
+                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" />
                         </a>
                         <a href="https://itunes.apple.com/app/id1049627139" 
                             data-ga-event="Download|MVoter 2015|AppleStore"
@@ -56,7 +56,7 @@
                             target="_blank"
                             data-ga-event="Download|Mae|PlayStore">
                             <img alt="Get it on Google Play"
-                               src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" class="google_play_badge" />
+                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" />
                         </a>    
                     </p>
                     <p>
@@ -88,7 +88,7 @@
                             target="_blank"
                             data-ga-event="Download|Maepaysoh (မဲေပးစို႔)|PlayStore">
                             <img alt="Get it on Google Play"
-                               src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" class="google_play_badge" />
+                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" />
                         </a>    
                     </p>
 
