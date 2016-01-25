@@ -18,7 +18,15 @@
         <div class="col s12 box-content white">
             <div class="row info-row">
                 <div class="col s12 m3 l4 info-img">
-                    <img src="/{{ $app->icon }}" alt="{{ $app->name }}">
+                    @if ( $app->website_url)
+                        <a href="{{ $app->website_url }}" 
+                                    target="_blank"
+                                    data-ga-event="ViewAppWebsite|{{ $app->name }}">
+                            <img src="/{{ $app->icon }}" alt="{{ $app->name }}">
+                        </a>
+                    @else
+                        <img src="/{{ $app->icon }}" alt="{{ $app->name }}">
+                    @endif
                 </div>
                 <div class="col s12 m9 l8">
                     <h4>{{ $app->name }}</h4> 
