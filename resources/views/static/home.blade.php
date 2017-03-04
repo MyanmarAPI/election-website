@@ -28,7 +28,7 @@
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">file_download</i>apk ရယူရန်
                         </a>
-                        <a href="http://mvoterapp.com/"
+                        <a href="http://web.mvoterapp.com/"
                             target="_blank"
                             data-ga-evnet="ViewAppWebsite|MVoter 2017"
                             class="waves-effect waves-light btn indigo darken-2">
@@ -49,9 +49,6 @@
                 	
                 </div>
             </div>
-    </div>
-    <div class="row">
-        <a href="{{ route('showcase.lists') }}" class="waves-effect waves-light btn-large indigo darken-2">View more applications</a>
     </div>
 	</div> <!-- end of div.hero -->
 
