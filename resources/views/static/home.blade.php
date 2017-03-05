@@ -6,7 +6,7 @@
 	<div class="hero center white">
 		<div class="row app-container mg-top">
             <div class="col s12 l12 center">
-                <h4>MVoter 2017</h4> 
+                <h4>mVoter 2017</h4> 
                 <p>
                     <img style="width:200px;" src="http://maepaysoh.org/uploads/201703021307022017_Icon_512x512.png" alt="MVoter 2017">
                 </p>
@@ -28,7 +28,7 @@
                             class="waves-effect waves-light btn indigo darken-2">
                             <i class="material-icons left">file_download</i>apk ရယူရန်
                         </a>
-                        <a href="http://web.mvoterapp.com/"
+                        <a href="http://bit.ly/mvoter-web"
                             target="_blank"
                             data-ga-evnet="ViewAppWebsite|MVoter 2017"
                             class="waves-effect waves-light btn indigo darken-2">
