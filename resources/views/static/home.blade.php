@@ -15,11 +15,12 @@
                     <p>
                         <a href="http://bit.ly/mvoter-android" data-ga-event="Download|MVoter 2017|PlayStore" target="_blank">
                             <img alt="Get it on Google Play"
-                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" />
+                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" style="width:59px;" />
                         </a>
-                        <a href="http://bit.ly/mvoter-ios" 
+                        <!-- http://bit.ly/mvoter-ios -->
+                        <a 
                             data-ga-event="Download|MVoter 2017|AppleStore"
-                            style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;" target="_blank"></a>
+                            style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;position: relative;top: -9px;" target="_blank" onclick="alert('Comming Soon!');"></a>
                     </p>
                     <p>
                         <a href="http://bit.ly/mvoter-apk" 
