@@ -10,7 +10,7 @@
                 <p>
                     <img style="width:200px;" src="http://maepaysoh.org/uploads/201703021307022017_Icon_512x512.png" alt="MVoter 2017">
                 </p>
-                <h5>Developed By PopStack</h5>
+                <h5>Developed by Popstack and The Asia Foundation</h5>
             	<div class="info-dl">
                     <p>
                         <a href="http://bit.ly/mvoter-android" data-ga-event="Download|MVoter 2017|PlayStore" target="_blank">
