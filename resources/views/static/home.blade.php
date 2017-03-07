@@ -49,6 +49,20 @@
                     </p>
                 	
                 </div>
+                <div class="manual_downloads">
+                    <a href="https://goo.gl/tshZrt" 
+                        target="_blank"
+                        data-ga-event="Download|MVoter 2017 Manual|User Manual"
+                        class="waves-effect waves-light btn indigo darken-2" style="margin-bottom: 20px;">
+                        <i class="material-icons left">file_download</i>mVoter2017 User Manual
+                    </a>
+                    <a href="https://goo.gl/W9KW8x" 
+                        target="_blank"
+                        data-ga-event="Download|MVoter 2017 Manual|Download Manual"
+                        class="waves-effect waves-light btn indigo darken-2" style="margin-bottom: 20px;">
+                        <i class="material-icons left">file_download</i>Application Download Manual
+                    </a>
+                </div>
             </div>
     </div>
 	</div> <!-- end of div.hero -->
