@@ -15,7 +15,7 @@
                     <p>
                         <a href="http://bit.ly/mvoter-android" data-ga-event="Download|MVoter 2017|PlayStore" target="_blank">
                             <img alt="Get it on Google Play"
-                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" style="width:59px;" />
+                               src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" class="google_play_badge" style="height:59px;" />
                         </a>
                         <!-- http://bit.ly/mvoter-ios -->
                         <a 
