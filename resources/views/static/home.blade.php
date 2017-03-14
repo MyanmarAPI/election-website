@@ -10,7 +10,7 @@
                 <p>
                     <img style="width:200px;" src="http://maepaysoh.org/uploads/201703021307022017_Icon_512x512.png" alt="MVoter 2017">
                 </p>
-                <h5>Developed by Popstack and The Asia Foundation</h5>
+                <h5>Developed by Team PopStack and The Asia Foundation</h5>
             	<div class="info-dl">
                     <p>
                         <a href="http://bit.ly/mvoter-android" data-ga-event="Download|MVoter 2017|PlayStore" target="_blank">
@@ -38,11 +38,11 @@
                 </div>
                 <div class="info-desc">
                     <p>
-                        The 2017 by elections will be held on April 1.  There are approximately 2.3 million voters who can go to the polls to choose from among 94 candidates (including 7 independents) and 24 political parties for 19 vacant seats.  Voting will take place in 8 states and regions:  Yangon, Kayah, Chin, Mon Rakhine, Shan Bago, and Sagaing.  The MaePaySoh (Let’s Vote) voter education initiative, developed for the 2015 general elections, has been updated for the 2017 by elections and provides information on candidates, political parties, polling stations, and voter information.   
+                        The 2017 by-elections will be held on April 1. There are approximately 2.3 million voters who can go to the polls to choose from among 94 candidates (including 7 independents) and 24 political parties for 19 vacant seats. Voting will take place in 8 states and regions: Yangon, Kayah, Chin, Mon, Rakhine, Shan, Bago, and Sagaing. The MaePaySoh (Let’s Vote) voter education initiative, developed for the 2015 general elections, has been updated for the 2017 by-elections and provides information on candidates, political parties, polling stations, and voter information.   
                             
                     </p>
                     <p>
-                        MVoter2017 mobile and web apps are developed by Pop Stack and The Asia Foundation, with the generous support of Australian Aid. 
+                        mVoter 2017 mobile and web apps are developed by Team PopStack and The Asia Foundation, with the generous support of Australian Aid. 
                     </p>
                     <p>
                         Download the apps, and connect with us on <a href="https://www.facebook.com/MaePaySoh/" target="_blank">Facebook</a>!    
@@ -54,7 +54,7 @@
                         target="_blank"
                         data-ga-event="Download|MVoter 2017 Manual|User Manual"
                         class="waves-effect waves-light btn indigo darken-2" style="margin-bottom: 20px;">
-                        <i class="material-icons left">file_download</i>mVoter2017 User Manual
+                        <i class="material-icons left">file_download</i>mVoter 2017 User Manual
                     </a>
                     <a href="https://goo.gl/W9KW8x" 
                         target="_blank"
